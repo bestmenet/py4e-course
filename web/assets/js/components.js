@@ -2,7 +2,7 @@
 
 import {
   el, icon, esc, fmtTime, fmtNum, navigate, toast, copyText,
-  youtubeThumb, onIdle, isOffline,
+  youtubeThumb, onIdle, isOffline, currentLanguage, setLanguage, t,
 } from './core.js';
 import { highlight } from './highlight.js';
 import { api } from './api.js';
@@ -19,7 +19,8 @@ export function shell() {
   if (shellEls) return shellEls;
   const topbar = el('header', { class: 'topbar' });
   const view = el('main', { class: 'view', id: 'main-content', tabindex: '-1' });
-  const app = el('div', { class: 'app' }, topbar, view);
+  const app = el('div', { class: 'app' },
+    el('a', { class: 'skip-link', href: '#main-content' }, 'Skip to content'), topbar, view);
   shellEls = { app, topbar, view };
   return shellEls;
 }
@@ -48,10 +49,21 @@ export function renderTopbar(active) {
       }, label))),
     el('div', { class: 'top-actions' },
       searchBox(),
+      languageButton(),
       themeButton(),
       navMenuButton()),
   );
   return topbar;
+}
+
+function languageButton() {
+  const zh = currentLanguage() === 'zh';
+  return el('button', {
+    class: 'btn btn-ghost btn-sm language-button',
+    'aria-label': zh ? 'Switch language to English' : '切换为简体中文',
+    'data-tip': zh ? 'English' : '简体中文',
+    onclick: () => setLanguage(zh ? 'en' : 'zh'),
+  }, zh ? 'EN' : '中文');
 }
 
 function searchBox() {
@@ -118,8 +130,11 @@ function navMenuButton() {
       class: 'menu',
       style: { position: 'fixed', top: '64px', right: '16px', left: 'auto' },
     },
-    ...['/', '/syllabus', '/setup', '/book', '/videos', '/slides', '/library', '/playground', '/progress']
-      .map((href) => el('a', { href, onclick: () => menu.remove() }, href === '/' ? 'Overview' : href.slice(1))));
+    ...[
+      ['/', 'Overview'], ['/syllabus', 'Syllabus'], ['/setup', 'Setup'], ['/book', 'Book'],
+      ['/videos', 'Videos'], ['/slides', 'Slides'], ['/library', 'Code'],
+      ['/playground', 'Playground'], ['/progress', 'My progress'],
+    ].map(([href, label]) => el('a', { href, onclick: () => menu.remove() }, label)));
     document.body.append(menu);
     const dismiss = (ev) => {
       if (!menu.contains(ev.target)) { menu.remove(); document.removeEventListener('click', dismiss); }
@@ -140,7 +155,9 @@ export function renderFooter() {
           'An independent edition of the PY4E course materials: the full book, every lecture deck, '
           + 'all videos and the complete sample-code library, assembled into one site you can read and run.'),
         el('p', { style: { fontSize: 'var(--fs-2xs)', color: 'var(--ink-4)', marginTop: 'var(--s-3)' } },
-          'Course and text © Dr. Charles R. Severance, released under CC BY-NC-SA 4.0.')),
+          'Course and text © Dr. Charles R. Severance, released under CC BY-NC-SA 4.0.'),
+        el('p', { style: { fontSize: 'var(--fs-2xs)', color: 'var(--ink-4)', marginTop: 'var(--s-2)' } },
+          'The original book text and lecture videos are in English. This interface and course overview are available in Simplified Chinese.')),
       el('div', {},
         el('h5', {}, 'Course'),
         el('ul', {},
@@ -162,7 +179,7 @@ export function renderFooter() {
           el('li', {}, el('a', { href: 'https://online.dr-chuck.com', target: '_blank', rel: 'noopener' }, 'Online courses'))))),
     el('div', { class: 'footer-bottom' },
       el('span', {}, 'GitHub Pages · progress saved in this browser'),
-      el('span', { class: 'num' }, `PY4E · ${fmtNum(state.course?.stats?.words || 0)} words`)));
+      el('span', { class: 'num' }, `PY4E · ${t('{count} words', { count: fmtNum(state.course?.stats?.words || 0) })}`)));
 }
 
 /* ------------------------------------------------------------ lesson cards */
@@ -171,22 +188,22 @@ export function lessonCard(lesson) {
   const p = lessonProgress(lesson.slug);
   const meta = [];
   if (lesson.videos.length) {
-    meta.push(el('span', {}, icon('video', 13), `${lesson.videos.length} videos`));
+    meta.push(el('span', {}, icon('video', 13), t('{count} videos', { count: lesson.videos.length })));
   }
   if (lesson.deck_page_count) {
-    meta.push(el('span', {}, icon('slides', 13), `${lesson.deck_page_count} slides`));
+    meta.push(el('span', {}, icon('slides', 13), t('{count} slides', { count: lesson.deck_page_count })));
   }
   if (lesson.duration_seconds) {
     meta.push(el('span', {}, icon('clock', 13), fmtTime(lesson.duration_seconds)));
   }
   if (lesson.guide_count) {
-    meta.push(el('span', {}, icon('download', 13), `${lesson.guide_count} setup guides`));
+    meta.push(el('span', {}, icon('download', 13), t('{count} setup guides', { count: lesson.guide_count })));
   }
 
   return el('a', { class: 'card card-link lesson-card', href: `/lesson/${lesson.slug}` },
     el('div', {},
       el('div', { class: 'row-between' },
-        el('span', { class: 'n' }, `Lesson ${String(lesson.number).padStart(2, '0')}`),
+        el('span', { class: 'n' }, t('Lesson {number}', { number: String(lesson.number).padStart(2, '0') })),
         p.percent > 0 ? el('span', {
           class: `badge ${p.done ? 'badge-ok' : 'badge-accent'}`,
         }, p.done ? 'Done' : `${p.percent}%`) : null),
@@ -200,7 +217,7 @@ export function lessonCard(lesson) {
 export function lessonRow(lesson, index) {
   const p = lessonProgress(lesson.slug);
   return el('a', { class: 'unit', href: `/lesson/${lesson.slug}`, dataset: { done: p.done ? '1' : '0' } },
-    el('div', { class: 'unit-num' }, String(lesson.number || index + 1).padStart(2, '0')),
+      el('div', { class: 'unit-num' }, String(lesson.number || index + 1).padStart(2, '0')),
     el('div', {},
       el('div', { class: 'unit-title' }, lesson.name),
       el('div', { class: 'unit-desc' }, lesson.description)),

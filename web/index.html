@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Python for Everybody — offline course</title>
-  <meta name="description" content="The complete PY4E course — book, lecture videos, slides and sample code — assembled into one offline site.">
+  <title>人人学 Python — 完整课程</title>
+  <meta name="description" content="完整的 PY4E 课程资料：教材、课程视频、课件和示例代码，集中在一个课程网站中。">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#faf8f5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#131518" media="(prefers-color-scheme: dark)">
@@ -15,6 +15,7 @@
   <script>
     /* Apply the saved theme before first paint so there is no flash. */
     try {
+      if (localStorage.getItem('py4e:language') === 'en') document.documentElement.lang = 'en';
       var saved = localStorage.getItem('py4e:theme');
       if (saved) {
         saved = JSON.parse(saved);
@@ -26,18 +27,18 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content">跳转到正文</a>
 
   <div id="boot" style="min-height:100vh;display:grid;place-items:center">
     <div style="text-align:center;max-width:32rem;padding:2rem">
       <div class="brand-mark" style="width:56px;height:56px;font-size:1.2rem;margin:0 auto 1.25rem">py</div>
-      <h1 style="font-size:1.5rem;margin-bottom:0.5rem">Python for Everybody</h1>
+      <h1 style="font-size:1.5rem;margin-bottom:0.5rem">人人学 Python</h1>
       <p style="color:var(--ink-3);font-size:0.875rem;display:flex;align-items:center;justify-content:center;gap:0.6rem">
-        <span class="spinner"></span> Loading the course…
+        <span class="spinner"></span> 正在加载课程…
       </p>
       <noscript>
         <p style="margin-top:1.5rem;color:var(--err);font-size:0.875rem">
-          This course needs JavaScript. Every asset it uses is served locally — enable scripts and reload.
+          本课程需要 JavaScript。请启用脚本后重新加载页面。
         </p>
       </noscript>
     </div>

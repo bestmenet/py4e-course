@@ -1,5 +1,5 @@
 import { BASE_PATH } from './runtime.js';
-import { toast } from './core.js';
+import { toast, t } from './core.js';
 /* data.js — one place that owns course content and learner progress.
    Views subscribe instead of fetching for themselves, so a progress change
    repaints every badge on screen without a reload. */
@@ -55,7 +55,7 @@ export function loadCourse() {
     for (const c of course.chapters || []) idx.chapterBySlug.set(c.slug, c);
     for (const d of course.decks || []) idx.deckBySlug.set(d.slug, d);
     course.lessons = [...(course.lessons || [])].sort((a, b) => (a.number || 0) - (b.number || 0));
-    document.title = `${course.title} — offline course`;
+    document.title = t(course.title);
     emit('course');
     return course;
   }).catch((err) => {

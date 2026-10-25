@@ -167,6 +167,8 @@ main.view { outline: none; min-width: 0; }
   color: var(--accent);
   position: relative;
 }
+html:lang(zh) .hero h1 { text-wrap: balance; line-height: 1.2; letter-spacing: -0.02em; }
+html:lang(zh) .hero h1 em { white-space: nowrap; }
 .hero-lede {
   font-size: clamp(1rem, 1.5vw, var(--fs-xl));
   line-height: 1.6;
@@ -228,6 +230,7 @@ main.view { outline: none; min-width: 0; }
   line-height: 1;
 }
 .stat .n small { font-size: 0.5em; font-weight: 600; color: var(--ink-3); margin-left: 0.15em; }
+html:lang(zh) .stat .n { font-size: var(--fs-2xl); white-space: nowrap; }
 .stat .l {
   font-size: var(--fs-2xs);
   color: var(--ink-3);
@@ -236,6 +239,8 @@ main.view { outline: none; min-width: 0; }
   text-transform: uppercase;
   font-weight: 620;
 }
+
+.playground .panel-head > .row { flex-wrap: wrap; }
 
 /* --------------------------------------------------------------- sections */
 

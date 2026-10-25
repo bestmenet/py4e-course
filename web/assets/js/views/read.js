@@ -2,7 +2,7 @@
    runnable code samples, per-chapter notes and bookmarks. */
 
 import {
-  el, icon, fmtNum, navigate, toast, debounce, throttle, store, onLeaveView,
+  el, icon, fmtNum, navigate, toast, throttle, store, onLeaveView, t,
 } from '../core.js';
 import { api } from '../api.js';
 import {
@@ -37,7 +37,7 @@ export async function renderRead(view, params, query) {
     return;
   }
 
-  const article = el('article', { class: 'reader-main book', html: chapter.html });
+  const article = el('article', { class: 'reader-main book', lang: 'en', html: chapter.html });
   await settleFigures(article);
   enhanceChapterCode(article, { chapterSlug: chapter.slug });
   decorateHeadings(article, chapter);
@@ -235,12 +235,12 @@ function chapterPager(chapter) {
       const entry = state.progress.lessons[lesson.slug] || {};
       const nextState = !entry.read;
       setLessonRead(lesson.slug, nextState);
-      e.currentTarget.textContent = nextState ? 'Chapter read' : 'Mark chapter as read';
-      toast(nextState ? 'Marked as read' : 'Marked unread', nextState ? 'ok' : '', 1500);
+      e.currentTarget.textContent = t(nextState ? 'Chapter read' : 'Mark chapter as read');
+      toast(t(nextState ? 'Marked as read' : 'Marked unread'), nextState ? 'ok' : '', 1500);
     },
   }, icon('check', 15), (state.progress.lessons[lesson.slug] || {}).read ? 'Chapter read' : 'Mark chapter as read') : null;
 
-  return el('div', { class: 'reader-foot' },
+  return el('div', { class: 'reader-foot', lang: document.documentElement.lang },
     el('div', { class: 'row' },
       prev ? el('a', { class: 'btn btn-outline', href: `/read/${prev.slug}` },
         icon('arrowLeft', 15), prev.title) : null,
@@ -259,6 +259,7 @@ function trackReading(article, chapter) {
   const headings = Array.from(article.querySelectorAll('h2[id]'));
   if (!headings.length) return;
   const update = throttle(() => {
+    if (!article.isConnected) return;
     const top = window.scrollY + 140;
     let last = null;
     for (const h of headings) { if (h.offsetTop <= top) last = h; }
@@ -272,6 +273,7 @@ function trackReading(article, chapter) {
     }
   }, 400);
   window.addEventListener('scroll', update, { passive: true });
+  onLeaveView(() => window.removeEventListener('scroll', update));
   update();
 }
 
@@ -289,19 +291,20 @@ function wireNotes(article, chapter) {
   const status = el('span', { class: 'muted', style: { fontSize: 'var(--fs-2xs)' } },
     existing ? 'Saved' : '');
 
-  const persist = debounce((text) => {
+  const persist = (text) => {
     saveNote(chapter.slug, text).then(() => {
-      status.textContent = `Saved ${new Date().toLocaleTimeString()}`;
+      status.textContent = t('Saved {time}', { time: new Date().toLocaleTimeString() });
     });
-  }, 700);
+  };
 
   pad.addEventListener('input', () => {
-    status.textContent = 'Saving…';
+    status.textContent = t('Saving…');
     persist(pad.value);
   });
 
   const panel = el('section', {
     class: 'card card-pad-lg',
+    lang: document.documentElement.lang,
     style: { marginTop: 'var(--s-8)', fontFamily: 'var(--font-ui)' },
   },
   el('div', { class: 'row-between', style: { marginBottom: 'var(--s-3)' } },

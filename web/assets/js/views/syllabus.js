@@ -1,6 +1,6 @@
 /* views/syllabus.js — the whole course as one ordered list. */
 
-import { el, icon, fmtTime, fmtNum, navigate } from '../core.js';
+import { el, icon, fmtTime, fmtNum, navigate, t } from '../core.js';
 import { state, courseProgress, lessonProgress } from '../data.js';
 import {
   renderFooter, crumbs, lessonRow, sectionHead, emptyState,
@@ -20,7 +20,7 @@ export function renderSyllabus(view, params, query) {
 
   const filterBar = el('div', { class: 'segmented' },
     ...[
-      ['all', `All ${lessons.length}`],
+      ['all', t('All {count}', { count: lessons.length })],
       ['todo', 'Not finished'],
       ['done', 'Finished'],
     ].map(([key, label]) => el('button', {
@@ -38,8 +38,7 @@ export function renderSyllabus(view, params, query) {
         el('div', {},
           el('h1', {}, 'Syllabus'),
           el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-            'Seventeen lessons in four stages. Each one is a lecture to watch, a deck to page through, '
-            + 'a chapter to read and a set of exercises to run.')),
+            t('Seventeen lessons in four stages. Each one is a lecture to watch, a deck to page through, a chapter to read and a set of exercises to run.'))),
         el('div', { class: 'card card-pad', style: { minWidth: '15rem' } },
           el('div', { class: 'row-between', style: { marginBottom: 'var(--s-3)' } },
             el('span', { class: 'eyebrow' }, 'Course progress'),
@@ -48,16 +47,16 @@ export function renderSyllabus(view, params, query) {
           el('div', { class: 'bar bar-thick bar-warm' },
             el('span', { style: { width: `${progress.percent}%` } })),
           el('div', { class: 'meta-row', style: { marginTop: 'var(--s-3)' } },
-            el('span', {}, `${progress.done} of ${progress.total} lessons complete`),
+            el('span', {}, t('{count} of {total} lessons complete', { count: progress.done, total: progress.total })),
             el('span', { class: 'sep' }, '·'),
-            el('span', {}, `${progress.videos} of ${progress.videosTotal} videos`)))),
+            el('span', {}, t('{count} of {total} videos watched', { count: progress.videos, total: progress.videosTotal }))))),
 
       el('div', { class: 'row-between wrap', style: { marginBottom: 'var(--s-5)' } },
         filterBar,
         el('div', { class: 'meta-row' },
-          el('span', {}, icon('book', 14), `${course.stats.chapters} chapters`),
+          el('span', {}, icon('book', 14), t('{count} chapters', { count: course.stats.chapters })),
           el('span', { class: 'sep' }, '·'),
-          el('span', {}, icon('clock', 14), `${fmtTime(course.stats.seconds)} of video`))),
+          el('span', {}, icon('clock', 14), t('{time} of video', { time: fmtTime(course.stats.seconds) })))),
 
       shown.length
         ? el('div', {}, ...stages.map((stage) => stageBlock(stage, shown, lessons)))
@@ -89,8 +88,8 @@ function stageBlock(stage, shown, all) {
   if (!visible.length) return null;
   return el('section', { style: { marginBottom: 'var(--s-8)' } },
     el('div', { class: 'row', style: { marginBottom: 'var(--s-3)' } },
-      el('h2', { style: { fontSize: 'var(--fs-xl)' } }, stage.name),
-      el('span', { class: 'badge badge-plain' }, `${visible.length} lesson${visible.length === 1 ? '' : 's'}`)),
-    el('p', { class: 'muted', style: { fontSize: 'var(--fs-sm)', marginBottom: 'var(--s-4)' } }, stage.note),
+      el('h2', { style: { fontSize: 'var(--fs-xl)' } }, t(stage.name)),
+      el('span', { class: 'badge badge-plain' }, t(visible.length === 1 ? '{count} lesson' : '{count} lessons', { count: visible.length }))),
+    el('p', { class: 'muted', style: { fontSize: 'var(--fs-sm)', marginBottom: 'var(--s-4)' } }, t(stage.note)),
     el('div', { class: 'syllabus' }, ...visible.map((l) => lessonRow(l, all.indexOf(l)))));
 }

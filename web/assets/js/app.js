@@ -3,6 +3,7 @@
 import {
   el, route, setNotFound, startRouter, mountReadBar, onRouteChange,
   toast, initTheme, navigate,
+  t,
 } from './core.js';
 import { state, loadCourse, loadProgress, subscribe } from './data.js';
 import { shell, renderTopbar, renderFooter, emptyState } from './components.js';
@@ -87,7 +88,7 @@ setNotFound((path) => {
       el('p', { class: 'eyebrow', style: { marginBottom: 'var(--s-4)' } }, '404'),
       el('h1', {}, 'That page does not exist'),
       el('p', { class: 'lede', style: { marginTop: 'var(--s-4)' } },
-        `Nothing lives at ${path}. The course has a fixed set of pages — try the syllabus.`),
+        t('Nothing lives at {path}. The course has a fixed set of pages — try the syllabus.', { path })),
       el('div', { class: 'row', style: { marginTop: 'var(--s-6)' } },
         el('a', { class: 'btn btn-primary', href: '/' }, 'Overview'),
         el('a', { class: 'btn btn-outline', href: '/syllabus' }, 'Syllabus')),
@@ -95,22 +96,26 @@ setNotFound((path) => {
 });
 
 function setMeta(moduleName, params) {
-  const base = 'Python for Everybody';
+  const base = t('Python for Everybody');
   const titles = {
     home: base,
-    syllabus: `Syllabus · ${base}`,
-    setup: `Setup · ${base}`,
-    lesson: `Lesson · ${base}`,
-    read: `Read · ${base}`,
-    book: `The book · ${base}`,
-    videos: `Videos · ${base}`,
-    slides: `Slides · ${base}`,
-    library: `Code library · ${base}`,
-    playground: `Playground · ${base}`,
-    search: `Search · ${base}`,
-    progress: `My progress · ${base}`,
+    syllabus: `${t('Syllabus')} · ${base}`,
+    setup: `${t('Setup')} · ${base}`,
+    lesson: `${t('Lesson')} · ${base}`,
+    read: `${t('Read the book')} · ${base}`,
+    book: `${t('The book')} · ${base}`,
+    videos: `${t('Videos')} · ${base}`,
+    slides: `${t('Slides')} · ${base}`,
+    library: `${t('Code library')} · ${base}`,
+    playground: `${t('Playground')} · ${base}`,
+    search: `${t('Search')} · ${base}`,
+    progress: `${t('My progress')} · ${base}`,
   };
   document.title = titles[moduleName] || base;
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.content = t('The complete PY4E course materials — book, lecture videos, slides and sample code — in one offline site.');
+  }
 }
 
 /* ------------------------------------------------------------------ boot */

@@ -1,10 +1,11 @@
 /* views/playground.js — write and run Python against the course's own data
    files, in the browser, executed by Pyodide in a browser worker. */
 
-import { el, icon, navigate, toast, copyText, debounce, store, fmtBytes } from '../core.js';
+import { el, icon, toast, copyText, store, fmtBytes, t } from '../core.js';
 import { api } from '../api.js';
+import { sitePath } from '../runtime.js';
 import { state } from '../data.js';
-import { renderFooter, crumbs, emptyState, sectionHead } from '../components.js';
+import { renderFooter, crumbs } from '../components.js';
 
 const DRAFT_KEY = 'playground-draft';
 
@@ -28,6 +29,7 @@ const STARTERS = [
   },
   {
     id: 'repl',
+    mode: 'repl',
     title: 'Interactive session',
     code: `>>> d = dict()\n`
       + `>>> d['a'] = 1\n`
@@ -76,14 +78,16 @@ const STARTERS = [
   {
     id: 'url',
     title: 'Network request',
-    code: `import urllib.request\n`
+    code: `from pyodide.http import pyfetch\n`
       + `\n`
-      + `# needs a network connection; fails cleanly without one\n`
-      + `fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')\n`
+      + `# Fetch the course file from this site using the browser's network API.\n`
+      + `response = await pyfetch('${sitePath('/static/code/romeo.txt')}')\n`
+      + `if not response.ok:\n`
+      + `    raise RuntimeError(f'HTTP {response.status}')\n`
+      + `text = await response.string()\n`
       + `counts = dict()\n`
-      + `for line in fhand:\n`
-      + `    for word in line.decode().split():\n`
-      + `        counts[word] = counts.get(word, 0) + 1\n`
+      + `for word in text.split():\n`
+      + `    counts[word] = counts.get(word, 0) + 1\n`
       + `print(counts)\n`,
   },
 ];
@@ -91,9 +95,8 @@ const STARTERS = [
 export async function renderPlayground(view, params, query) {
   const saved = store.get(DRAFT_KEY);
   const sample = query.get('sample');
-  let mode = 'script';
-  let draft = (saved && saved.mode === 'repl' && saved.code) ? saved.code : null;
-  if (!draft) draft = STARTERS[0].code;
+  let mode = saved?.mode === 'repl' ? 'repl' : 'script';
+  const draft = typeof saved?.code === 'string' ? saved.code : STARTERS[0].code;
 
   const editor = el('textarea', {
     class: 'editor',
@@ -125,9 +128,9 @@ export async function renderPlayground(view, params, query) {
     void height;
   };
 
-  const saveDraft = debounce(() => {
+  const saveDraft = () => {
     store.set(DRAFT_KEY, { code: editor.value, mode, at: Date.now() });
-  }, 600);
+  };
 
   editor.addEventListener('input', () => { paintGutter(); saveDraft(); });
   editor.addEventListener('scroll', paintGutter);
@@ -155,11 +158,13 @@ export async function renderPlayground(view, params, query) {
   });
 
   async function run() {
+    if (runBtn.disabled) return;
     const code = editor.value;
     if (!code.trim()) { toast('Nothing to run', '', 1400); return; }
     runBtn.disabled = true;
-    runBtn.replaceChildren(el('span', { class: 'spinner' }), 'Running');
-    consoleOut.replaceChildren(el('span', { class: 'meta' }, 'Running…'));
+    runBtn.replaceChildren(el('span', { class: 'spinner' }), t('Running'));
+    consoleOut.replaceChildren(el('span', { class: 'meta' }, t('Running…')));
+    stateLine.replaceChildren();
     const started = performance.now();
     try {
       const result = await api.run({
@@ -170,17 +175,16 @@ export async function renderPlayground(view, params, query) {
       });
       renderConsole(consoleOut, result);
       stateLine.replaceChildren(
-        el('span', { class: 'num' }, `${Math.round(performance.now() - started)} ms round trip`),
+        el('span', { class: 'num' }, t('{ms} ms round trip', { ms: Math.round(performance.now() - started) })),
         el('span', { class: 'sep' }, '·'),
-        el('span', {}, `exit ${result.exit_code === null ? '—' : result.exit_code}`),
-        result.truncated ? el('span', { class: 'badge badge-warm' }, 'output truncated') : null);
+        el('span', {}, t('exit {code}', { code: result.exit_code === null ? '—' : result.exit_code })),
+        ...(result.truncated ? [el('span', { class: 'badge badge-warm' }, 'output truncated')] : []));
     } catch (err) {
       consoleOut.replaceChildren(el('span', { class: 'err' },
-        `Could not start browser Python: ${err.message}\n\n`
-        + 'Check your connection and try again.'));
+        t('Could not start browser Python: {error}\n\nCheck your connection and try again.', { error: err.message })));
     } finally {
       runBtn.disabled = false;
-      runBtn.replaceChildren(icon('play', 15), 'Run');
+      runBtn.replaceChildren(icon('play', 15), t('Run'));
     }
   }
 
@@ -192,14 +196,17 @@ export async function renderPlayground(view, params, query) {
     ...[['script', 'Program'], ['repl', 'Interactive']].map(([key, label]) => el('button', {
       type: 'button',
       'aria-pressed': mode === key ? 'true' : 'false',
-      onclick: (e) => {
-        mode = key;
-        for (const b of e.currentTarget.parentNode.children) {
-          b.setAttribute('aria-pressed', b === e.currentTarget ? 'true' : 'false');
-        }
-        saveDraft();
-      },
+      dataset: { mode: key },
+      onclick: () => setMode(key),
     }, label)));
+
+  function setMode(nextMode) {
+    mode = nextMode;
+    for (const button of modeSwitch.children) {
+      button.setAttribute('aria-pressed', button.dataset.mode === mode ? 'true' : 'false');
+    }
+    saveDraft();
+  }
 
   const samples = el('select', {
     class: 'select',
@@ -208,8 +215,9 @@ export async function renderPlayground(view, params, query) {
     onchange: (e) => {
       const starter = STARTERS.find((s) => s.id === e.target.value);
       if (!starter) return;
+      setMode(starter.mode || 'script');
       setCode(starter.code);
-      toast(`Loaded “${starter.title}”`, 'ok', 1500);
+      toast(t('Loaded “{title}”', { title: t(starter.title) }), 'ok', 1500);
       e.target.selectedIndex = 0;
     },
   },
@@ -283,8 +291,7 @@ export async function renderPlayground(view, params, query) {
   fileSearch.addEventListener('input', () => paintFiles(fileSearch.value));
 
   function insertFileName(name) {
-    const needsQuotes = /[\s]/.test(name);
-    const literal = needsQuotes ? `'${name}'` : `'${name}'`;
+    const literal = JSON.stringify(name);
     const { selectionStart: s, selectionEnd: e } = editor;
     editor.value = editor.value.slice(0, s) + literal + editor.value.slice(e);
     editor.selectionStart = editor.selectionEnd = s + literal.length;
@@ -306,7 +313,7 @@ export async function renderPlayground(view, params, query) {
       el('div', { class: 'panel-body', style: { paddingBottom: 'var(--s-2)' } },
         fileSearch,
         el('p', { class: 'muted', style: { fontSize: 'var(--fs-3xs)', margin: 'var(--s-2) 0 0' } },
-          `Click a name to insert it at the cursor. All ${files.length} files sit in the working directory.`)),
+          t('Click a name to insert it at the cursor. All {count} files sit in the working directory.', { count: files.length }))),
       fileList),
     state.course ? el('div', { class: 'panel' },
       el('div', { class: 'panel-head' }, el('h4', {}, 'Reference')),
@@ -323,8 +330,7 @@ export async function renderPlayground(view, params, query) {
         el('div', {},
           el('h1', {}, 'Playground'),
           el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-            'Real Python, run in your browser. The first run loads the Python runtime. Every data file the book uses is already in the '
-            + 'working directory. Network requests follow browser restrictions; raw sockets are unavailable.')),
+            t('Real Python, run in your browser. The first run loads the Python runtime. Course sample files are already in the working directory. Use pyodide.http.pyfetch with await for browser network requests; raw sockets and urllib networking are unavailable.'))),
         el('div', { class: 'row' },
           el('a', { class: 'btn btn-outline', href: '/library' }, icon('code', 15), 'Browse the library'))),
       el('div', { class: 'grid-split' }, main, aside)),
@@ -334,11 +340,12 @@ export async function renderPlayground(view, params, query) {
   if (sample) {
     try {
       const file = await api.codeFile(sample);
+      setMode('script');
       editor.value = file.text;
       paintGutter();
       saveDraft();
     } catch (err) {
-      toast(`Could not load the example: ${err.message}`, '', 4000);
+      toast(t('Could not load the example: {error}', { error: err.message }), '', 4000);
     }
   }
 }
@@ -346,7 +353,11 @@ export async function renderPlayground(view, params, query) {
 export function renderConsole(host, result) {
   host.replaceChildren();
   if (result.stdout) host.append(document.createTextNode(result.stdout.replace(/\n+$/, '\n')));
-  if (result.stderr) host.append(el('span', { class: 'err' }, result.stderr));
+  if (result.stderr) {
+    const error = el('span', { class: 'err' });
+    error.append(document.createTextNode(result.stderr));
+    host.append(error);
+  }
   if (!result.stdout && !result.stderr) {
     host.append(el('span', { class: 'meta' }, result.ok ? '(no output)\n' : '(no output)'));
   }

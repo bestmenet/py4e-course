@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sys
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup, NavigableString
@@ -24,7 +25,7 @@ GUIDES = [
     {"slug": "windows", "source": "software-win.php", "label": "Windows",
      "blurb": "Install Python and a text editor on Windows 11."},
     {"slug": "mac", "source": "software-mac.php", "label": "macOS",
-     "blurb": "Python is already there; add an editor and learn the Terminal."},
+     "blurb": "Check or install Python 3, add an editor and learn the Terminal."},
     {"slug": "editors", "source": "editors.php", "label": "Choosing a text editor",
      "blurb": "Why a plain-text editor matters, and which ones to avoid."},
     {"slug": "assignment", "source": "install.php", "label": "The first assignment",
@@ -57,7 +58,7 @@ def youtube_ids(node):
 
 def convert(slug, html):
     soup = BeautifulSoup(html, "lxml")
-    main = soup.find("main") or soup
+    main = soup.find("main") or soup.body or soup
     for tag in main.find_all(["script", "style", "nav", "select", "link", "meta",
                               "iframe", "form", "button", "header", "footer"]):
         tag.decompose()
@@ -90,6 +91,12 @@ def convert(slug, html):
         pre.append(code)
         pre["class"] = ["bash"]
 
+    # Every embedded guide needs a page title even when the source starts at h2.
+    if not main.find("h1"):
+        first_heading = main.find("h2")
+        if first_heading:
+            first_heading.name = "h1"
+
     # headings -> ids + toc
     toc, used = [], set()
     for h in main.find_all(["h1", "h2", "h3"]):
@@ -107,10 +114,12 @@ def convert(slug, html):
         h["id"] = hid
         toc.append({"level": int(h.name[1]), "text": text, "id": hid})
 
-    # external links open in a new tab
+    # Keep known guides local; resolve other relative links against their source.
+    local_guides = {guide["source"]: "/setup/" + guide["slug"] for guide in GUIDES}
     for a in main.find_all("a", href=True):
-        if a["href"].startswith("/"):
-            a["href"] = BASE + a["href"]
+        href = a["href"]
+        if not href.startswith("#"):
+            a["href"] = local_guides.get(href, urljoin(BASE + "/", href))
         if a["href"].startswith("http"):
             a["target"] = "_blank"
             a["rel"] = "noopener"
@@ -119,7 +128,9 @@ def convert(slug, html):
         figure["class"] = list(figure.get("class", [])) + ["book-figure"]
 
     title = toc[0]["text"] if toc else slug.replace("-", " ").title()
-    body = main.decode()
+    # The app already owns its main landmark and #main-content skip target.
+    # Embed the guide's content rather than copying the source page shell.
+    body = main.decode_contents()
     return {
         "slug": slug,
         "title": title,

@@ -248,7 +248,7 @@ def main():
     search_docs = []
     for raw in chapters_raw:
         soup, toc, blocks = transform_chapter(raw, code_set, images_present)
-        body = soup.decode()
+        body = (soup.body or soup).decode_contents()
         chapters[raw["slug"]] = {
             "slug": raw["slug"],
             "title": raw["section_title"] or raw["book_title"],

@@ -1,7 +1,7 @@
 /* views/setup.js — the "install Python" guides that lesson 1 is really made of.
    Routes: /setup and /setup/:slug */
 
-import { el, icon, youtubeEmbed, onLeaveView } from '../core.js';
+import { el, icon, youtubeEmbed, onLeaveView, t } from '../core.js';
 import { api } from '../api.js';
 import {
   state, idx, subscribe, GUIDED_LESSON, lessonProgress, isGuideRead, markGuideRead,
@@ -30,13 +30,13 @@ export function renderSetup(view, params, query) {
     const p = lesson ? lessonProgress(GUIDED_LESSON) : null;
     statusCard.replaceChildren(
       el('div', { class: 'row-between', style: { marginBottom: 'var(--s-3)' } },
-        el('span', { class: 'eyebrow' }, 'Lesson 1'),
+        el('span', { class: 'eyebrow' }, t('Lesson {number}', { number: 1 })),
         el('span', { class: `badge ${p && p.done ? 'badge-ok' : 'badge-plain'}` },
           p && p.done ? 'Done' : 'In progress')),
       el('div', { class: 'bar', style: { marginBottom: 'var(--s-3)' } },
         el('span', { style: { width: `${p ? p.percent : 0}%` } })),
       el('div', { class: 'meta-row' },
-        el('span', {}, `${p ? p.guides : 0} of ${guides.length} guides read`)),
+        el('span', {}, t('{count} of {total} guides read', { count: p ? p.guides : 0, total: guides.length }))),
       el('a', { class: 'btn btn-outline btn-sm', href: `/lesson/${GUIDED_LESSON}`,
         style: { marginTop: 'var(--s-4)' } }, 'Lesson page', icon('arrowRight', 14)));
     grid.replaceChildren(...guides.map((g, i) => guideCard(g, i)));
@@ -47,12 +47,10 @@ export function renderSetup(view, params, query) {
       crumbs([{ label: 'Overview', href: '/' }, { label: 'Syllabus', href: '/syllabus' }, { label: 'Setup' }]),
       el('div', { class: 'row-between wrap', style: { marginTop: 'var(--s-3)', marginBottom: 'var(--s-6)', gap: 'var(--s-5)' } },
         el('div', {},
-          el('p', { class: 'eyebrow' }, 'Lesson 01'),
+          el('p', { class: 'eyebrow' }, t('Lesson {number}', { number: '01' })),
           el('h1', { style: { marginTop: 'var(--s-2)' } }, 'Getting Python running'),
           el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-            'You need two things before lesson 2: somewhere to write Python, and a way to run it. '
-            + 'Pick whichever of these matches your computer — or skip installation entirely and '
-            + 'use the browser.')),
+            t('You need two things before lesson 2: somewhere to write Python, and a way to run it. Pick whichever of these matches your computer — or skip installation entirely and use the browser.'))),
         lesson ? statusCard : null),
 
       grid,
@@ -61,12 +59,10 @@ export function renderSetup(view, params, query) {
         el('div', { class: 'callout' },
           icon('info', 18),
           el('div', {},
-            el('strong', {}, 'Nothing to install to start reading. '),
-            'The book, the lecture slides and the sample code all work in this browser right now. '
-            + 'Installing Python only matters once you want to write programs of your own — '
-            + 'or you can use the ',
+            el('strong', {}, t('Nothing to install to start reading.')),
+            t('The book, the lecture slides and the sample code all work in this browser right now. Installing Python only matters once you want to write programs of your own — or you can use the '),
             el('a', { href: '/playground' }, 'playground'),
-            ', which runs Python in your browser for you.')),
+            t(', which runs Python in your browser for you.'))),
         el('p', { style: { marginTop: 'var(--s-4)', fontSize: 'var(--fs-sm)', color: 'var(--ink-3)' } },
           'The original course also offers a hosted ',
           el('a', {
@@ -93,13 +89,13 @@ export function guideCard(guide, i) {
         style: { width: '38px', height: '38px', fontSize: 'var(--fs-md)' },
       }, String(i + 1).padStart(2, '0')),
       el('span', { class: `badge ${read ? 'badge-ok' : 'badge-plain'}` },
-        read ? 'Read' : `${guide.toc.length} section${guide.toc.length === 1 ? '' : 's'}`)),
+        read ? 'Read' : t(guide.toc.length === 1 ? '{count} section' : '{count} sections', { count: guide.toc.length }))),
     el('h3', { style: { fontSize: 'var(--fs-xl)', marginBottom: 'var(--s-2)' } }, guide.label),
     el('p', { style: { fontSize: 'var(--fs-sm)', color: 'var(--ink-3)' } }, guide.blurb),
     el('div', { class: 'meta-row', style: { marginTop: 'var(--s-4)' } },
-      el('span', {}, icon('book', 13), `${guide.words} words`),
+      el('span', {}, icon('book', 13), t('{count} words', { count: guide.words })),
       el('span', { class: 'sep' }, '·'),
-      el('span', {}, icon('clock', 13), `${Math.max(1, Math.round(guide.words / 200))} min`)));
+      el('span', {}, icon('clock', 13), t('{count} min', { count: Math.max(1, Math.round(guide.words / 200)) }))));
 }
 
 /* ------------------------------------------------------------------ reader */
@@ -131,7 +127,7 @@ export async function renderSetupGuide(view, params, query) {
     return;
   }
 
-  const article = el('article', { class: 'reader-main book', html: guide.html });
+  const article = el('article', { class: 'reader-main book', lang: 'en', html: guide.html });
   enhanceChapterCode(article, { chapterSlug: `guide-${guide.slug}` });
   markGuideRead(guide.slug);
 

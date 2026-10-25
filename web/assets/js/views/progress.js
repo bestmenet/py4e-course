@@ -1,6 +1,6 @@
 /* views/progress.js — the learner's own dashboard. */
 
-import { el, icon, toast, relTime, onLeaveView } from '../core.js';
+import { el, icon, toast, relTime, onLeaveView, t } from '../core.js';
 import {
   state, courseProgress, lessonProgress, resetProgress, bookmarks, subscribe,
 } from '../data.js';
@@ -32,8 +32,7 @@ export function renderProgress(view, params, query) {
           el('div', {},
             el('h1', {}, 'My progress'),
             el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-              'Your learning progress, notes and bookmarks are saved in this browser. '
-              + 'Use the same browser to continue; progress does not sync between devices.')),
+              t('Your learning progress, notes and bookmarks are saved in this browser. Use the same browser to continue; progress does not sync between devices.'))),
           el('div', { class: 'row' },
             el('button', {
               class: 'btn btn-danger',
@@ -42,9 +41,9 @@ export function renderProgress(view, params, query) {
 
         el('div', { class: 'dash-grid' },
           metric(`${progress.percent}%`, 'Course complete'),
-          metric(`${progress.done}`, 'Lessons finished', `of ${progress.total}`),
-          metric(`${progress.videos}`, 'Videos watched', `of ${progress.videosTotal}`),
-          metric(`${passed}`, 'Exercises solved', exercises.length ? `of ${exercises.length} tried` : 'none yet'),
+          metric(`${progress.done}`, 'Lessons finished', t('of {count}', { count: progress.total })),
+          metric(`${progress.videos}`, 'Videos watched', t('of {count}', { count: progress.videosTotal })),
+          metric(`${passed}`, 'Exercises solved', exercises.length ? t('of {count} tried', { count: exercises.length }) : 'none yet'),
           metric(`${marks.length}`, 'Bookmarks'),
           metric(`${streaks.length}`, 'Active days')),
 
@@ -67,7 +66,7 @@ export function renderProgress(view, params, query) {
                   class: 'check', dataset: { done: lp.done ? '1' : '0' },
                 }, icon('check', 11)),
                 el('span', { class: 'grow truncate', style: { fontSize: 'var(--fs-xs)' } },
-                  `${l.number}. ${l.name}`),
+                  t('{number}. {name}', { number: l.number, name: t(l.name) })),
                 el('span', { class: 'num', style: { fontSize: 'var(--fs-3xs)', color: 'var(--ink-4)' } },
                   `${lp.percent}%`));
               })))),
@@ -81,10 +80,10 @@ export function renderProgress(view, params, query) {
                 },
                 el('div', { class: 'row-between', style: { marginBottom: 'var(--s-3)' } },
                   el('div', { class: 'ring', style: { '--pct': lp.percent } }, el('span', {}, `${lp.percent}%`)),
-                  el('span', { class: 'badge badge-warm' }, `${lp.videos}/${lp.videosTotal} videos`)),
+                  el('span', { class: 'badge badge-warm' }, t('{videos}/{total} videos', { videos: lp.videos, total: lp.videosTotal }))),
                 el('h3', { style: { fontSize: 'var(--fs-base)' } }, lesson.name),
                 el('p', { class: 'muted', style: { fontSize: 'var(--fs-xs)', marginTop: 'var(--s-2)' } },
-                  `${lp.slides} of ${lp.slidesTotal} slides · ${lp.read ? 'chapter read' : 'chapter unread'}`)))))
+                  t('{slides} of {total} slides · {status}', { slides: lp.slides, total: lp.slidesTotal, status: t(lp.read ? 'chapter read' : 'chapter unread') }))))))
           : null,
 
         marks.length
@@ -109,8 +108,8 @@ export function renderProgress(view, params, query) {
               sectionHead('Exercises', 'Problems you have touched.'),
               el('div', { class: 'panel' },
                 el('div', { class: 'panel-head' },
-                  el('h4', {}, `${exercises.length} attempted`),
-                  el('span', { class: 'badge badge-ok' }, `${passed} solved`)),
+                  el('h4', {}, t('{count} attempted', { count: exercises.length })),
+                  el('span', { class: 'badge badge-ok' }, t('{count} solved', { count: passed }))),
                 ...exercises.map(([id, value]) => el('div', {
                   class: 'row-between',
                   style: { padding: 'var(--s-3) var(--s-4)', borderBottom: '1px solid var(--line-soft)' },
@@ -120,7 +119,7 @@ export function renderProgress(view, params, query) {
                   el('span', { class: 'mono', style: { fontSize: 'var(--fs-xs)' } }, id)),
                 el('div', { class: 'row' },
                   value.code ? el('span', { class: 'muted', style: { fontSize: 'var(--fs-3xs)' } },
-                    `${value.code.split('\n').length} lines`) : null,
+                    t('{count} lines', { count: value.code.split('\n').length })) : null,
                   el('span', { class: 'muted', style: { fontSize: 'var(--fs-3xs)' } }, relTime(value.updated)))))))
           : null,
 
@@ -150,11 +149,10 @@ function metric(value, label, sub) {
 function confirmReset() {
   const overlay = el('div', { class: 'modal-backdrop' },
     el('div', { class: 'modal' },
-      el('div', { class: 'modal-head' }, el('h2', { style: { fontSize: 'var(--fs-lg)' } }, 'Reset all progress?')),
+          el('div', { class: 'modal-head' }, el('h2', { style: { fontSize: 'var(--fs-lg)' } }, 'Reset all progress?')),
       el('div', { class: 'modal-body' },
         el('p', {},
-          'This clears every watched video, read chapter, bookmark, exercise and note stored for '
-          + 'this course in this browser. It cannot be undone.')),
+          t('This clears every watched video, read chapter, bookmark, exercise and note stored for this course in this browser. It cannot be undone.'))),
       el('div', { class: 'modal-foot' },
         el('button', {
           class: 'btn btn-outline',

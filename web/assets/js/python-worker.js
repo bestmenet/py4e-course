@@ -14,7 +14,7 @@ try {
 }
 
 const driver = `
-import sys, io, json, traceback, code as console_code, os, shutil
+import sys, io, json, traceback, code as console_code, os, shutil, ast, inspect
 _payload = json.loads(_input_json)
 _folder = '/home/pyodide/course-run'
 os.chdir('/home/pyodide')
@@ -69,7 +69,9 @@ try:
         if _stderr.text:
             _exit = 1
     else:
-        exec(compile(_source, '__main__.py', 'exec'), _scope)
+        _execution = eval(compile(_source, '__main__.py', 'exec', flags=ast.PyCF_ALLOW_TOP_LEVEL_AWAIT), _scope)
+        if inspect.isawaitable(_execution):
+            await _execution
 except SystemExit as _err:
     _exit = _err.code if isinstance(_err.code, int) else (1 if _err.code else 0)
     if _err.code and not isinstance(_err.code, int):
@@ -93,7 +95,7 @@ self.onmessage = async ({ data: { id, payload } }) => {
     // follows browser CORS restrictions; raw sockets are unavailable.
     python.globals.set('_input_json', JSON.stringify(payload));
     python.globals.set('_files_json', JSON.stringify(sourceFiles));
-    python.runPython(driver);
+    await python.runPythonAsync(driver);
     const result = JSON.parse(python.globals.get('_result'));
     result.duration_ms = Math.round(performance.now() - started);
     self.postMessage({ type: 'result', id, result });

@@ -1,7 +1,7 @@
 import { sitePath } from '../runtime.js';
 /* views/search.js — relevance-ranked search across the whole book. */
 
-import { el, icon, navigate, debounce, titleCase } from '../core.js';
+import { el, icon, navigate, debounce, titleCase, t } from '../core.js';
 import { api } from '../api.js';
 import { state, idx } from '../data.js';
 import { renderFooter, crumbs, emptyState, sectionHead } from '../components.js';
@@ -56,18 +56,14 @@ export async function renderSearch(view, params, query) {
     status.style.display = '';
     status.replaceChildren(
       el('span', { style: { fontSize: 'var(--fs-sm)' } },
-        el('strong', {}, String(data.count)),
-        data.count === 1 ? ' result for ' : ' results for ',
-        el('strong', {}, `“${term}”`)),
+        t(data.count === 1 ? '1 result for “{term}”' : '{count} results for “{term}”', { count: data.count, term })),
       el('span', { class: 'grow' }),
-      scopeChips(),
-      suggestions.childNodes.length ? null : null);
+      scopeChips());
 
     if (!data.count) {
       results.replaceChildren(emptyState(
         'Nothing matched',
-        `No part of the book contains “${term}”. Try a shorter query, or a term the book would use — `
-        + 'like “list”, “socket” or “sqlite”.',
+        t('No part of the book contains “{term}”. Try a shorter query, or a term the book would use — like “list”, “socket” or “sqlite”.', { term }),
         el('button', {
           class: 'btn btn-outline', onclick: () => { input.value = ''; run(''); },
         }, 'Clear the search')));
@@ -114,8 +110,8 @@ export async function renderSearch(view, params, query) {
     const where = hit.is_lesson
       ? 'Lesson overview'
       : guide
-        ? `Setup · ${guide.label}`
-        : `Chapter ${chapterNumber(hit.chapter)} · ${chapter ? chapter.title : hit.chapter}`;
+        ? t('Setup · {title}', { title: t(guide.label) })
+        : t('Chapter {number} · {title}', { number: chapterNumber(hit.chapter), title: t(chapter ? chapter.title : hit.chapter) });
 
     return el('div', { class: 'result' },
       el('div', { class: 'where' }, where),
@@ -129,9 +125,7 @@ export async function renderSearch(view, params, query) {
     return el('div', { style: { paddingTop: 'var(--s-6)' } },
       el('h2', { class: 'section-title' }, 'Search the entire book'),
       el('p', { class: 'lede', style: { marginBottom: 'var(--s-5)' } },
-        'Every word of the book, every lesson description and video title, and the installation '
-        + 'guides — indexed in your browser. Results are ranked so the section that actually '
-        + 'explains a term comes first.'),
+        t('Every word of the book, every lesson description and video title, and the installation guides — indexed in your browser. Results are ranked so the section that actually explains a term comes first.')),
       el('div', { class: 'tag-list' }, ...popular.map((p) => el('button', {
         class: 'pill', type: 'button',
         onclick: () => { input.value = p; run(p); input.focus(); },

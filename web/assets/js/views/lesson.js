@@ -2,7 +2,7 @@
    its exercises, gathered on a single page. */
 
 import {
-  el, icon, fmtTime, navigate, toast, youtubeEmbed, titleCase, onLeaveView,
+  el, icon, fmtTime, navigate, toast, youtubeEmbed, titleCase, onLeaveView, t,
 } from '../core.js';
 import { api } from '../api.js';
 import {
@@ -85,10 +85,10 @@ function lessonHero(lesson, tab, chapterSummary) {
       crumbs([
         { label: 'Overview', href: '/' },
         { label: 'Syllabus', href: '/syllabus' },
-        { label: `Lesson ${lesson.number}` },
+        { label: t('Lesson {number}', { number: lesson.number }) },
       ]),
       el('div', { class: 'row', style: { marginTop: 'var(--s-3)' } },
-        el('span', { class: 'badge badge-accent' }, `Lesson ${String(lesson.number).padStart(2, '0')}`),
+        el('span', { class: 'badge badge-accent' }, t('Lesson {number}', { number: String(lesson.number).padStart(2, '0') })),
         p.done ? el('span', { class: 'badge badge-ok' }, icon('check', 11), 'Completed') : null,
         p.percent > 0 && !p.done ? el('span', { class: 'badge badge-warm' }, `${p.percent}% complete`) : null),
       el('h1', {}, lesson.name),
@@ -101,9 +101,9 @@ function lessonHero(lesson, tab, chapterSummary) {
           lesson.videos.length ? el('span', { class: 'row', style: { gap: '0.35em' } },
             icon('video', 14), `${lesson.videos.length} videos · ${fmtTime(lesson.duration_seconds)}`) : null,
           lesson.deck_page_count ? el('span', { class: 'row', style: { gap: '0.35em' } },
-            icon('slides', 14), `${lesson.deck_page_count} slides`) : null,
+            icon('slides', 14), t('{count} slides', { count: lesson.deck_page_count })) : null,
           chapterSummary ? el('a', { href: `/read/${chapterSummary.slug}`, class: 'row', style: { gap: '0.35em' } },
-            icon('book', 14), `Chapter ${chapterSummary.slug.slice(0, 2)} · ${chapterSummary.title}`) : null),
+            icon('book', 14), t('Chapter {number} · {title}', { number: chapterSummary.slug.slice(0, 2), title: t(chapterSummary.title) })) : null),
         el('div', { class: 'row' },
           prev ? el('a', {
             class: 'btn btn-quiet btn-sm', href: `/lesson/${prev.slug}`,
@@ -208,12 +208,12 @@ async function paintOverview(body, lesson, chapterSummary) {
         : null,
       lesson.videos.length ? pathCard('video', 'Lecture videos',
         `${lesson.videos.length} clips · ${fmtTime(lesson.duration_seconds)}`,
-        p.videosTotal ? `${p.videos} of ${p.videosTotal} watched` : null,
+        p.videosTotal ? t('{count} of {total} watched', { count: p.videos, total: p.videosTotal }) : null,
         p.videosTotal ? Math.round((p.videos / p.videosTotal) * 100) : 0,
         `/lesson/${lesson.slug}?tab=videos`) : null,
       lesson.deck_page_count ? pathCard('slides', 'Lecture slides',
-        `${lesson.deck_page_count} slides`,
-        p.slidesTotal ? `${p.slides} of ${p.slidesTotal} seen` : null,
+        t('{count} slides', { count: lesson.deck_page_count }),
+        p.slidesTotal ? t('{count} of {total} seen', { count: p.slides, total: p.slidesTotal }) : null,
         p.slidesTotal ? Math.round((p.slides / p.slidesTotal) * 100) : 0,
         `/lesson/${lesson.slug}?tab=slides`) : null,
       chapterSummary ? pathCard('book', 'Book chapter',
@@ -473,7 +473,7 @@ async function paintPractice(body, lesson, chapterSummary) {
 
   if (exercises.length) {
     blocks.push(el('section', {},
-      el('h2', { class: 'section-title' }, `${exercises.length} exercises`),
+      el('h2', { class: 'section-title' }, t('{count} exercises', { count: exercises.length })),
       el('p', { class: 'muted', style: { fontSize: 'var(--fs-sm)', marginBottom: 'var(--s-5)' } },
         'Written for this chapter. Solve them in the playground — the data files the exercises '
         + 'need are already there.'),
@@ -516,11 +516,14 @@ function extractExercises(chapter) {
   if (!heading) return [];
   const out = [];
   let node = heading.nextElementSibling;
-  let bucket = { title: heading.textContent.trim(), blocks: [] };
+  let bucket = { blocks: [] };
   while (node && node.tagName !== 'H2') {
-    if (node.tagName === 'P' || node.tagName === 'UL' || node.tagName === 'OL' || node.tagName === 'PRE') {
-      bucket.blocks.push(node.outerHTML);
+    if (node.matches('section.footnotes, hr')) break;
+    if (node.tagName === 'P' && /^Exercise\s+\d+\s*:/i.test(node.textContent.trim()) && bucket.blocks.length) {
+      out.push(bucket);
+      bucket = { blocks: [] };
     }
+    bucket.blocks.push(node.outerHTML);
     node = node.nextElementSibling;
   }
   if (bucket.blocks.length) out.push(bucket);
@@ -530,26 +533,29 @@ function extractExercises(chapter) {
 function exerciseCard(lesson, chapter, bucket, index) {
   const id = `${chapter.slug}:${index}`;
   const saved = exerciseState(id);
+  const status = el('span', {
+    class: `badge ${saved?.passed ? 'badge-ok' : 'badge-plain'}`,
+  }, saved?.passed ? 'Solved' : 'Not solved');
   const holder = el('div', { class: 'book', html: bucket.blocks.join('') });
   enhanceChapterCode(holder, { chapterSlug: chapter.slug });
 
   const foot = el('div', { class: 'row-between wrap', style: { marginTop: 'var(--s-4)' } },
     el('div', { class: 'row' },
-      el('span', {
-        class: `badge ${saved && saved.passed ? 'badge-ok' : 'badge-plain'}`,
-      }, saved && saved.passed ? 'Solved' : 'Not solved'),
+      status,
       saved && saved.code ? el('span', { class: 'muted', style: { fontSize: 'var(--fs-2xs)' } },
         `${saved.code.split('\n').length} lines saved`) : null),
     el('div', { class: 'row' },
-      el('a', { class: 'btn btn-outline btn-sm', href: `/playground?sample=${chapter.slug}` },
+      el('a', { class: 'btn btn-outline btn-sm', href: '/playground' },
         icon('terminal', 14), 'Open playground'),
       el('button', {
         class: `btn btn-sm ${saved && saved.passed ? 'btn-outline' : 'btn-primary'}`,
         onclick: (e) => {
-          const now = !(saved && saved.passed);
+          const now = !exerciseState(id)?.passed;
           saveExercise(id, { passed: now });
+          status.textContent = t(now ? 'Solved' : 'Not solved');
+          status.className = `badge ${now ? 'badge-ok' : 'badge-plain'}`;
           const btn = e.currentTarget;
-          btn.textContent = now ? 'Solved' : 'Mark solved';
+          btn.textContent = t(now ? 'Solved' : 'Mark solved');
           btn.className = `btn btn-sm ${now ? 'btn-outline' : 'btn-primary'}`;
           toast(now ? 'Nice — marked as solved' : 'Marked unsolved', now ? 'ok' : '', 1500);
         },
@@ -558,7 +564,7 @@ function exerciseCard(lesson, chapter, bucket, index) {
   return el('article', { class: 'card card-pad-lg', id },
     el('div', { class: 'row-between', style: { marginBottom: 'var(--s-3)' } },
       el('span', { class: 'num', style: { fontSize: 'var(--fs-2xs)', color: 'var(--ink-4)' } },
-        `EXERCISE ${index}`)),
+        t('Exercise {number}', { number: index }))),
     holder,
     foot);
 }
@@ -610,7 +616,7 @@ function lessonAside(lesson, tab, chapterSummary) {
             p.done ? 'Completed'
               : lesson.slug === GUIDED_LESSON && p.guidesTotal
                 ? `${p.guides}/${p.guidesTotal} guides read`
-                : `${p.videos}/${p.videosTotal} watched`))),
+                : t('{count}/{total} watched', { count: p.videos, total: p.videosTotal })))),
       el('button', {
         class: `btn btn-block ${p.done ? 'btn-outline' : 'btn-primary'}`,
         onclick: () => {
@@ -632,10 +638,10 @@ function lessonAside(lesson, tab, chapterSummary) {
       el('div', { class: 'aside-list' },
         prev ? el('a', { href: `/lesson/${prev.slug}` },
           el('span', { class: 'idx' }, '←'),
-          el('span', { class: 'truncate' }, `${prev.number}. ${prev.name}`)) : null,
+          el('span', { class: 'truncate' }, `${prev.number}. ${t(prev.name)}`)) : null,
         next ? el('a', { href: `/lesson/${next.slug}` },
           el('span', { class: 'idx' }, '→'),
-          el('span', { class: 'truncate' }, `${next.number}. ${next.name}`)) : null,
+          el('span', { class: 'truncate' }, `${next.number}. ${t(next.name)}`)) : null,
         el('a', { href: '/syllabus' },
           el('span', { class: 'idx' }, icon('list', 13)),
           el('span', {}, 'All lessons')))));

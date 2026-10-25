@@ -87,6 +87,8 @@
 /* segmented control */
 .segmented {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   padding: 3px;
   gap: 2px;
   background: var(--paper-sunk);
@@ -94,6 +96,7 @@
   border-radius: var(--r-md);
 }
 .segmented button {
+  white-space: nowrap;
   padding: 0.3rem 0.7rem;
   font-size: var(--fs-xs);
   font-weight: 560;

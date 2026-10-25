@@ -1,7 +1,7 @@
 import { routePath } from '../runtime.js';
 /* views/book.js — the book's front matter: cover, contents, reading modes. */
 
-import { el, icon, fmtNum, fmtTime, navigate, toast, copyText } from '../core.js';
+import { el, icon, fmtNum, fmtTime, navigate, toast, copyText, t } from '../core.js';
 import { state, idx, bookmarks, lessonProgress } from '../data.js';
 import {
   renderFooter, crumbs, sectionHead, lessonRow, emptyState,
@@ -28,15 +28,13 @@ export function renderBook(view, params, query) {
         el('div', {},
           el('h1', {}, 'Python for Everybody'),
           el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-            'Exploring Data Using Python 3 — the complete text, sixteen chapters, '
-            + 'available right here. Every figure, table and code sample is here, '
-            + 'and the code samples run in place.'),
+            t('Exploring Data Using Python 3 — the complete text, sixteen chapters, available right here. Every figure, table and code sample is here, and the code samples run in place.')),
           el('div', { class: 'meta-row', style: { marginTop: 'var(--s-5)' } },
-            el('span', {}, icon('bookOpen', 14), `${chapters.length} chapters`),
+            el('span', {}, icon('bookOpen', 14), t('{count} chapters', { count: chapters.length })),
             el('span', { class: 'sep' }, '·'),
-            el('span', {}, icon('note', 14), `${fmtNum(words)} words`),
+            el('span', {}, icon('note', 14), t('{count} words', { count: fmtNum(words) })),
             el('span', { class: 'sep' }, '·'),
-            el('span', {}, icon('clock', 14), `~${Math.round(words / 220 / 60 * 10) / 10} hours to read`)),
+            el('span', {}, icon('clock', 14), t('~{hours} hours to read', { hours: Math.round(words / 220 / 60 * 10) / 10 }))),
           el('div', { class: 'row', style: { marginTop: 'var(--s-6)' } },
             el('a', { class: 'btn btn-primary btn-lg', href: `/read/${chapters[0].slug}` },
               icon('book', 16), 'Start reading'),
@@ -47,9 +45,7 @@ export function renderBook(view, params, query) {
           el('p', {
             class: 'read',
             style: { fontSize: 'var(--fs-lg)', lineHeight: '1.65', color: 'var(--ink-2)' },
-          }, '“Writing programs is a very creative and rewarding activity. You can write programs '
-             + 'for many reasons, ranging from making your living to solving a difficult data '
-             + 'analysis problem to having fun to helping someone else solve a problem.”'),
+          }, t('“Writing programs is a very creative and rewarding activity. You can write programs for many reasons, ranging from making your living to solving a difficult data analysis problem to having fun to helping someone else solve a problem.”')),
           el('div', { class: 'meta-row', style: { marginTop: 'var(--s-4)' } },
             el('span', {}, 'Dr. Charles R. Severance'),
             el('span', { class: 'sep' }, '·'),
@@ -64,7 +60,7 @@ export function renderBook(view, params, query) {
       marks.length
         ? el('section', { class: 'section' },
             sectionHead('Your bookmarks',
-              `${marks.length} section${marks.length === 1 ? '' : 's'} you marked while reading.`),
+              t(marks.length === 1 ? '{count} section you marked while reading.' : '{count} sections you marked while reading.', { count: marks.length })),
             el('div', { class: 'grid grid-3' },
               ...marks.slice(0, 12).map((b) => {
                 const chapter = idx.chapterBySlug.get(b.chapter);
@@ -83,7 +79,7 @@ export function renderBook(view, params, query) {
 
       el('section', { class: 'section' },
         sectionHead('Contents',
-          'Sixteen chapters, in order. Each links to the matching lesson.', [
+            t('Sixteen chapters, in order. Each links to the matching lesson.'), [
             el('a', { class: 'btn btn-outline btn-sm', href: '/syllabus' }, 'Lessons view', icon('arrowRight', 14)),
           ]),
         el('div', { class: 'syllabus' },
@@ -93,10 +89,7 @@ export function renderBook(view, params, query) {
         el('div', { class: 'callout' },
           icon('info', 18),
           el('div', {},
-            el('strong', {}, 'About the text. '),
-            'The book was written by Dr. Charles R. Severance and is released under '
-            + 'CC BY-NC-SA 4.0. This offline edition reproduces it unmodified apart from '
-            + 'rewriting asset links to point at local copies.')))),
+            t('About the text. The book was written by Dr. Charles R. Severance and is released under CC BY-NC-SA 4.0. This offline edition reproduces it unmodified apart from rewriting asset links to point at local copies.'))))),
 
     renderFooter());
 }
@@ -116,12 +109,12 @@ function chapterRow(chapter, index) {
         + (sections.length > 4 ? ` · +${sections.length - 4} more` : '')),
       reach
         ? el('div', { class: 'meta-row', style: { marginTop: 'var(--s-2)' } },
-            el('span', {}, icon('bookmark', 12), `Reached: ${reach}`))
+            el('span', {}, icon('bookmark', 12), t('Reached: {section}', { section: reach })))
         : null),
     el('div', { class: 'unit-side' },
       el('div', { class: 'tag-list' },
-        el('span', { class: 'pill' }, `${sections.length} sections`),
-        el('span', { class: 'pill' }, `${fmtNum(chapter.words)} words`),
+        el('span', { class: 'pill' }, t('{count} sections', { count: sections.length })),
+        el('span', { class: 'pill' }, t('{count} words', { count: fmtNum(chapter.words) })),
         p && p.read ? el('span', { class: 'pill pill-accent' }, icon('check', 11), 'read') : null)));
 }
 

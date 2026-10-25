@@ -1,4 +1,6 @@
 import { sitePath, routePath, siteHTML } from './runtime.js';
+import { t, currentLanguage } from './i18n.js';
+export { t, currentLanguage, setLanguage } from './i18n.js';
 
 /* core.js — DOM helpers, router, theme, toast, modal, misc formatting.
    No dependencies. Everything else in the app builds on this. */
@@ -12,17 +14,17 @@ export function el(tag, attrs, ...children) {
       if (value === null || value === undefined || value === false) continue;
       if (key === 'class') node.className = value;
       else if (key === 'html') node.innerHTML = siteHTML(value);
-      else if (key === 'text') node.textContent = value;
+      else if (key === 'text') node.textContent = t(value);
       else if (key === 'dataset') Object.assign(node.dataset, value);
       else if (key === 'style' && typeof value === 'object') Object.assign(node.style, value);
       else if (key.startsWith('on') && typeof value === 'function') {
         node.addEventListener(key.slice(2).toLowerCase(), value);
-      } else node.setAttribute(key, ['href', 'src', 'poster'].includes(key) && typeof value === 'string' ? sitePath(value) : (value === true ? '' : value));
+      } else node.setAttribute(key, ['href', 'src', 'poster'].includes(key) && typeof value === 'string' ? sitePath(value) : (value === true ? '' : (typeof value === 'string' && ['placeholder', 'aria-label', 'title', 'data-tip'].includes(key) ? t(value) : value)));
     }
   }
   for (const child of children.flat(Infinity)) {
     if (child === null || child === undefined || child === false) continue;
-    node.append(child instanceof Node ? child : document.createTextNode(String(child)));
+    node.append(child instanceof Node ? child : document.createTextNode(t(String(child))));
   }
   return node;
 }
@@ -89,6 +91,11 @@ export function fmtTime(seconds) {
   const s = Math.max(0, Math.round(seconds || 0));
   const h = Math.floor(s / 3600);
   const m = Math.floor((s % 3600) / 60);
+  if (currentLanguage() === 'zh') {
+    if (h) return `${h}小时${m ? `${m}分` : ''}`;
+    if (m) return `${m}分钟`;
+    return `${s}秒`;
+  }
   if (h) return `${h}h ${m}m`;
   if (m) return `${m}m`;
   return `${s}s`;
@@ -111,12 +118,19 @@ export function fmtBytes(bytes) {
 export function fmtDate(ts) {
   if (!ts) return '';
   const d = new Date(ts * 1000);
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return d.toLocaleDateString(currentLanguage() === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
 export function relTime(ts) {
   if (!ts) return '';
   const diff = Date.now() / 1000 - ts;
+  if (currentLanguage() === 'zh') {
+    if (diff < 60) return '刚刚';
+    if (diff < 3600) return `${Math.floor(diff / 60)} 分钟前`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)} 小时前`;
+    if (diff < 604800) return `${Math.floor(diff / 86400)} 天前`;
+    return fmtDate(ts);
+  }
   if (diff < 60) return 'just now';
   if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
   if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;

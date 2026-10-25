@@ -2,7 +2,7 @@ import { sitePath } from '../runtime.js';
 /* views/library.js — every sample program and data file the book references,
    browsable and runnable in place. */
 
-import { el, icon, fmtBytes, navigate, toast, copyText, debounce, store } from '../core.js';
+import { el, icon, fmtBytes, navigate, toast, copyText, debounce, store, t } from '../core.js';
 import { highlight } from '../highlight.js';
 import { api } from '../api.js';
 import { state } from '../data.js';
@@ -42,8 +42,8 @@ export async function renderLibrary(view, params, query) {
   });
 
   const groupChips = el('div', { class: 'segmented' },
-    ...[['all', `All ${files.length}`], ...GROUPS.map((g) => [
-      g.id, `${g.label} ${files.filter((f) => g.match(f.name)).length}`,
+    ...[['all', t('All {count} files', { count: files.length })], ...GROUPS.map((g) => [
+      g.id, t('{label} {count}', { label: t(g.label), count: files.filter((f) => g.match(f.name)).length }),
     ])].map(([id, label]) => el('button', {
       type: 'button',
       'aria-pressed': group === id ? 'true' : 'false',
@@ -134,7 +134,11 @@ export async function renderLibrary(view, params, query) {
           const result = await api.runFile(file.name, stdinBox.value);
           output.replaceChildren(el('span', { class: 'out-label' }, 'Output'));
           if (result.stdout) output.append(document.createTextNode(result.stdout));
-          if (result.stderr) output.append(el('span', { class: 'err' }, result.stderr));
+          if (result.stderr) {
+            const error = el('span', { class: 'err' });
+            error.append(document.createTextNode(result.stderr));
+            output.append(error);
+          }
           if (!result.stdout && !result.stderr) output.append(el('span', { class: 'meta' }, '(no output)'));
           output.append(el('span', { class: 'meta' }, `\n— ${result.duration_ms} ms`));
           // if the program wanted input and got none, open the input box for them
@@ -144,7 +148,7 @@ export async function renderLibrary(view, params, query) {
               '\nThis program asks for input — type an answer above, then run it again.'));
           }
         } catch (err) {
-          output.replaceChildren(el('span', { class: 'err' }, `Runner unavailable: ${err.message}`));
+          output.replaceChildren(el('span', { class: 'err' }, t('Runner unavailable: {error}', { error: err.message })));
         }
       },
     }, icon('play', 13), 'Run this program');
@@ -191,8 +195,7 @@ export async function renderLibrary(view, params, query) {
       el('div', { class: 'panel-body', style: { paddingBottom: 'var(--s-2)' } },
         search,
         el('p', { class: 'muted', style: { fontSize: 'var(--fs-3xs)', margin: 'var(--s-3) 0 0' } },
-          'These are the exact files the book’s programs read. They live in the working '
-          + 'directory of the playground and the runner.'))),
+          t('These are the exact files the book’s programs read. They live in the working directory of the playground and the runner.')))),
     el('div', { class: 'panel' }, list));
 
   view.replaceChildren(
@@ -202,8 +205,9 @@ export async function renderLibrary(view, params, query) {
         el('div', {},
           el('h1', {}, 'Code library'),
           el('p', { class: 'lede', style: { marginTop: 'var(--s-3)' } },
-            `${files.length} programs and data files, downloaded from the course and available here. `
-            + 'Every Python file can be run here, unchanged.')),
+          t('{count} course programs and data files are available here. Some Python files can run in the browser.', { count: files.length })),
+          el('p', { class: 'muted', style: { marginTop: 'var(--s-2)', fontSize: 'var(--fs-xs)' } },
+            'Browser execution supports local sample files and selected Python features. Raw sockets, urllib networking, and desktop GUI libraries are unavailable.')),
         el('div', { class: 'row' }, groupChips)),
       el('div', { class: 'lib-layout' }, aside, pane)),
     renderFooter());

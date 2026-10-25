@@ -1,6 +1,6 @@
 /* views/home.js — the course landing page. */
 
-import { el, icon, fmtTime, fmtNum, navigate } from '../core.js';
+import { el, icon, fmtTime, fmtNum, navigate, t } from '../core.js';
 import { state, courseProgress, lessonProgress } from '../data.js';
 import { lessonCard, videoCard, sectionHead, statTile } from '../components.js';
 
@@ -17,32 +17,28 @@ export function renderHome(view) {
       progress.percent > 0 ? continueCard(progress) : null,
       el('section', { class: 'section', style: { marginTop: 'var(--s-8)' } },
         sectionHead('The seventeen lessons',
-          'Two to three hours each. Watch the lecture, page through the slides, read the matching '
-          + 'chapter, then run the examples yourself.',
+          t('Two to three hours each. Watch the lecture, page through the slides, read the matching chapter, then run the examples yourself.'),
           [el('a', { class: 'btn btn-outline btn-sm', href: '/syllabus' }, 'Full syllabus', icon('arrowRight', 14))]),
         el('div', { class: 'grid grid-3' }, ...lessons.map(lessonCard))),
 
       el('section', { class: 'section' },
         sectionHead('Start with the first lecture',
-          'The whole course is 87 short videos — about ' + fmtTime(stats.seconds) + ' of watch time.',
+          t('The whole course is {count} short videos — about {time} of watch time.', { count: stats.videos, time: fmtTime(stats.seconds) }),
           [el('a', { class: 'btn btn-outline btn-sm', href: '/videos' }, 'All videos', icon('arrowRight', 14))]),
         videoStrip(course)),
 
       el('section', { class: 'section' },
         sectionHead('Read the book online',
-          'All sixteen chapters are here, with the figures, tables and every code sample — '
-          + 'and you can run the samples without leaving the page.'),
+          t('All sixteen chapters are here, with the figures, tables and every code sample — and you can run the samples without leaving the page.')),
         chapterGrid(course)),
 
       el('section', { class: 'section' },
         sectionHead('Or write your own',
-          'A scratchpad that runs real Python in your browser, with all the course data files '
-          + 'already in place.',
+          t('A scratchpad that runs real Python in your browser, with all the course data files already in place.'),
           [el('a', { class: 'btn btn-primary btn-sm', href: '/playground' }, icon('terminal', 14), 'Open playground')]),
         el('div', { class: 'grid grid-2' },
           practiceCard('python', 'Code playground',
-            'Write and run Python in the browser. mbox.txt, romeo.txt, words.txt and 130 other sample '
-            + 'files are one directory away.', '/playground'),
+            t('Write and run Python in the browser. mbox.txt, romeo.txt, words.txt and 130 other sample files are one directory away.'), '/playground'),
           practiceCard('layers', 'Sample library',
             'Every program and data file the book references, browsable and runnable.',
             '/library'),
@@ -65,22 +61,18 @@ function hero(course, progress) {
           'Dr. Chuck · University of Michigan · CC BY-NC-SA'),
         el('h1', {}, 'Learn to program by ', el('em', {}, 'solving problems'), ' that matter.'),
         el('p', { class: 'hero-lede' },
-          'Python for Everybody is the course that has introduced millions of people to programming. '
-          + 'This is the whole thing — the book, every lecture, all the slides and the complete '
-          + 'sample-code library — assembled into one site that runs in your browser, '
-          + 'with no separate course downloads.'),
+          t('Python for Everybody is the course that has introduced millions of people to programming. This is the whole thing — the book, every lecture, all the slides and the complete sample-code library — assembled into one site that runs in your browser, with no separate course downloads.')),
         el('div', { class: 'hero-actions' },
           el('a', { class: 'btn btn-primary btn-lg', href: '/lesson/install' },
             icon('play', 16), 'Start lesson 1'),
           el('a', { class: 'btn btn-outline btn-lg', href: '/book' },
             icon('book', 16), 'Read the book'),
           progress.percent > 0
-            ? el('a', { class: 'btn btn-ghost', href: '/progress' }, `Resume · ${progress.percent}% done`)
+            ? el('a', { class: 'btn btn-ghost', href: '/progress' }, t('Resume · {percent}% done', { percent: progress.percent }))
             : null)),
       el('div', { class: 'hero-card' },
         el('p', { class: 'card-quote' },
-          '“Programming is a very creative and rewarding activity. Once you know how to program '
-          + 'you will figure out what you want to do with your newfound skills.”'),
+          t('“Programming is a very creative and rewarding activity. Once you know how to program you will figure out what you want to do with your newfound skills.”')),
         el('div', { class: 'hero-code' },
           el('div', {}, el('span', { class: 'c' }, '# the very first program'), ),
           el('div', {},
@@ -92,22 +84,22 @@ function hero(course, progress) {
             el('span', { class: 's' }, "'From'"), '):'),
           el('div', {}, '        ', el('span', { class: 'f' }, 'print'), '(line)')),
         el('div', { class: 'meta-row', style: { marginTop: 'var(--s-4)' } },
-          el('span', {}, icon('book', 13), `${course.stats.chapters} chapters`),
+          el('span', {}, icon('book', 13), t('{count} chapters', { count: course.stats.chapters })),
           el('span', { class: 'sep' }, '·'),
-          el('span', {}, icon('video', 13), `${course.stats.videos} videos`),
+          el('span', {}, icon('video', 13), t('{count} videos', { count: course.stats.videos })),
           el('span', { class: 'sep' }, '·'),
-          el('span', {}, icon('code', 13), `${course.stats.code_files} sample files`)))));
+          el('span', {}, icon('code', 13), t('{count} sample files', { count: course.stats.code_files }))))));
 }
 
 function statStrip(stats) {
   return el('div', { class: 'stat-strip' },
     el('div', { class: 'stat-strip-inner' },
-      statTile(String(stats.lessons), 'Lessons'),
-      statTile(fmtNum(stats.words), 'Words to read'),
-      statTile(String(stats.videos), 'Video lectures'),
-      statTile(fmtTime(stats.seconds), 'Watch time'),
-      statTile(String(stats.slides), 'Lecture slides'),
-      statTile(String(stats.code_files), 'Runnable samples')));
+      statTile(String(stats.lessons), t('Lessons')),
+      statTile(fmtNum(stats.words), t('Words to read')),
+      statTile(String(stats.videos), t('Video lectures')),
+      statTile(fmtTime(stats.seconds), t('Watch time')),
+      statTile(String(stats.slides), t('Lecture slides')),
+      statTile(String(stats.code_files), t('Runnable samples'))));
 }
 
 function continueCard(progress) {
@@ -119,7 +111,7 @@ function continueCard(progress) {
       el('div', { style: { minWidth: '16rem' } },
         el('p', { class: 'eyebrow' }, 'Pick up where you left off'),
         el('h2', { style: { fontSize: 'var(--fs-2xl)', marginTop: 'var(--s-2)' } },
-          `Lesson ${next.number}: ${next.name}`),
+          t('Lesson {number}: {name}', { number: next.number, name: t(next.name) })),
         el('p', { class: 'muted', style: { fontSize: 'var(--fs-sm)', marginTop: 'var(--s-2)' } },
           next.description)),
       el('div', { class: 'row', style: { gap: 'var(--s-5)' } },
@@ -149,7 +141,7 @@ function videoStrip(course) {
         el('a', {
           href: `/lesson/${lesson.slug}`,
           style: { fontSize: 'var(--fs-2xs)', color: 'var(--ink-3)' },
-        }, `Lesson ${lesson.number} · ${lesson.name}`)))));
+        }, t('Lesson {number} · {name}', { number: lesson.number, name: t(lesson.name) }))))));
 }
 
 function chapterGrid(course) {
@@ -160,9 +152,9 @@ function chapterGrid(course) {
       const sections = (chapter.toc || []).filter((t) => t.level === 2).slice(0, 4);
       return el('a', { class: 'card card-link chapter-card', href: `/read/${chapter.slug}` },
         el('div', { class: 'row-between' },
-          el('span', { class: 'cn' }, `CHAPTER ${chapterNumber(chapter.slug)}`),
+          el('span', { class: 'cn' }, t('CHAPTER {number}', { number: chapterNumber(chapter.slug) })),
           el('span', { class: 'muted', style: { fontSize: 'var(--fs-3xs)' } },
-            `${fmtNum(chapter.words)} words`)),
+            t('{count} words', { count: fmtNum(chapter.words) }))),
         el('h3', {}, chapter.title),
         el('ul', {}, ...sections.map((s) => el('li', {}, el('span', {}, s.text)))));
     }));
@@ -188,9 +180,5 @@ function footerCopy() {
     el('div', { class: 'callout', style: { maxWidth: '72ch' } },
       icon('info', 18),
       el('div', {},
-        el('strong', {}, 'About this copy. '),
-        'The text of the book is by Dr. Charles R. Severance and is licensed CC BY-NC-SA 4.0. '
-        + 'Video lectures are hosted on YouTube and played in an embedded player. '
-        + 'Everything else — the slides, figures, sample programs and data files — is served from '
-        + 'this website, ready to read without additional downloads.')));
+        t('About this copy. The text of the book is by Dr. Charles R. Severance and is licensed CC BY-NC-SA 4.0. Video lectures are hosted on YouTube and played in an embedded player. Everything else — the slides, figures, sample programs and data files — is served from this website, ready to read without additional downloads.'))));
 }
