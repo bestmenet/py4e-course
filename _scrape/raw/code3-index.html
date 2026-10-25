@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python for Everybody Code Samples</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 300;
+        }
+        .home-icon {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: opacity 0.2s;
+        }
+        .home-icon:hover {
+            opacity: 0.8;
+        }
+        .breadcrumbs {
+            background: #ecf0f1;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .breadcrumb-item {
+            display: inline-block;
+        }
+        .breadcrumb-item:not(:last-child)::after {
+            content: ' / ';
+            color: #7f8c8d;
+        }
+        .breadcrumb-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s;
+        }
+        .file-item:hover {
+            background-color: #f8f9fa;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-icon {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        .file-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        .file-name a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .file-name a:hover {
+            color: #3498db;
+        }
+        .file-info {
+            color: #7f8c8d;
+            font-size: 14px;
+            text-align: right;
+        }
+        .folder {
+            color: #f39c12;
+        }
+        .file {
+            color: #3498db;
+        }
+        .parent-links {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .parent-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .parent-links a:hover {
+            text-decoration: underline;
+        }
+        .empty-message {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 40px 20px;
+            font-style: italic;
+        }
+        .navigation-links {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .nav-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .github-link {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+            z-index: 1000;
+        }
+        .github-link a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .github-link a:hover {
+            color: #495057;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Python for Everybody Code Samples</h1>
+                                                <a href=".." class="home-icon" title="Go to Home">🏠</a>
+                                    </div>
+        
+                
+        <div class="content">
+                        <ul class="file-list">
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=bs4">
+                                bs4/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=gmane">
+                                gmane/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2026-09-16 17:49:28</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=opengeo">
+                                opengeo/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2026-09-16 17:46:21</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=pagerank">
+                                pagerank/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=roster">
+                                roster/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=soupsieve">
+                                soupsieve/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="folder">📁</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="?folder=tracks">
+                                tracks/
+                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                                                                        <span>2026-04-09 10:09:44</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="addtwo.py" target="_blank">
+                                addtwo.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>80 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="argfile.py" target="_blank">
+                                argfile.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>115 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="argtest.py" target="_blank">
+                                argtest.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>124 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="authors.txt" target="_blank">
+                                authors.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>147 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="avelist.py" target="_blank">
+                                avelist.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>210 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="avenum.py" target="_blank">
+                                avenum.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>221 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="average.py" target="_blank">
+                                average.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>302 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="badhtml.html" target="_blank">
+                                badhtml.html                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>89 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="brontosaurus.py" target="_blank">
+                                brontosaurus.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>128 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="bs4.zip" target="_blank">
+                                bs4.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>102.67 KB</span>
+                                                                             |                             <span>2026-10-20 12:19:38</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="celsius.py" target="_blank">
+                                celsius.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>103 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="clown.txt" target="_blank">
+                                clown.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>106 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="copytildone1.py" target="_blank">
+                                copytildone1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>103 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="copytildone2.py" target="_blank">
+                                copytildone2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>143 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="count1.py" target="_blank">
+                                count1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>333 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="count2.py" target="_blank">
+                                count2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>512 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="count3.py" target="_blank">
+                                count3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>506 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="curl1.py" target="_blank">
+                                curl1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>186 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="curl2.py" target="_blank">
+                                curl2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>324 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="curl3.py" target="_blank">
+                                curl3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>652 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="db1.py" target="_blank">
+                                db1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>195 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="db2.py" target="_blank">
+                                db2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>437 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="egg.py" target="_blank">
+                                egg.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>373 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="elev.py" target="_blank">
+                                elev.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>96 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="emaildb.py" target="_blank">
+                                emaildb.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>942 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="fahren.py" target="_blank">
+                                fahren.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>107 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="fahren2.py" target="_blank">
+                                fahren2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>166 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="geoxml.py" target="_blank">
+                                geoxml.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.27 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="gitpulls.py" target="_blank">
+                                gitpulls.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.38 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="gitsecrets.py" target="_blank">
+                                gitsecrets.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>255 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="giturl.py" target="_blank">
+                                giturl.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>743 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="gmane.zip" target="_blank">
+                                gmane.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>77.17 KB</span>
+                                                                             |                             <span>2026-10-23 17:04:14</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="grade.py" target="_blank">
+                                grade.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>292 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="greet.py" target="_blank">
+                                greet.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>55 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="grep.py" target="_blank">
+                                grep.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>304 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="hidden.py" target="_blank">
+                                hidden.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>322 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="intro-short.txt" target="_blank">
+                                intro-short.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>467 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="intro.txt" target="_blank">
+                                intro.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>27.44 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="json1.py" target="_blank">
+                                json1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>257 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="json2.py" target="_blank">
+                                json2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>319 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="largest.py" target="_blank">
+                                largest.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>215 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="lyrics.py" target="_blank">
+                                lyrics.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>194 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="mailcount.py" target="_blank">
+                                mailcount.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>224 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="mailtop.py" target="_blank">
+                                mailtop.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>371 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="mbox-short.txt" target="_blank">
+                                mbox-short.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>92.41 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="mbox.txt" target="_blank">
+                                mbox.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>6.38 MB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="notry.py" target="_blank">
+                                notry.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>109 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="oauth.py" target="_blank">
+                                oauth.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>21.29 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="objects.py" target="_blank">
+                                objects.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>153 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="open.py" target="_blank">
+                                open.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>110 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="opengeo.py" target="_blank">
+                                opengeo.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.22 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="opengeo.zip" target="_blank">
+                                opengeo.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>14.72 KB</span>
+                                                                             |                             <span>2026-10-20 12:19:38</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="pagerank.zip" target="_blank">
+                                pagerank.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>124.15 KB</span>
+                                                                             |                             <span>2026-10-20 12:19:38</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="pals.py" target="_blank">
+                                pals.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>114 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party.py" target="_blank">
+                                party.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>211 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party1.py" target="_blank">
+                                party1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>153 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party2.py" target="_blank">
+                                party2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>187 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party3.py" target="_blank">
+                                party3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>261 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party4.py" target="_blank">
+                                party4.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>300 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party5.py" target="_blank">
+                                party5.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>292 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party6.py" target="_blank">
+                                party6.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>352 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="party7.py" target="_blank">
+                                party7.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>366 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="pay.py" target="_blank">
+                                pay.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>132 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="pay2.py" target="_blank">
+                                pay2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>208 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="pay3.py" target="_blank">
+                                pay3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>304 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re01.py" target="_blank">
+                                re01.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>175 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re02.py" target="_blank">
+                                re02.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>179 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re03.py" target="_blank">
+                                re03.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>222 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re04.py" target="_blank">
+                                re04.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>200 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re05.py" target="_blank">
+                                re05.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>126 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re06.py" target="_blank">
+                                re06.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>215 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re07.py" target="_blank">
+                                re07.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>278 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re08.py" target="_blank">
+                                re08.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>371 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re09.py" target="_blank">
+                                re09.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>319 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re10.py" target="_blank">
+                                re10.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>311 B</span>
+                                                                             |                             <span>2025-06-22 16:32:11</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re11.py" target="_blank">
+                                re11.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>380 B</span>
+                                                                             |                             <span>2025-06-22 16:32:11</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re12.py" target="_blank">
+                                re12.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>286 B</span>
+                                                                             |                             <span>2025-06-22 16:32:11</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re13.py" target="_blank">
+                                re13.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>325 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re14.py" target="_blank">
+                                re14.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>338 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="re15.py" target="_blank">
+                                re15.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>465 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="romeo-full.txt" target="_blank">
+                                romeo-full.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>8.66 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="romeo.txt" target="_blank">
+                                romeo.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>167 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="roster.zip" target="_blank">
+                                roster.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>2.48 KB</span>
+                                                                             |                             <span>2026-10-20 12:19:38</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search1.py" target="_blank">
+                                search1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>103 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search10.py" target="_blank">
+                                search10.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>192 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search2.py" target="_blank">
+                                search2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>128 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search3.py" target="_blank">
+                                search3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>215 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search4.py" target="_blank">
+                                search4.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>138 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search5.py" target="_blank">
+                                search5.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>166 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search6.py" target="_blank">
+                                search6.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>204 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search7.py" target="_blank">
+                                search7.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>275 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search8.py" target="_blank">
+                                search8.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>174 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="search9.py" target="_blank">
+                                search9.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>201 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="sequence.py" target="_blank">
+                                sequence.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>231 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="socket1.py" target="_blank">
+                                socket1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>323 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="socket2.py" target="_blank">
+                                socket2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>478 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="soft.py" target="_blank">
+                                soft.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>226 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="spamave.py" target="_blank">
+                                spamave.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>461 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="tracks.zip" target="_blank">
+                                tracks.zip                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>8.45 KB</span>
+                                                                             |                             <span>2026-10-20 12:19:38</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="tryexcept.py" target="_blank">
+                                tryexcept.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>175 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="trynum.py" target="_blank">
+                                trynum.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>161 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twdump.py" target="_blank">
+                                twdump.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>210 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twfriends.py" target="_blank">
+                                twfriends.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>3.1 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twitter1.py" target="_blank">
+                                twitter1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>831 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twitter2.py" target="_blank">
+                                twitter2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.04 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twjoin.py" target="_blank">
+                                twjoin.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>661 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twspider.py" target="_blank">
+                                twspider.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.93 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twtest.py" target="_blank">
+                                twtest.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>672 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="twurl.py" target="_blank">
+                                twurl.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.09 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtcheck.py" target="_blank">
+                                txtcheck.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>577 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtcheck2.py" target="_blank">
+                                txtcheck2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>681 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtcheck3.py" target="_blank">
+                                txtcheck3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>660 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtcount.py" target="_blank">
+                                txtcount.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>181 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtdelete.py" target="_blank">
+                                txtdelete.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>730 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtmd5.py" target="_blank">
+                                txtmd5.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>552 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="txtsize.py" target="_blank">
+                                txtsize.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>251 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urljpeg.py" target="_blank">
+                                urljpeg.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>715 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urllib1.py" target="_blank">
+                                urllib1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>140 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urllib2.py" target="_blank">
+                                urllib2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>171 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urllink2.py" target="_blank">
+                                urllink2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>685 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urllink3.py" target="_blank">
+                                urllink3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.36 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urllinks.py" target="_blank">
+                                urllinks.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>728 B</span>
+                                                                             |                             <span>2026-01-26 12:49:55</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urlregex.py" target="_blank">
+                                urlregex.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>417 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="urlwords.py" target="_blank">
+                                urlwords.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>270 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="whathour.py" target="_blank">
+                                whathour.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>393 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="wikidata.db" target="_blank">
+                                wikidata.db                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>16 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="wikigrade.py" target="_blank">
+                                wikigrade.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>2.7 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="wordcount.py" target="_blank">
+                                wordcount.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>218 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="wordlist.py" target="_blank">
+                                wordlist.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>241 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="words.py" target="_blank">
+                                words.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>378 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="words.txt" target="_blank">
+                                words.txt                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>1.14 KB</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="xml1.py" target="_blank">
+                                xml1.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>280 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="xml2.py" target="_blank">
+                                xml2.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>466 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                                <li class="file-item">
+                    <div class="file-icon">
+                                                    <span class="file">📄</span>
+                                            </div>
+                    <div class="file-name">
+                                                    <a href="xml3.py" target="_blank">
+                                xml3.py                            </a>
+                                            </div>
+                                        <div class="file-info">
+                                                    <span>490 B</span>
+                                                                             |                             <span>2025-06-06 10:51:03</span>
+                                            </div>
+                                    </li>
+                            </ul>
+                    </div>
+        
+                <div class="github-link">
+            <a href="https://github.com/csev/htaccess-indexes" target="_blank" rel="noopener noreferrer">
+                📦 This Application is available on GitHub
+            </a>
+        </div>
+            </div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f9d79d2f6ab82e',t:'MTc5Mjg1MzkzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html> 

@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Python for Everybody — offline course
+   theme.css · design tokens, reset, base typography
+   --------------------------------------------------------------------------
+   Direction: a calm, reading-first course.  Warm paper instead of pure white,
+   a single deep-teal accent for anything interactive, burnt orange reserved
+   for progress and emphasis.  Serif is used *only* for long-form reading
+   (book chapters, lesson intros); the interface stays in the system sans so
+   it reads as software, not as a document.
+   ========================================================================== */
+
+/* --------------------------------------------------------------- tokens */
+
+:root {
+  /* paper + ink ---------------------------------------------------------- */
+  --paper:          #faf8f5;
+  --paper-sunk:     #f2efe9;
+  --surface:        #ffffff;
+  --surface-alt:    #f7f5f0;
+  --surface-hover:  #f1eee7;
+  --ink:            #1b1d21;
+  --ink-2:          #4a4f57;
+  --ink-3:          #797f88;
+  --ink-4:          #a8adb4;
+  --line:           #e5e0d8;
+  --line-soft:      #efeae2;
+  --line-strong:    #cec7bb;
+
+  /* accents -------------------------------------------------------------- */
+  --accent:         #0f766e;
+  --accent-hot:     #0b5f59;
+  --accent-ink:     #0a4f4a;
+  --accent-soft:    #e2f1ef;
+  --accent-softer:  #f0f8f7;
+  --accent-line:    #a8d5d0;
+
+  --warm:           #c2410c;
+  --warm-hot:       #9a3208;
+  --warm-soft:      #fbeee5;
+  --warm-line:      #f0cbb4;
+
+  --gold:           #a16207;
+  --gold-soft:      #fbf3df;
+
+  --ok:             #157f3d;
+  --ok-soft:        #e6f5ec;
+  --warn:           #b45309;
+  --warn-soft:      #fdf2e2;
+  --err:            #b3261e;
+  --err-soft:       #fdeceb;
+  --info:           #1d5fa8;
+  --info-soft:      #e8f1fb;
+
+  /* syntax --------------------------------------------------------------- */
+  --code-bg:        #f6f4ef;
+  --code-bg-deep:   #1d2b2a;
+  --code-line:      #e7e2d9;
+  --syn-keyword:    #a626a4;
+  --syn-string:     #4d7c0f;
+  --syn-comment:    #8b8f96;
+  --syn-number:     #b45309;
+  --syn-func:       #1d5fa8;
+  --syn-builtin:    #0f766e;
+  --syn-op:         #5a6169;
+
+  /* type ----------------------------------------------------------------- */
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+             Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+             "Microsoft YaHei", Arial, sans-serif;
+  --font-read: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+               "Source Serif Pro", Georgia, "Songti SC", "SimSun", serif;
+  --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  --font-num: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --fs-3xs: 0.6875rem;   /* 11 */
+  --fs-2xs: 0.75rem;     /* 12 */
+  --fs-xs:  0.8125rem;   /* 13 */
+  --fs-sm:  0.875rem;    /* 14 */
+  --fs-md:  0.9375rem;   /* 15 */
+  --fs-base:1rem;        /* 16 */
+  --fs-lg:  1.0625rem;   /* 17 */
+  --fs-xl:  1.1875rem;   /* 19 */
+  --fs-2xl: 1.375rem;    /* 22 */
+  --fs-3xl: 1.75rem;     /* 28 */
+  --fs-4xl: 2.25rem;     /* 36 */
+  --fs-5xl: 3rem;        /* 48 */
+  --fs-6xl: 3.75rem;     /* 60 */
+
+  --lh-tight: 1.2;
+  --lh-ui:    1.5;
+  --lh-read:  1.72;
+  --lh-code:  1.62;
+
+  /* space ---------------------------------------------------------------- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 2.5rem;
+  --s-8: 3rem;
+  --s-9: 4rem;
+  --s-10: 5rem;
+  --s-11: 7rem;
+
+  /* shape ---------------------------------------------------------------- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(40, 33, 24, 0.05);
+  --shadow-sm: 0 1px 3px rgba(40, 33, 24, 0.07), 0 1px 2px rgba(40, 33, 24, 0.04);
+  --shadow-md: 0 4px 12px rgba(40, 33, 24, 0.07), 0 1px 3px rgba(40, 33, 24, 0.05);
+  --shadow-lg: 0 12px 32px rgba(40, 33, 24, 0.10), 0 2px 8px rgba(40, 33, 24, 0.05);
+  --shadow-xl: 0 24px 64px rgba(30, 25, 18, 0.16), 0 4px 12px rgba(30, 25, 18, 0.07);
+  --ring: 0 0 0 3px rgba(15, 118, 110, 0.22);
+  --ring-warm: 0 0 0 3px rgba(194, 65, 12, 0.20);
+
+  /* layout --------------------------------------------------------------- */
+  --w-wide:  1240px;
+  --w-main:  1080px;
+  --w-read:  71ch;
+  --h-topbar: 60px;
+  --h-player: 0px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 130ms;
+  --dur: 220ms;
+  --dur-slow: 420ms;
+}
+
+/* dark theme ------------------------------------------------------------- */
+
+:root[data-theme="dark"],
+:root:not([data-theme="light"]).prefers-dark {
+  --paper:          #131518;
+  --paper-sunk:     #0e1013;
+  --surface:        #1a1d22;
+  --surface-alt:    #212530;
+  --surface-hover:  #262b33;
+  --ink:            #e9e7e2;
+  --ink-2:          #b6bcc4;
+  --ink-3:          #868d97;
+  --ink-4:          #626973;
+  --line:           #2b3037;
+  --line-soft:      #23272e;
+  --line-strong:    #3b424b;
+
+  --accent:         #45b8ad;
+  --accent-hot:     #5fcabf;
+  --accent-ink:     #8ddcd4;
+  --accent-soft:    #16302f;
+  --accent-softer:  #122423;
+  --accent-line:    #2c514e;
+
+  --warm:           #e8825a;
+  --warm-hot:       #f09b78;
+  --warm-soft:      #332018;
+  --warm-line:      #5c3826;
+
+  --gold:           #d9a743;
+  --gold-soft:      #2e2716;
+
+  --ok:             #5cc98a;
+  --ok-soft:        #14291d;
+  --warn:           #e0a95c;
+  --warn-soft:      #2c2416;
+  --err:            #f08b83;
+  --err-soft:       #331b19;
+  --info:           #7cb3ec;
+  --info-soft:      #16243a;
+
+  --code-bg:        #1e2228;
+  --code-bg-deep:   #14181d;
+  --code-line:      #2b3037;
+  --syn-keyword:    #d9a0d6;
+  --syn-string:     #a3c76a;
+  --syn-comment:    #6c737d;
+  --syn-number:     #e0a95c;
+  --syn-func:       #7cb3ec;
+  --syn-builtin:    #45b8ad;
+  --syn-op:         #98a0aa;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 26px 70px rgba(0, 0, 0, 0.6);
+  --ring: 0 0 0 3px rgba(69, 184, 173, 0.28);
+  --ring-warm: 0 0 0 3px rgba(232, 130, 90, 0.26);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:          #131518;
+    --paper-sunk:     #0e1013;
+    --surface:        #1a1d22;
+    --surface-alt:    #212530;
+    --surface-hover:  #262b33;
+    --ink:            #e9e7e2;
+    --ink-2:          #b6bcc4;
+    --ink-3:          #868d97;
+    --ink-4:          #626973;
+    --line:           #2b3037;
+    --line-soft:      #23272e;
+    --line-strong:    #3b424b;
+    --accent:         #45b8ad;
+    --accent-hot:     #5fcabf;
+    --accent-ink:     #8ddcd4;
+    --accent-soft:    #16302f;
+    --accent-softer:  #122423;
+    --accent-line:    #2c514e;
+    --warm:           #e8825a;
+    --warm-hot:       #f09b78;
+    --warm-soft:      #332018;
+    --warm-line:      #5c3826;
+    --gold:           #d9a743;
+    --gold-soft:      #2e2716;
+    --ok:             #5cc98a;
+    --ok-soft:        #14291d;
+    --warn:           #e0a95c;
+    --warn-soft:      #2c2416;
+    --err:            #f08b83;
+    --err-soft:       #331b19;
+    --info:           #7cb3ec;
+    --info-soft:      #16243a;
+    --code-bg:        #1e2228;
+    --code-bg-deep:   #14181d;
+    --code-line:      #2b3037;
+    --syn-keyword:    #d9a0d6;
+    --syn-string:     #a3c76a;
+    --syn-comment:    #6c737d;
+    --syn-number:     #e0a95c;
+    --syn-func:       #7cb3ec;
+    --syn-builtin:    #45b8ad;
+    --syn-op:         #98a0aa;
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 26px 70px rgba(0, 0, 0, 0.6);
+    --ring: 0 0 0 3px rgba(69, 184, 173, 0.28);
+    --ring-warm: 0 0 0 3px rgba(232, 130, 90, 0.26);
+  }
+}
+
+/* ----------------------------------------------------------------- reset */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--h-topbar) + var(--h-player) + 20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  line-height: var(--lh-ui);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; }
+img { height: auto; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button { cursor: pointer; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hot); }
+
+ul, ol { list-style: none; }
+
+table { border-collapse: collapse; width: 100%; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: var(--s-6) 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+::selection { background: var(--accent-soft); color: var(--accent-ink); }
+
+/* -------------------------------------------------- headings & flows */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--lh-tight);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+h1 { font-size: var(--fs-4xl); letter-spacing: -0.025em; }
+h2 { font-size: var(--fs-3xl); letter-spacing: -0.02em; }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-base); }
+
+p { max-width: 74ch; }
+
+.mono { font-family: var(--font-mono); font-variant-ligatures: none; }
+.num  { font-family: var(--font-num); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.read { font-family: var(--font-read); }
+
+.eyebrow {
+  font-size: var(--fs-2xs);
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.lede {
+  font-size: var(--fs-xl);
+  line-height: 1.6;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+
+.muted { color: var(--ink-3); }
+.dim   { color: var(--ink-4); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  background: var(--accent);
+  color: #fff;
+  padding: var(--s-3) var(--s-4);
+  border-radius: 0 0 var(--r-md) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ------------------------------------------------------------- scrollbar */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: var(--r-pill);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover { background-clip: content-box; background-color: var(--ink-4); }
+
+/* ------------------------------------------------------------- utilities */
+
+.stack > * + * { margin-top: var(--s-4); }
+.stack-lg > * + * { margin-top: var(--s-6); }
+.row { display: flex; align-items: center; gap: var(--s-3); }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.wrap { flex-wrap: wrap; }
+.grow { flex: 1 1 auto; min-width: 0; }
+.center { display: flex; align-items: center; justify-content: center; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

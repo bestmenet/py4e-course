@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <!-- Tiny bit of JS -->
+        <script src="https://static.tsugi.org/js/tsugiscripts_head.js"></script>
+<script>
+var _TSUGI = {
+  ajax_session: false,
+  cookieless: false,
+  tsugi_browser_mark: "6adcc1c78f9b1",
+  heartbeat: 32400000,
+  heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat",
+  rest_path: {"parent":"","base_url":"https:\/\/www.py4e.com","controller":"lessons","extra":"","action":false,"parameters":[],"current":"\/lessons","full":"\/lessons"},
+  launch_presentation_return_url: false,
+  launch_presentation_error_return_url: false,
+  spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+  staticroot: "https://static.tsugi.org",
+  apphome: "https://www.py4e.com",
+  wwwroot: "https://www.py4e.com/tsugi",
+  youtube_playlist: "PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+  react_token: "d104024d4a28b6261bf5191de45e5ad6",
+  window_close_message: "Application complete - You can close this tab.",
+  session_expire_message: "Your session has expired"
+}
+</script>
+        <!-- Le styles -->
+<link href="https://static.tsugi.org/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/bootstrap-3.4.1/patch/accessibility-patch.css" rel="stylesheet">
+<link href="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/v4-shims.css" rel="stylesheet">
+<style>:root {--primary:#0D47A1;
+--primary-menu:#0D47A1;
+--primary-border:#0d4295;
+--primary-darker:#0c4091;
+--primary-darkest:#0b3b85;
+--background-color:#FFFFFF;
+--background-focus:#F5F5F5;
+--background-accent:#0D47A1;
+--secondary:#EEEEEE;
+--secondary-menu:#EEEEEE;
+--text:#111111;
+--text-light:#5E5E5E;
+--font-family:sans-serif;
+--font-size:14px;
+}</style>
+<link href="https://static.tsugi.org/css/tsugi2.css" rel="stylesheet">
+<style>
+#tsugi_main_nav_bar .navbar-brand .tsugi-course-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 0.4em;
+  flex: 0 0 32px;
+}
+#tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img img {
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #tsugi_main_nav_bar > .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #tsugi_main_nav_bar .navbar-header {
+    float: none;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  #tsugi_main_nav_bar .navbar-brand {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-collapse.collapse {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-main,
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.navbar-text,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    float: none;
+    min-height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-notifications,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-calendar-due,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-discussions,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-courses {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+  }
+}
+</style>
+<script type="text/javascript">CSRF_TOKEN = "3398c7cb905723dbcf9670b3b92d605a";function tsugiCsrfHeaders(h){h=h||{};if(CSRF_TOKEN){h["X-CSRF-TOKEN"]=CSRF_TOKEN;}return h;}</script>
+</head>
+<body prefix="oer: http://oerschema.org">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="body_container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display:none">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tsugi_main_nav_collapse" aria-controls="tsugi_main_nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.py4e.com">PY4E</a>
+    </div>
+    <div id="tsugi_main_nav_collapse" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-main">
+        <li><a href="https://www.py4e.com/lessons" >Lessons</a></li>
+        <li><a href="https://www.py4e.com/book" >Book</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://online.dr-chuck.com" target="_self">Courses</a></li>
+        <li><a href="https://www.py4e.com/login" >Login</a></li>
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+} else {
+  document.getElementsByTagName('body')[0].style.paddingTop = '1.0rem';
+}
+</script>
+<div id="flashmessages"></div><main id="main-content" tabindex="-1">
+<style>
+.card {
+    display: inline-block;
+    padding: 0.5em;
+    margin: 12px;
+    border: 1px solid black;
+    height: 9em;
+    overflow-y: hidden;
+}
+.card div {
+    height: 8em;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+.progress-badge {
+    display: inline-block;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    font-size: 0.75em;
+    line-height: 1.2;
+}
+.progress-badge-check {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+.progress-badge-percent {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+.progress-badge-not-started {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: normal;
+}
+.tsugi-lti-link-meta {
+    display: inline;
+    margin-left: 0.25em;
+    white-space: nowrap;
+}
+.tsugi-assignments-due-badge {
+    display: inline-block;
+    margin-left: 0.35em;
+    padding: 0.12em 0.45em;
+    border-radius: 0.25em;
+    font-size: 0.75em;
+    line-height: 1.2;
+    vertical-align: middle;
+    border: 1px solid transparent;
+}
+.tsugi-assignments-due-completed {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.tsugi-assignments-due-past {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.tsugi-assignments-due-soon {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+.tsugi-assignments-due-future {
+    background: #e9ecef;
+    color: #495057;
+    border-color: #dee2e6;
+}
+.tsugi-assignments-due-neutral {
+    background: #f8f9fa;
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+.tsugi-assignments-due-state {
+    font-weight: bold;
+}
+.tsugi-assignments-due-detail {
+    font-weight: normal;
+}
+.tsugi-assignments-rl-sig-sep {
+    color: #767676;
+    margin: 0 0.25em;
+    font-weight: normal;
+}
+.tsugi-assignments-rl-sig {
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #343a40;
+    font-weight: 500;
+}
+.tsugi-link-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1100px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.tsugi-link-modal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.5em 2.75em 0.5em 0.75em;
+    border-bottom: 1px solid #ddd;
+    background: #f5f5f5;
+    position: relative;
+}
+.tsugi-link-modal-title {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tsugi-link-modal-open-new {
+    flex: 0 0 auto;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+.tsugi-link-modal-close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+.tsugi-link-modal-close:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+.tsugi-link-modal-frame {
+    flex: 1 1 auto;
+    width: 100%;
+    border: 0;
+    background: #fff;
+}
+.tsugi-inline-embed {
+    display: block;
+    width: 100%;
+    height: 640px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+</style>
+<div class="container"><div typeof="Course">
+<h1>Python for Everybody (PY4E)</h1>
+<p property="description">Hello and welcome to my site where you learn Python even if you have no programming background.</p>
+<div id="box">
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/install" aria-label="1: Installing Python">
+<i class="fa fa-bicycle fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>1: Installing Python<br clear="all"><p class="tsugi-card-description">The first task is to work through the installation steps including installing Python and text editor.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => install
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/intro" aria-label="2: Why Program?">
+<i class="fa fa-hand-o-right fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>2: Why Program?<br clear="all"><p class="tsugi-card-description">We learn why one might want to learn to program, and look at the basic issues with learning to program.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_01_hello
+    [1] => py4e_01_in_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/memory" aria-label="3: Variables, expressions and statements">
+<i class="fa fa-database fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>3: Variables, expressions and statements<br clear="all"><p class="tsugi-card-description">We learn how to make variables and store data in those variables.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_02_02
+    [1] => pythonauto_02_03
+    [2] => py4e_02_ex_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/logic" aria-label="4: Conditional Execution">
+<i class="fa fa-diamond fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>4: Conditional Execution<br clear="all"><p class="tsugi-card-description">We look at how Python executes some statements and skips others.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_03_01
+    [1] => pythonauto_03_03
+    [2] => py4e_03_if_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/functions" aria-label="5: Functions">
+<i class="fa fa-files-o fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>5: Functions<br clear="all"><p class="tsugi-card-description">Take a brief look at how Python implements the 'store and use later' programming pattern.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_04_06
+    [1] => py4e_04_def_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/loops" aria-label="6: Loops and Iterations">
+<i class="fa fa-gears fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>6: Loops and Iterations<br clear="all"><p class="tsugi-card-description">We look at how Python repeats statements using looping structures.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_05_02
+    [1] => py4e_05_for_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/strings" aria-label="7: Strings">
+<i class="fa fa-file-text-o fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>7: Strings<br clear="all"><p class="tsugi-card-description">We look at how Python stores and manipulates textual data using string variables and functions.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_06_05
+    [1] => py4e_06_str_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/files" aria-label="8: Files">
+<i class="fa fa-database fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>8: Files<br clear="all"><p class="tsugi-card-description">We learn how to open data files on your computer and read through the files using Python.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_07_02
+    [1] => py4e_07_files_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/lists" aria-label="9: Lists">
+<i class="fa fa-list-ol fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>9: Lists<br clear="all"><p class="tsugi-card-description">We look at Python's simplest data structure - the list.  Lists can store more than one item in a variable.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_08_04
+    [1] => pythonauto_08_05
+    [2] => py4e_08_list_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/dictionary" aria-label="10: Dictionaries">
+<i class="fa fa-key fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>10: Dictionaries<br clear="all"><p class="tsugi-card-description">The dictionary data structures allows us to store multiple values in an object and look up the values by their key.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_09_04
+    [1] => py4e_09_dict_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/tuples" aria-label="11: Tuples">
+<i class="fa fa-inbox fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>11: Tuples<br clear="all"><p class="tsugi-card-description">The tuple is a Python data structure that is like a simple and efficient list.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonauto_10_02
+    [1] => py4e_10_tup_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/regex" aria-label="12: Regular Expressions">
+<i class="fa fa-magic fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>12: Regular Expressions<br clear="all"><p class="tsugi-card-description">Regular Expressions allow us to search for patterns in strings and extract data from strings using the regular expression programming language.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythondata_01_regex
+    [1] => py4e_11_reg_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/network" aria-label="13: Network Programming">
+<i class="fa fa-cloud fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>13: Network Programming<br clear="all"><p class="tsugi-card-description">We take a quick look at how data moves across the network using the HyperText Transport Protocol (HTTP) and how we write programs to read data across the network.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythondata_02_rrc
+    [1] => pythondata_03_html
+    [2] => pythondata_04_links
+    [3] => py4e_12_http_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/servces" aria-label="14: Using Web Services">
+<i class="fa fa-briefcase fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>14: Using Web Services<br clear="all"><p class="tsugi-card-description">Web services allow a program to access data available in a different server.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythondata_05_xml
+    [1] => py4e_13_xml_quiz
+    [2] => pythondata_06_json
+    [3] => py4e_13_json_quiz
+    [4] => pythondata_07_geo
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/Objects" aria-label="15: Object-Oriented Programming">
+<i class="fa fa-cubes fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>15: Object-Oriented Programming<br clear="all"><p class="tsugi-card-description">We do a quick look at how Python supports the Object-Oriented programming pattern.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => py4e_14_oo_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/database" aria-label="16: Databases">
+<i class="fa fa-database fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>16: Databases<br clear="all"><p class="tsugi-card-description">Databases give us very fast random access to large amounts of data. There is a lot of material in this chapter as we learn the Structured Query Language (SQL).</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+    [0] => pythonsql_01_single
+    [1] => py4e_15_one_quiz
+    [2] => pythonsql_02_email
+    [3] => pythonsql_03_tracks
+    [4] => py4e_15_mod_quiz
+    [5] => pythonsql_04_many
+    [6] => py4e_15_many_quiz
+)
+
+-->
+<article class="card"><div>
+<a class="tsugi-lessons-module-card-link" href="/lessons/dataviz" aria-label="17: Data Visualization">
+<i class="fa fa-bar-chart-o fa-2x" aria-hidden="true" style="float: left; padding-right: 5px;"></i>17: Data Visualization<br clear="all"><p class="tsugi-card-description">In this section, we learn to scrape data from the network, store the data in a database and then read the data from the database to produce in in-browser visualization of the data.</p>
+</a></div></article>
+<!--
+Array
+(
+)
+Array
+(
+)
+
+-->
+</div> <!-- box -->
+</div> <!-- typeof="Course" -->
+</div><script src="https://static.tsugi.org/js/jquery-1.11.3.js"></script>
+<script src="https://static.tsugi.org/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery.timeago-1.6.3.js"></script>
+<script src="https://static.tsugi.org/js/handlebars-v4.0.2.js"></script>
+<script src="https://static.tsugi.org/tmpljs-3.8.0/tmpl.min.js"></script>
+<script src="https://static.tsugi.org/js/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+    $(document).ready(function() { jQuery("time.timeago").timeago(); });
+</script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Notifications/tsugi-notifications.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Calendar/tsugi-calendar-due.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Discussions/tsugi-discussions.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Courses/tsugi-courses.js"></script>
+
+<script type="text/javascript" src="https://static.tsugi.org/js/waterfall-light.js"></script>
+<script>
+$(function(){
+    $('#box').waterfall({refresh: 0})
+});
+</script>
+
+</main>
+</div><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f9b2bebf85816b',t:'MTc5Mjg1MjQyMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <!-- Tiny bit of JS -->
+        <script src="https://static.tsugi.org/js/tsugiscripts_head.js"></script>
+<script>
+var _TSUGI = {
+  ajax_session: false,
+  cookieless: false,
+  tsugi_browser_mark: "6adcf314db9e8",
+  heartbeat: 32400000,
+  heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat",
+  rest_path: {"parent":"","base_url":"https:\/\/www.py4e.com","controller":"software-win.php","extra":"","action":false,"parameters":[],"current":"\/software-win.php","full":"\/software-win.php"},
+  launch_presentation_return_url: false,
+  launch_presentation_error_return_url: false,
+  spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+  staticroot: "https://static.tsugi.org",
+  apphome: "https://www.py4e.com",
+  wwwroot: "https://www.py4e.com/tsugi",
+  youtube_playlist: "PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+  react_token: "d99b373dc9b5273ea0d1959875033067",
+  window_close_message: "Application complete - You can close this tab.",
+  session_expire_message: "Your session has expired"
+}
+</script>
+        <!-- Le styles -->
+<link href="https://static.tsugi.org/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/bootstrap-3.4.1/patch/accessibility-patch.css" rel="stylesheet">
+<link href="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/v4-shims.css" rel="stylesheet">
+<style>:root {--primary:#0D47A1;
+--primary-menu:#0D47A1;
+--primary-border:#0d4295;
+--primary-darker:#0c4091;
+--primary-darkest:#0b3b85;
+--background-color:#FFFFFF;
+--background-focus:#F5F5F5;
+--background-accent:#0D47A1;
+--secondary:#EEEEEE;
+--secondary-menu:#EEEEEE;
+--text:#111111;
+--text-light:#5E5E5E;
+--font-family:sans-serif;
+--font-size:14px;
+}</style>
+<link href="https://static.tsugi.org/css/tsugi2.css" rel="stylesheet">
+<style>
+#tsugi_main_nav_bar .navbar-brand .tsugi-course-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 0.4em;
+  flex: 0 0 32px;
+}
+#tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img img {
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #tsugi_main_nav_bar > .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #tsugi_main_nav_bar .navbar-header {
+    float: none;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  #tsugi_main_nav_bar .navbar-brand {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-collapse.collapse {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-main,
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.navbar-text,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    float: none;
+    min-height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-notifications,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-calendar-due,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-discussions,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-courses {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+  }
+}
+</style>
+<script type="text/javascript">CSRF_TOKEN = "e46c14ce7cd8d42f8f08acf59e522d56";function tsugiCsrfHeaders(h){h=h||{};if(CSRF_TOKEN){h["X-CSRF-TOKEN"]=CSRF_TOKEN;}return h;}</script>
+<style>
+body {
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    line-height: 1.93rem;
+    color: var(--text);
+    background-color: var(--background-color);
+}
+</style>
+</head>
+<body prefix="oer: http://oerschema.org">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="body_container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display:none">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tsugi_main_nav_collapse" aria-controls="tsugi_main_nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.py4e.com">PY4E</a>
+    </div>
+    <div id="tsugi_main_nav_collapse" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-main">
+        <li><a href="https://www.py4e.com/lessons" >Lessons</a></li>
+        <li><a href="https://www.py4e.com/book" >Book</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://online.dr-chuck.com" target="_self">Courses</a></li>
+        <li><a href="https://www.py4e.com/login" >Login</a></li>
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+} else {
+  document.getElementsByTagName('body')[0].style.paddingTop = '1.0rem';
+}
+</script>
+<div id="flashmessages"></div><main id="main-content" tabindex="-1">
+<h1>Installing Python on Windows 11</h1>
+<p><b>Note:</b> Any reasonably recent version of Python is acceptable for this course.
+If you already have Python 3.x on your computer, you can use it for this class.</p>
+<p>If you don't have Python installed, download it from:</p>
+<p><a href="https://www.python.org/download/" target="_blank" rel="noopener noreferrer">https://www.python.org/download/</a></p>
+
+<h2>Installing a Programming Text Editor</h2>
+<p>If you have a programmer editor you like, you can use it. If not, we recommend these
+free text editors for software development:</p>
+<ul>
+<li><a href="https://thonny.org/" target="_blank" rel="noopener noreferrer">Thonny</a> – Free, open source, simple</li>
+<li><a href="https://phcode.io/" target="_blank" rel="noopener noreferrer">Phoenix Code</a> – Free, open source, more advanced</li>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> – Free, feature-rich, includes AI assistance</li>
+</ul>
+
+<h2>Writing a Python Program on Windows 11</h2>
+<p>We have a short
+<a href="https://www.youtube.com/watch?v=70ZxCfUjkuw&index=1&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" rel="noopener noreferrer">step-by-step video</a>
+showing how to install Python and write your first program.</p>
+
+<h2>Windows Command Line Notes</h2>
+<p>When the command line starts <b>up</b>, you are in your "home" directory. The path to your home directory varies by Windows version. In the examples below, replace <b>csev</b> with your own username.</p>
+<pre>
+    Windows 10:             C:\Users\csev
+    Windows 10 OneDrive:    C:\Users\csev\OneDrive
+    Windows 11:             C:\Users\csev
+    Windows 11 OneDrive:    C:\Users\csev\OneDrive
+</pre>
+<p>The command prompt usually shows your current location in the folder structure.</p>
+<p>To see exactly where you are, run <b>cd</b> with no parameters:</p>
+<pre>
+    C:\Users\csev> cd
+    C:\Users\csev
+</pre>
+
+<h3>Navigating Folders</h3>
+<p>When you open a command line, the first step is usually to move to the right folder. For example, to run a file from your desktop, use <b>cd Desktop</b> (or <b>cd OneDrive\Desktop</b>). Use <b>dir</b> to list files in the current directory and <b>cd ..</b> to go <b>up</b> one directory.</p>
+<p><b>Tip:</b> When typing a path, you can type part of a folder name (like Desktop) and press Tab to auto-complete it, as long as you've typed enough for the system to guess correctly.</p>
+
+<h3>If You Get Lost</h3>
+<p>If you lose track of your location or can't find the folder you need, close the Command Line or Terminal window and open a new one. You'll start back in your home directory.</p>
+
+<h3>Command Line Settings</h3>
+<p>Click the icon in the upper-left of the command prompt window and select Preferences. You can customize various settings; a particularly useful one is to set the Command History Buffer Size to 999, so you can scroll back through many previous commands.</p>
+
+<h2>Running Your Python Program in the Command Line</h2>
+<p>To run your program, type at the command prompt:</p>
+<pre>
+    py firstprog.py
+</pre>
+<p>Or simply:</p>
+<pre>
+    firstprog.py
+</pre>
+<p>Replace <b>firstprog.py</b> with the name of your Python file. Make sure you're in the correct directory using the <b>cd</b> command first.</p>
+<p>You can run your program repeatedly in the same command window. Use the <b>up</b>-arrow key to recall previous commands and press Enter to run them again—handy when you're editing and testing changes.</p>
+<script src="https://static.tsugi.org/js/jquery-1.11.3.js"></script>
+<script src="https://static.tsugi.org/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery.timeago-1.6.3.js"></script>
+<script src="https://static.tsugi.org/js/handlebars-v4.0.2.js"></script>
+<script src="https://static.tsugi.org/tmpljs-3.8.0/tmpl.min.js"></script>
+<script src="https://static.tsugi.org/js/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+    $(document).ready(function() { jQuery("time.timeago").timeago(); });
+</script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Notifications/tsugi-notifications.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Calendar/tsugi-calendar-due.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Discussions/tsugi-discussions.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Courses/tsugi-courses.js"></script>
+
+<p style="font-size: 0.875rem; color: #333; margin-top: 5em;">
+Copyright Creative Commons Attribution 4.0 - Charles R. Severance
+</p>
+
+</main>
+</div><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fae6e1ed1b5578',t:'MTc5Mjg2NTA0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

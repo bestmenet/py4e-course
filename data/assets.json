@@ -1,0 +1,1197 @@
+[
+ {
+  "url": "https://www.py4e.com/code3/addtwo.py",
+  "path": "code/addtwo.py",
+  "category": "code-sample",
+  "bytes": 80
+ },
+ {
+  "url": "https://www.py4e.com/code3/argfile.py",
+  "path": "code/argfile.py",
+  "category": "code-sample",
+  "bytes": 115
+ },
+ {
+  "url": "https://www.py4e.com/code3/argtest.py",
+  "path": "code/argtest.py",
+  "category": "code-sample",
+  "bytes": 124
+ },
+ {
+  "url": "https://www.py4e.com/code3/authors.txt",
+  "path": "code/authors.txt",
+  "category": "code-sample",
+  "bytes": 147
+ },
+ {
+  "url": "https://www.py4e.com/code3/avelist.py",
+  "path": "code/avelist.py",
+  "category": "code-sample",
+  "bytes": 210
+ },
+ {
+  "url": "https://www.py4e.com/code3/avenum.py",
+  "path": "code/avenum.py",
+  "category": "code-sample",
+  "bytes": 221
+ },
+ {
+  "url": "https://www.py4e.com/code3/average.py",
+  "path": "code/average.py",
+  "category": "code-sample",
+  "bytes": 302
+ },
+ {
+  "url": "https://www.py4e.com/code3/badhtml.html",
+  "path": "code/badhtml.html",
+  "category": "code-sample",
+  "bytes": 1027
+ },
+ {
+  "url": "https://www.py4e.com/code3/brontosaurus.py",
+  "path": "code/brontosaurus.py",
+  "category": "code-sample",
+  "bytes": 128
+ },
+ {
+  "url": "https://www.py4e.com/code3/bs4.zip",
+  "path": "code/bs4.zip",
+  "category": "code-sample",
+  "bytes": 105133
+ },
+ {
+  "url": "https://www.py4e.com/code3/celsius.py",
+  "path": "code/celsius.py",
+  "category": "code-sample",
+  "bytes": 103
+ },
+ {
+  "url": "https://www.py4e.com/code3/clown.txt",
+  "path": "code/clown.txt",
+  "category": "code-sample",
+  "bytes": 106
+ },
+ {
+  "url": "https://www.py4e.com/code3/copytildone1.py",
+  "path": "code/copytildone1.py",
+  "category": "code-sample",
+  "bytes": 103
+ },
+ {
+  "url": "https://www.py4e.com/code3/copytildone2.py",
+  "path": "code/copytildone2.py",
+  "category": "code-sample",
+  "bytes": 143
+ },
+ {
+  "url": "https://www.py4e.com/code3/count1.py",
+  "path": "code/count1.py",
+  "category": "code-sample",
+  "bytes": 333
+ },
+ {
+  "url": "https://www.py4e.com/code3/count2.py",
+  "path": "code/count2.py",
+  "category": "code-sample",
+  "bytes": 512
+ },
+ {
+  "url": "https://www.py4e.com/code3/count3.py",
+  "path": "code/count3.py",
+  "category": "code-sample",
+  "bytes": 506
+ },
+ {
+  "url": "https://www.py4e.com/code3/curl1.py",
+  "path": "code/curl1.py",
+  "category": "code-sample",
+  "bytes": 186
+ },
+ {
+  "url": "https://www.py4e.com/code3/curl2.py",
+  "path": "code/curl2.py",
+  "category": "code-sample",
+  "bytes": 324
+ },
+ {
+  "url": "https://www.py4e.com/code3/curl3.py",
+  "path": "code/curl3.py",
+  "category": "code-sample",
+  "bytes": 652
+ },
+ {
+  "url": "https://www.py4e.com/code3/db1.py",
+  "path": "code/db1.py",
+  "category": "code-sample",
+  "bytes": 195
+ },
+ {
+  "url": "https://www.py4e.com/code3/db2.py",
+  "path": "code/db2.py",
+  "category": "code-sample",
+  "bytes": 437
+ },
+ {
+  "url": "https://www.py4e.com/code3/egg.py",
+  "path": "code/egg.py",
+  "category": "code-sample",
+  "bytes": 373
+ },
+ {
+  "url": "https://www.py4e.com/code3/elev.py",
+  "path": "code/elev.py",
+  "category": "code-sample",
+  "bytes": 96
+ },
+ {
+  "url": "https://www.py4e.com/code3/emaildb.py",
+  "path": "code/emaildb.py",
+  "category": "code-sample",
+  "bytes": 942
+ },
+ {
+  "url": "https://www.py4e.com/code3/fahren.py",
+  "path": "code/fahren.py",
+  "category": "code-sample",
+  "bytes": 107
+ },
+ {
+  "url": "https://www.py4e.com/code3/fahren2.py",
+  "path": "code/fahren2.py",
+  "category": "code-sample",
+  "bytes": 166
+ },
+ {
+  "url": "https://www.py4e.com/code3/geoxml.py",
+  "path": "code/geoxml.py",
+  "category": "code-sample",
+  "bytes": 1299
+ },
+ {
+  "url": "https://www.py4e.com/code3/gitpulls.py",
+  "path": "code/gitpulls.py",
+  "category": "code-sample",
+  "bytes": 1412
+ },
+ {
+  "url": "https://www.py4e.com/code3/gitsecrets.py",
+  "path": "code/gitsecrets.py",
+  "category": "code-sample",
+  "bytes": 255
+ },
+ {
+  "url": "https://www.py4e.com/code3/giturl.py",
+  "path": "code/giturl.py",
+  "category": "code-sample",
+  "bytes": 743
+ },
+ {
+  "url": "https://www.py4e.com/code3/gmane.zip",
+  "path": "code/gmane.zip",
+  "category": "code-sample",
+  "bytes": 79023
+ },
+ {
+  "url": "https://www.py4e.com/code3/grade.py",
+  "path": "code/grade.py",
+  "category": "code-sample",
+  "bytes": 292
+ },
+ {
+  "url": "https://www.py4e.com/code3/greet.py",
+  "path": "code/greet.py",
+  "category": "code-sample",
+  "bytes": 55
+ },
+ {
+  "url": "https://www.py4e.com/code3/grep.py",
+  "path": "code/grep.py",
+  "category": "code-sample",
+  "bytes": 304
+ },
+ {
+  "url": "https://www.py4e.com/code3/hidden.py",
+  "path": "code/hidden.py",
+  "category": "code-sample",
+  "bytes": 322
+ },
+ {
+  "url": "https://www.py4e.com/code3/intro-short.txt",
+  "path": "code/intro-short.txt",
+  "category": "code-sample",
+  "bytes": 467
+ },
+ {
+  "url": "https://www.py4e.com/code3/intro.txt",
+  "path": "code/intro.txt",
+  "category": "code-sample",
+  "bytes": 28094
+ },
+ {
+  "url": "https://www.py4e.com/code3/json1.py",
+  "path": "code/json1.py",
+  "category": "code-sample",
+  "bytes": 257
+ },
+ {
+  "url": "https://www.py4e.com/code3/json2.py",
+  "path": "code/json2.py",
+  "category": "code-sample",
+  "bytes": 319
+ },
+ {
+  "url": "https://www.py4e.com/code3/largest.py",
+  "path": "code/largest.py",
+  "category": "code-sample",
+  "bytes": 215
+ },
+ {
+  "url": "https://www.py4e.com/code3/lyrics.py",
+  "path": "code/lyrics.py",
+  "category": "code-sample",
+  "bytes": 194
+ },
+ {
+  "url": "https://www.py4e.com/code3/mailcount.py",
+  "path": "code/mailcount.py",
+  "category": "code-sample",
+  "bytes": 224
+ },
+ {
+  "url": "https://www.py4e.com/code3/mailtop.py",
+  "path": "code/mailtop.py",
+  "category": "code-sample",
+  "bytes": 371
+ },
+ {
+  "url": "https://www.py4e.com/code3/mbox-short.txt",
+  "path": "code/mbox-short.txt",
+  "category": "code-sample",
+  "bytes": 94626
+ },
+ {
+  "url": "https://www.py4e.com/code3/mbox.txt",
+  "path": "code/mbox.txt",
+  "category": "code-sample",
+  "bytes": 6687002
+ },
+ {
+  "url": "https://www.py4e.com/code3/notry.py",
+  "path": "code/notry.py",
+  "category": "code-sample",
+  "bytes": 109
+ },
+ {
+  "url": "https://www.py4e.com/code3/oauth.py",
+  "path": "code/oauth.py",
+  "category": "code-sample",
+  "bytes": 21799
+ },
+ {
+  "url": "https://www.py4e.com/code3/objects.py",
+  "path": "code/objects.py",
+  "category": "code-sample",
+  "bytes": 153
+ },
+ {
+  "url": "https://www.py4e.com/code3/open.py",
+  "path": "code/open.py",
+  "category": "code-sample",
+  "bytes": 110
+ },
+ {
+  "url": "https://www.py4e.com/code3/opengeo.py",
+  "path": "code/opengeo.py",
+  "category": "code-sample",
+  "bytes": 1252
+ },
+ {
+  "url": "https://www.py4e.com/code3/opengeo.zip",
+  "path": "code/opengeo.zip",
+  "category": "code-sample",
+  "bytes": 15077
+ },
+ {
+  "url": "https://www.py4e.com/code3/pagerank.zip",
+  "path": "code/pagerank.zip",
+  "category": "code-sample",
+  "bytes": 127130
+ },
+ {
+  "url": "https://www.py4e.com/code3/pals.py",
+  "path": "code/pals.py",
+  "category": "code-sample",
+  "bytes": 114
+ },
+ {
+  "url": "https://www.py4e.com/code3/party.py",
+  "path": "code/party.py",
+  "category": "code-sample",
+  "bytes": 211
+ },
+ {
+  "url": "https://www.py4e.com/code3/party1.py",
+  "path": "code/party1.py",
+  "category": "code-sample",
+  "bytes": 153
+ },
+ {
+  "url": "https://www.py4e.com/code3/party2.py",
+  "path": "code/party2.py",
+  "category": "code-sample",
+  "bytes": 187
+ },
+ {
+  "url": "https://www.py4e.com/code3/party3.py",
+  "path": "code/party3.py",
+  "category": "code-sample",
+  "bytes": 261
+ },
+ {
+  "url": "https://www.py4e.com/code3/party4.py",
+  "path": "code/party4.py",
+  "category": "code-sample",
+  "bytes": 300
+ },
+ {
+  "url": "https://www.py4e.com/code3/party5.py",
+  "path": "code/party5.py",
+  "category": "code-sample",
+  "bytes": 292
+ },
+ {
+  "url": "https://www.py4e.com/code3/party6.py",
+  "path": "code/party6.py",
+  "category": "code-sample",
+  "bytes": 352
+ },
+ {
+  "url": "https://www.py4e.com/code3/party7.py",
+  "path": "code/party7.py",
+  "category": "code-sample",
+  "bytes": 366
+ },
+ {
+  "url": "https://www.py4e.com/code3/pay.py",
+  "path": "code/pay.py",
+  "category": "code-sample",
+  "bytes": 132
+ },
+ {
+  "url": "https://www.py4e.com/code3/pay2.py",
+  "path": "code/pay2.py",
+  "category": "code-sample",
+  "bytes": 208
+ },
+ {
+  "url": "https://www.py4e.com/code3/pay3.py",
+  "path": "code/pay3.py",
+  "category": "code-sample",
+  "bytes": 304
+ },
+ {
+  "url": "https://www.py4e.com/code3/re01.py",
+  "path": "code/re01.py",
+  "category": "code-sample",
+  "bytes": 175
+ },
+ {
+  "url": "https://www.py4e.com/code3/re02.py",
+  "path": "code/re02.py",
+  "category": "code-sample",
+  "bytes": 179
+ },
+ {
+  "url": "https://www.py4e.com/code3/re03.py",
+  "path": "code/re03.py",
+  "category": "code-sample",
+  "bytes": 222
+ },
+ {
+  "url": "https://www.py4e.com/code3/re04.py",
+  "path": "code/re04.py",
+  "category": "code-sample",
+  "bytes": 200
+ },
+ {
+  "url": "https://www.py4e.com/code3/re05.py",
+  "path": "code/re05.py",
+  "category": "code-sample",
+  "bytes": 126
+ },
+ {
+  "url": "https://www.py4e.com/code3/re06.py",
+  "path": "code/re06.py",
+  "category": "code-sample",
+  "bytes": 215
+ },
+ {
+  "url": "https://www.py4e.com/code3/re07.py",
+  "path": "code/re07.py",
+  "category": "code-sample",
+  "bytes": 278
+ },
+ {
+  "url": "https://www.py4e.com/code3/re08.py",
+  "path": "code/re08.py",
+  "category": "code-sample",
+  "bytes": 371
+ },
+ {
+  "url": "https://www.py4e.com/code3/re09.py",
+  "path": "code/re09.py",
+  "category": "code-sample",
+  "bytes": 319
+ },
+ {
+  "url": "https://www.py4e.com/code3/re10.py",
+  "path": "code/re10.py",
+  "category": "code-sample",
+  "bytes": 311
+ },
+ {
+  "url": "https://www.py4e.com/code3/re11.py",
+  "path": "code/re11.py",
+  "category": "code-sample",
+  "bytes": 380
+ },
+ {
+  "url": "https://www.py4e.com/code3/re12.py",
+  "path": "code/re12.py",
+  "category": "code-sample",
+  "bytes": 286
+ },
+ {
+  "url": "https://www.py4e.com/code3/re13.py",
+  "path": "code/re13.py",
+  "category": "code-sample",
+  "bytes": 325
+ },
+ {
+  "url": "https://www.py4e.com/code3/re14.py",
+  "path": "code/re14.py",
+  "category": "code-sample",
+  "bytes": 338
+ },
+ {
+  "url": "https://www.py4e.com/code3/re15.py",
+  "path": "code/re15.py",
+  "category": "code-sample",
+  "bytes": 465
+ },
+ {
+  "url": "https://www.py4e.com/code3/romeo-full.txt",
+  "path": "code/romeo-full.txt",
+  "category": "code-sample",
+  "bytes": 8864
+ },
+ {
+  "url": "https://www.py4e.com/code3/romeo.txt",
+  "path": "code/romeo.txt",
+  "category": "code-sample",
+  "bytes": 167
+ },
+ {
+  "url": "https://www.py4e.com/code3/roster.zip",
+  "path": "code/roster.zip",
+  "category": "code-sample",
+  "bytes": 2538
+ },
+ {
+  "url": "https://www.py4e.com/code3/search1.py",
+  "path": "code/search1.py",
+  "category": "code-sample",
+  "bytes": 103
+ },
+ {
+  "url": "https://www.py4e.com/code3/search10.py",
+  "path": "code/search10.py",
+  "category": "code-sample",
+  "bytes": 192
+ },
+ {
+  "url": "https://www.py4e.com/code3/search2.py",
+  "path": "code/search2.py",
+  "category": "code-sample",
+  "bytes": 128
+ },
+ {
+  "url": "https://www.py4e.com/code3/search3.py",
+  "path": "code/search3.py",
+  "category": "code-sample",
+  "bytes": 215
+ },
+ {
+  "url": "https://www.py4e.com/code3/search4.py",
+  "path": "code/search4.py",
+  "category": "code-sample",
+  "bytes": 138
+ },
+ {
+  "url": "https://www.py4e.com/code3/search5.py",
+  "path": "code/search5.py",
+  "category": "code-sample",
+  "bytes": 166
+ },
+ {
+  "url": "https://www.py4e.com/code3/search6.py",
+  "path": "code/search6.py",
+  "category": "code-sample",
+  "bytes": 204
+ },
+ {
+  "url": "https://www.py4e.com/code3/search7.py",
+  "path": "code/search7.py",
+  "category": "code-sample",
+  "bytes": 275
+ },
+ {
+  "url": "https://www.py4e.com/code3/search8.py",
+  "path": "code/search8.py",
+  "category": "code-sample",
+  "bytes": 174
+ },
+ {
+  "url": "https://www.py4e.com/code3/search9.py",
+  "path": "code/search9.py",
+  "category": "code-sample",
+  "bytes": 201
+ },
+ {
+  "url": "https://www.py4e.com/code3/sequence.py",
+  "path": "code/sequence.py",
+  "category": "code-sample",
+  "bytes": 231
+ },
+ {
+  "url": "https://www.py4e.com/code3/socket1.py",
+  "path": "code/socket1.py",
+  "category": "code-sample",
+  "bytes": 323
+ },
+ {
+  "url": "https://www.py4e.com/code3/socket2.py",
+  "path": "code/socket2.py",
+  "category": "code-sample",
+  "bytes": 478
+ },
+ {
+  "url": "https://www.py4e.com/code3/soft.py",
+  "path": "code/soft.py",
+  "category": "code-sample",
+  "bytes": 226
+ },
+ {
+  "url": "https://www.py4e.com/code3/spamave.py",
+  "path": "code/spamave.py",
+  "category": "code-sample",
+  "bytes": 461
+ },
+ {
+  "url": "https://www.py4e.com/code3/tracks.zip",
+  "path": "code/tracks.zip",
+  "category": "code-sample",
+  "bytes": 8650
+ },
+ {
+  "url": "https://www.py4e.com/code3/tryexcept.py",
+  "path": "code/tryexcept.py",
+  "category": "code-sample",
+  "bytes": 175
+ },
+ {
+  "url": "https://www.py4e.com/code3/trynum.py",
+  "path": "code/trynum.py",
+  "category": "code-sample",
+  "bytes": 161
+ },
+ {
+  "url": "https://www.py4e.com/code3/twdump.py",
+  "path": "code/twdump.py",
+  "category": "code-sample",
+  "bytes": 210
+ },
+ {
+  "url": "https://www.py4e.com/code3/twfriends.py",
+  "path": "code/twfriends.py",
+  "category": "code-sample",
+  "bytes": 3172
+ },
+ {
+  "url": "https://www.py4e.com/code3/twitter1.py",
+  "path": "code/twitter1.py",
+  "category": "code-sample",
+  "bytes": 831
+ },
+ {
+  "url": "https://www.py4e.com/code3/twitter2.py",
+  "path": "code/twitter2.py",
+  "category": "code-sample",
+  "bytes": 1067
+ },
+ {
+  "url": "https://www.py4e.com/code3/twjoin.py",
+  "path": "code/twjoin.py",
+  "category": "code-sample",
+  "bytes": 661
+ },
+ {
+  "url": "https://www.py4e.com/code3/twspider.py",
+  "path": "code/twspider.py",
+  "category": "code-sample",
+  "bytes": 1976
+ },
+ {
+  "url": "https://www.py4e.com/code3/twtest.py",
+  "path": "code/twtest.py",
+  "category": "code-sample",
+  "bytes": 672
+ },
+ {
+  "url": "https://www.py4e.com/code3/twurl.py",
+  "path": "code/twurl.py",
+  "category": "code-sample",
+  "bytes": 1118
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtcheck.py",
+  "path": "code/txtcheck.py",
+  "category": "code-sample",
+  "bytes": 577
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtcheck2.py",
+  "path": "code/txtcheck2.py",
+  "category": "code-sample",
+  "bytes": 681
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtcheck3.py",
+  "path": "code/txtcheck3.py",
+  "category": "code-sample",
+  "bytes": 660
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtcount.py",
+  "path": "code/txtcount.py",
+  "category": "code-sample",
+  "bytes": 181
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtdelete.py",
+  "path": "code/txtdelete.py",
+  "category": "code-sample",
+  "bytes": 730
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtmd5.py",
+  "path": "code/txtmd5.py",
+  "category": "code-sample",
+  "bytes": 552
+ },
+ {
+  "url": "https://www.py4e.com/code3/txtsize.py",
+  "path": "code/txtsize.py",
+  "category": "code-sample",
+  "bytes": 251
+ },
+ {
+  "url": "https://www.py4e.com/code3/urljpeg.py",
+  "path": "code/urljpeg.py",
+  "category": "code-sample",
+  "bytes": 715
+ },
+ {
+  "url": "https://www.py4e.com/code3/urllib1.py",
+  "path": "code/urllib1.py",
+  "category": "code-sample",
+  "bytes": 140
+ },
+ {
+  "url": "https://www.py4e.com/code3/urllib2.py",
+  "path": "code/urllib2.py",
+  "category": "code-sample",
+  "bytes": 171
+ },
+ {
+  "url": "https://www.py4e.com/code3/urllink2.py",
+  "path": "code/urllink2.py",
+  "category": "code-sample",
+  "bytes": 685
+ },
+ {
+  "url": "https://www.py4e.com/code3/urllink3.py",
+  "path": "code/urllink3.py",
+  "category": "code-sample",
+  "bytes": 1396
+ },
+ {
+  "url": "https://www.py4e.com/code3/urllinks.py",
+  "path": "code/urllinks.py",
+  "category": "code-sample",
+  "bytes": 728
+ },
+ {
+  "url": "https://www.py4e.com/code3/urlregex.py",
+  "path": "code/urlregex.py",
+  "category": "code-sample",
+  "bytes": 417
+ },
+ {
+  "url": "https://www.py4e.com/code3/urlwords.py",
+  "path": "code/urlwords.py",
+  "category": "code-sample",
+  "bytes": 270
+ },
+ {
+  "url": "https://www.py4e.com/code3/whathour.py",
+  "path": "code/whathour.py",
+  "category": "code-sample",
+  "bytes": 393
+ },
+ {
+  "url": "https://www.py4e.com/code3/wikidata.db",
+  "path": "code/wikidata.db",
+  "category": "code-sample",
+  "bytes": 16384
+ },
+ {
+  "url": "https://www.py4e.com/code3/wikigrade.py",
+  "path": "code/wikigrade.py",
+  "category": "code-sample",
+  "bytes": 2765
+ },
+ {
+  "url": "https://www.py4e.com/code3/wordcount.py",
+  "path": "code/wordcount.py",
+  "category": "code-sample",
+  "bytes": 218
+ },
+ {
+  "url": "https://www.py4e.com/code3/wordlist.py",
+  "path": "code/wordlist.py",
+  "category": "code-sample",
+  "bytes": 241
+ },
+ {
+  "url": "https://www.py4e.com/code3/words.py",
+  "path": "code/words.py",
+  "category": "code-sample",
+  "bytes": 378
+ },
+ {
+  "url": "https://www.py4e.com/code3/words.txt",
+  "path": "code/words.txt",
+  "category": "code-sample",
+  "bytes": 1171
+ },
+ {
+  "url": "https://www.py4e.com/code3/xml1.py",
+  "path": "code/xml1.py",
+  "category": "code-sample",
+  "bytes": 280
+ },
+ {
+  "url": "https://www.py4e.com/code3/xml2.py",
+  "path": "code/xml2.py",
+  "category": "code-sample",
+  "bytes": 466
+ },
+ {
+  "url": "https://www.py4e.com/code3/xml3.py",
+  "path": "code/xml3.py",
+  "category": "code-sample",
+  "bytes": 490
+ },
+ {
+  "url": "https://www.py4e.com/images/arch.svg",
+  "path": "images/arch.svg",
+  "category": "chapter-image",
+  "bytes": 7679
+ },
+ {
+  "url": "https://www.py4e.com/images/arch2.svg",
+  "path": "images/arch2.svg",
+  "category": "chapter-image",
+  "bytes": 9616
+ },
+ {
+  "url": "https://www.py4e.com/cover.jpg",
+  "path": "images/cover.jpg",
+  "category": "extra",
+  "bytes": 70057
+ },
+ {
+  "url": "https://www.py4e.com/images/cursor.svg",
+  "path": "images/cursor.svg",
+  "category": "chapter-image",
+  "bytes": 8640
+ },
+ {
+  "url": "https://www.py4e.com/images/elif.svg",
+  "path": "images/elif.svg",
+  "category": "chapter-image",
+  "bytes": 6407
+ },
+ {
+  "url": "https://www.py4e.com/images/handle.svg",
+  "path": "images/handle.svg",
+  "category": "chapter-image",
+  "bytes": 7606
+ },
+ {
+  "url": "https://www.py4e.com/images/if-else.svg",
+  "path": "images/if-else.svg",
+  "category": "chapter-image",
+  "bytes": 4829
+ },
+ {
+  "url": "https://www.py4e.com/images/if.svg",
+  "path": "images/if.svg",
+  "category": "chapter-image",
+  "bytes": 3795
+ },
+ {
+  "url": "https://www.py4e.com/images/list1.svg",
+  "path": "images/list1.svg",
+  "category": "chapter-image",
+  "bytes": 3205
+ },
+ {
+  "url": "https://www.py4e.com/images/mailorg.png",
+  "path": "images/mailorg.png",
+  "category": "chapter-image",
+  "bytes": 261125
+ },
+ {
+  "url": "https://www.py4e.com/images/many-to-many-verbose.png",
+  "path": "images/many-to-many-verbose.png",
+  "category": "chapter-image",
+  "bytes": 20265
+ },
+ {
+  "url": "https://www.py4e.com/images/many-to-many.png",
+  "path": "images/many-to-many.png",
+  "category": "chapter-image",
+  "bytes": 9819
+ },
+ {
+  "url": "https://www.py4e.com/images/nested.svg",
+  "path": "images/nested.svg",
+  "category": "chapter-image",
+  "bytes": 7238
+ },
+ {
+  "url": "https://www.py4e.com/images/one-to-many-verbose.png",
+  "path": "images/one-to-many-verbose.png",
+  "category": "chapter-image",
+  "bytes": 15599
+ },
+ {
+  "url": "https://www.py4e.com/images/one-to-many.png",
+  "path": "images/one-to-many.png",
+  "category": "chapter-image",
+  "bytes": 10539
+ },
+ {
+  "url": "https://www.py4e.com/images/openstreet-map.png",
+  "path": "images/openstreet-map.png",
+  "category": "chapter-image",
+  "bytes": 266507
+ },
+ {
+  "url": "https://www.py4e.com/images/pagerank.png",
+  "path": "images/pagerank.png",
+  "category": "chapter-image",
+  "bytes": 171168
+ },
+ {
+  "url": "https://www.py4e.com/images/pda.svg",
+  "path": "images/pda.svg",
+  "category": "chapter-image",
+  "bytes": 6560
+ },
+ {
+  "url": "https://www.py4e.com/images/pda.svg",
+  "path": "images/pda.svg",
+  "category": "extra",
+  "bytes": 6560,
+  "cached": true
+ },
+ {
+  "url": "https://www.py4e.com/images/pda2.svg",
+  "path": "images/pda2.svg",
+  "category": "chapter-image",
+  "bytes": 6572
+ },
+ {
+  "url": "https://www.py4e.com/images/program-oo-bs4.svg",
+  "path": "images/program-oo-bs4.svg",
+  "category": "chapter-image",
+  "bytes": 7206
+ },
+ {
+  "url": "https://www.py4e.com/images/program-oo-code.svg",
+  "path": "images/program-oo-code.svg",
+  "category": "chapter-image",
+  "bytes": 7207
+ },
+ {
+  "url": "https://www.py4e.com/images/program-oo.svg",
+  "path": "images/program-oo.svg",
+  "category": "chapter-image",
+  "bytes": 7026
+ },
+ {
+  "url": "https://www.py4e.com/images/program.svg",
+  "path": "images/program.svg",
+  "category": "chapter-image",
+  "bytes": 5005
+ },
+ {
+  "url": "https://www.py4e.com/images/relational.svg",
+  "path": "images/relational.svg",
+  "category": "chapter-image",
+  "bytes": 3863
+ },
+ {
+  "url": "https://www.py4e.com/images/soa.svg",
+  "path": "images/soa.svg",
+  "category": "chapter-image",
+  "bytes": 8166
+ },
+ {
+  "url": "https://www.py4e.com/images/socket.svg",
+  "path": "images/socket.svg",
+  "category": "chapter-image",
+  "bytes": 6706
+ },
+ {
+  "url": "https://www.py4e.com/images/string.svg",
+  "path": "images/string.svg",
+  "category": "chapter-image",
+  "bytes": 4474
+ },
+ {
+  "url": "https://www.py4e.com/images/tracks-albums-artists.png",
+  "path": "images/tracks-albums-artists.png",
+  "category": "chapter-image",
+  "bytes": 23805
+ },
+ {
+  "url": "https://www.py4e.com/images/tracks.svg",
+  "path": "images/tracks.svg",
+  "category": "chapter-image",
+  "bytes": 4682
+ },
+ {
+  "url": "https://www.py4e.com/images/wordcloud.png",
+  "path": "images/wordcloud.png",
+  "category": "chapter-image",
+  "bytes": 203196
+ },
+ {
+  "url": "https://www.py4e.com/images/xml-tree.svg",
+  "path": "images/xml-tree.svg",
+  "category": "chapter-image",
+  "bytes": 8000
+ },
+ {
+  "url": "https://www.py4e.com/photos/cookie_cutter_flickr_Didriks.png",
+  "path": "photos/cookie_cutter_flickr_Didriks.png",
+  "category": "chapter-image",
+  "bytes": 3186944
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-01-Intro.pdf",
+  "path": "slides/downloads/Pythonlearn-01-Intro.pdf",
+  "category": "slide-deck",
+  "bytes": 875918
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-01-Intro.pptx",
+  "path": "slides/downloads/Pythonlearn-01-Intro.pptx",
+  "category": "slide-deck",
+  "bytes": 2191553
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-02-Expressions.pdf",
+  "path": "slides/downloads/Pythonlearn-02-Expressions.pdf",
+  "category": "slide-deck",
+  "bytes": 225786
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-02-Expressions.pptx",
+  "path": "slides/downloads/Pythonlearn-02-Expressions.pptx",
+  "category": "slide-deck",
+  "bytes": 221728
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-03-Conditional.pdf",
+  "path": "slides/downloads/Pythonlearn-03-Conditional.pdf",
+  "category": "slide-deck",
+  "bytes": 223472
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-03-Conditional.pptx",
+  "path": "slides/downloads/Pythonlearn-03-Conditional.pptx",
+  "category": "slide-deck",
+  "bytes": 142212
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-04-Functions.pdf",
+  "path": "slides/downloads/Pythonlearn-04-Functions.pdf",
+  "category": "slide-deck",
+  "bytes": 158361
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-04-Functions.pptx",
+  "path": "slides/downloads/Pythonlearn-04-Functions.pptx",
+  "category": "slide-deck",
+  "bytes": 113608
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-05-Iterations.pdf",
+  "path": "slides/downloads/Pythonlearn-05-Iterations.pdf",
+  "category": "slide-deck",
+  "bytes": 283753
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-05-Iterations.pptx",
+  "path": "slides/downloads/Pythonlearn-05-Iterations.pptx",
+  "category": "slide-deck",
+  "bytes": 359967
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-06-Strings.pdf",
+  "path": "slides/downloads/Pythonlearn-06-Strings.pdf",
+  "category": "slide-deck",
+  "bytes": 318553
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-06-Strings.pptx",
+  "path": "slides/downloads/Pythonlearn-06-Strings.pptx",
+  "category": "slide-deck",
+  "bytes": 351792
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-07-Files.pdf",
+  "path": "slides/downloads/Pythonlearn-07-Files.pdf",
+  "category": "slide-deck",
+  "bytes": 225502
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-07-Files.pptx",
+  "path": "slides/downloads/Pythonlearn-07-Files.pptx",
+  "category": "slide-deck",
+  "bytes": 178629
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-08-Lists.pdf",
+  "path": "slides/downloads/Pythonlearn-08-Lists.pdf",
+  "category": "slide-deck",
+  "bytes": 201025
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-08-Lists.pptx",
+  "path": "slides/downloads/Pythonlearn-08-Lists.pptx",
+  "category": "slide-deck",
+  "bytes": 149597
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-09-Dictionaries.pdf",
+  "path": "slides/downloads/Pythonlearn-09-Dictionaries.pdf",
+  "category": "slide-deck",
+  "bytes": 674756
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-09-Dictionaries.pptx",
+  "path": "slides/downloads/Pythonlearn-09-Dictionaries.pptx",
+  "category": "slide-deck",
+  "bytes": 539933
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-10-Tuples.pdf",
+  "path": "slides/downloads/Pythonlearn-10-Tuples.pdf",
+  "category": "slide-deck",
+  "bytes": 105726
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-10-Tuples.pptx",
+  "path": "slides/downloads/Pythonlearn-10-Tuples.pptx",
+  "category": "slide-deck",
+  "bytes": 88136
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-11-Regex.pdf",
+  "path": "slides/downloads/Pythonlearn-11-Regex.pdf",
+  "category": "slide-deck",
+  "bytes": 366975
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-11-Regex.pptx",
+  "path": "slides/downloads/Pythonlearn-11-Regex.pptx",
+  "category": "slide-deck",
+  "bytes": 353154
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-12-HTTP.pdf",
+  "path": "slides/downloads/Pythonlearn-12-HTTP.pdf",
+  "category": "slide-deck",
+  "bytes": 1666843
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-12-HTTP.pptx",
+  "path": "slides/downloads/Pythonlearn-12-HTTP.pptx",
+  "category": "slide-deck",
+  "bytes": 4884361
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-13-WebServices.pdf",
+  "path": "slides/downloads/Pythonlearn-13-WebServices.pdf",
+  "category": "slide-deck",
+  "bytes": 4042252
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-13-WebServices.pptx",
+  "path": "slides/downloads/Pythonlearn-13-WebServices.pptx",
+  "category": "slide-deck",
+  "bytes": 7241659
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pdf",
+  "path": "slides/downloads/Pythonlearn-14-Objects.pdf",
+  "category": "slide-deck",
+  "bytes": 713609
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+  "path": "slides/downloads/Pythonlearn-14-Objects.pptx",
+  "category": "slide-deck",
+  "bytes": 3759428
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pdf",
+  "path": "slides/downloads/Pythonlearn-15-Databases.pdf",
+  "category": "slide-deck",
+  "bytes": 7889716
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pptx",
+  "path": "slides/downloads/Pythonlearn-15-Databases.pptx",
+  "category": "slide-deck",
+  "bytes": 7261248
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-16-Data-Viz.pdf",
+  "path": "slides/downloads/Pythonlearn-16-Data-Viz.pdf",
+  "category": "slide-deck",
+  "bytes": 841413
+ },
+ {
+  "url": "https://www.py4e.com/lectures3/Pythonlearn-16-Data-Viz.pptx",
+  "path": "slides/downloads/Pythonlearn-16-Data-Viz.pptx",
+  "category": "slide-deck",
+  "bytes": 1182507
+ }
+]

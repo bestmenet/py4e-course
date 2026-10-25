@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <!-- Tiny bit of JS -->
+        <script src="https://static.tsugi.org/js/tsugiscripts_head.js"></script>
+<script>
+var _TSUGI = {
+  ajax_session: false,
+  cookieless: false,
+  tsugi_browser_mark: "6adcf31278411",
+  heartbeat: 32400000,
+  heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat",
+  rest_path: {"parent":"","base_url":"https:\/\/www.py4e.com","controller":"software-replit.php","extra":"","action":false,"parameters":[],"current":"\/software-replit.php","full":"\/software-replit.php"},
+  launch_presentation_return_url: false,
+  launch_presentation_error_return_url: false,
+  spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+  staticroot: "https://static.tsugi.org",
+  apphome: "https://www.py4e.com",
+  wwwroot: "https://www.py4e.com/tsugi",
+  youtube_playlist: "PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+  react_token: "7cb7e502632a6746f86b97ea27e59f0c",
+  window_close_message: "Application complete - You can close this tab.",
+  session_expire_message: "Your session has expired"
+}
+</script>
+        <!-- Le styles -->
+<link href="https://static.tsugi.org/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/bootstrap-3.4.1/patch/accessibility-patch.css" rel="stylesheet">
+<link href="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/v4-shims.css" rel="stylesheet">
+<style>:root {--primary:#0D47A1;
+--primary-menu:#0D47A1;
+--primary-border:#0d4295;
+--primary-darker:#0c4091;
+--primary-darkest:#0b3b85;
+--background-color:#FFFFFF;
+--background-focus:#F5F5F5;
+--background-accent:#0D47A1;
+--secondary:#EEEEEE;
+--secondary-menu:#EEEEEE;
+--text:#111111;
+--text-light:#5E5E5E;
+--font-family:sans-serif;
+--font-size:14px;
+}</style>
+<link href="https://static.tsugi.org/css/tsugi2.css" rel="stylesheet">
+<style>
+#tsugi_main_nav_bar .navbar-brand .tsugi-course-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 0.4em;
+  flex: 0 0 32px;
+}
+#tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img img {
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #tsugi_main_nav_bar > .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #tsugi_main_nav_bar .navbar-header {
+    float: none;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  #tsugi_main_nav_bar .navbar-brand {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-collapse.collapse {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-main,
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.navbar-text,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    float: none;
+    min-height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-notifications,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-calendar-due,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-discussions,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-courses {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+  }
+}
+</style>
+<script type="text/javascript">CSRF_TOKEN = "e091f62c48d8d28d0d178f633333a9e8";function tsugiCsrfHeaders(h){h=h||{};if(CSRF_TOKEN){h["X-CSRF-TOKEN"]=CSRF_TOKEN;}return h;}</script>
+<style>
+body {
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    line-height: 1.93rem;
+    color: var(--text);
+    background-color: var(--background-color);
+}
+</style>
+</head>
+<body prefix="oer: http://oerschema.org">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="body_container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display:none">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tsugi_main_nav_collapse" aria-controls="tsugi_main_nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.py4e.com">PY4E</a>
+    </div>
+    <div id="tsugi_main_nav_collapse" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-main">
+        <li><a href="https://www.py4e.com/lessons" >Lessons</a></li>
+        <li><a href="https://www.py4e.com/book" >Book</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://online.dr-chuck.com" target="_self">Courses</a></li>
+        <li><a href="https://www.py4e.com/login" >Login</a></li>
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+} else {
+  document.getElementsByTagName('body')[0].style.paddingTop = '1.0rem';
+}
+</script>
+<div id="flashmessages"></div><main id="main-content" tabindex="-1">
+<h1>
+Using Python on Replit
+</h1>
+<p>
+Replit</a>
+(<a href="https://www.replit.com" target="_blank">www.replit.com</a>)
+is a free online service that gives you a way to develop and run programs
+inside a browser.   This is a full-featured environment with a browser-based text
+editor with syntax highlighting.  To use Replit for this class - all you need
+to write and run Python code is a web browser. There is nothing to install at all.
+</p>
+<p>
+You save some time by using Dr. Chuck's PY4E Replit template by starting at:
+<a href="https://replit.com/@ChuckSeverance/PY4E?v=1" target="_blank">
+https://replit.com/@ChuckSeverance/PY4E?v=1
+</a>.  This includes the files you will use for the course and sample code.
+</p>
+<p>
+This means that you can do this course on a "locked-down" environment on systems
+like Apple's iPad, iPhone, Android, ChromeBooks, or Windows 10 Home S.  You can
+also use Replit if you are using a work or school computer that does not
+allow any software into be installed.
+</p>
+<h2>Sign up for an account</h2>
+<p>
+You will need to sign up for an account to use Replit.   They have a free
+level that will cover all of your needs for this course through Chapter 15.
+</p>
+<h2>Writing Your First Program on Replit</h2>
+<p>
+Once you can log in to Replit, go into the files tab and create a new file called <b>hello.py</b>
+in your home folder (should be something like <b>/home/home/runner/PY4E</b>).  Put the following line in the file:
+<pre>
+print('Hello world')
+</pre>
+Save the file and press <b>Run</b> and you should see:
+<pre>
+Hello world
+</pre>
+Then change the text to 'Hello PY4E world', and press <b>Run</b> and it should run your modified
+program.
+</pre>
+</p>
+<p>
+While the <b>Run</b> button works for programs that are a few lines, once you start working on more complex
+programs you may need to use a Linux shell (command line).  It might feel a little strange at the beginning
+but learning a little bit of Linux is a great idea as it is the dominant system that is used for servers.
+</p>
+<h2>Using the Shell on Replit</h2>
+<p>
+After you switch from the console to the shell in the right panel,
+you should see something like:
+<pre>
+~/PY4E$
+</pre>
+This is the Linux command prompt.  Lets run your 'hello.py' program from the command line:
+<pre>
+~/PY4E$ cd
+~/PY4E$ pwd
+/home/runner/PY4E
+~/PY4E$ ls -l
+total 80
+-rw-r--r-- 1 runner runner    21 Jul 25 18:16 hello.py
+-rw-r--r-- 1 runner runner    20 Jul 25 16:12 main.py
+-rw-r--r-- 1 runner runner 62849 Jun 19 04:40 poetry.lock
+-rw-r--r-- 1 runner runner   327 Jun 19 04:39 pyproject.toml
+-rw-r--r-- 1 runner runner   382 Jul  9 17:22 replit.nix
+drwxr-xr-x 1 runner runner    56 Oct 26  2021 venv
+~/PY4E$ python3 hello.py
+Hello world
+</pre>
+Here is what the Linux Shell commands we are typing are doing:
+<ul>
+<li><b>cd</b> - Change directory into my home folder - we do this just to make sure we are starting in the 
+right place in the folder hierarchy.</li>
+<li><b>pwd</b> - Print Working Directory - this command tells you where you are at in the folder
+hierarchy.  We are in our home folder.  Linux is a multi-user system and each user has their own 'home'
+directory.  You can build a folder hierarchy from your home folder on down.</li>
+<li><b>ls -l</b> list the files and subfolders in the current folder.  The <b>-l</b> option
+shows details like permissions, modification date and file size.</li>
+<li><b>python3 hello.py</b> runs Python on your file</li>
+</ul>
+We recommend that you get familiar with the Linux bash shell to run your code from the very beginning
+because eventually you will need to the shell to run more complex programs.
+</p>
+<h2>Some Cool Hints on the bash console</h2>
+<p>
+You can scroll back through previous commands by pressing the up and down arrows and re-execute 
+commands using the enter key.  This can save a lot of typing.
+If you like keeping your screen uncluttered, you can clear the scroll 
+back buffer by pressing the <b>Command key</b> and the <b>K</b> key at the same time.</p>
+
+<h2>Editing Files on Replit</h2>
+<p>
+There are three ways to edit files in your Replit environment, ranging from the easiest
+to the coolest.  You only have to edit the file one of these ways.</p>
+<ol>
+<li>
+Go to the main Replit file panel, browse files, navigate to the correct folder and edit the file.
+</li><li>
+<p>Or in the command line:</p>
+<pre>
+cd ~
+nano hello.py
+</pre>
+<p>(The first time you run nano, Replit might need to install it for you)</p>
+<p>Save the File by pressing <b>CTRL-X</b>, <b>Y</b>, and Enter.</p>
+</li><li>
+Don't try this most difficult and most cool way to edit files on Linux without a helper
+if it is your first time with the <b>vim</b> text editor.
+<pre>
+cd ~
+vim hello.py
+</pre>
+<p>(The first time you run vim, Replit might need to install it for you)</p>
+<p>
+Once you have opened <b>vim</b>, cursor down where you want to make a change, and press the
+<b>i</b> key to go into 'INSERT' mode, then type your new text and press
+the <b>esc</b> key when you are done.  To save the file, you type <b>:wq</b>
+followed by <b>enter</b>.  If you get lost press <b>esc</b> <b>:q!</b>
+<b>enter</b> to get out of the file without saving.
+</li>
+</ol>
+Once you start deploying real applications in production
+environments like Google, Amazon, Microsoft, etc.. all you will have is command line.</p>
+
+<script src="https://static.tsugi.org/js/jquery-1.11.3.js"></script>
+<script src="https://static.tsugi.org/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery.timeago-1.6.3.js"></script>
+<script src="https://static.tsugi.org/js/handlebars-v4.0.2.js"></script>
+<script src="https://static.tsugi.org/tmpljs-3.8.0/tmpl.min.js"></script>
+<script src="https://static.tsugi.org/js/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+    $(document).ready(function() { jQuery("time.timeago").timeago(); });
+</script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Notifications/tsugi-notifications.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Calendar/tsugi-calendar-due.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Discussions/tsugi-discussions.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Courses/tsugi-courses.js"></script>
+
+<p style="font-size: 0.875rem; color: #333; margin-top: 5em;">
+Copyright Creative Commons Attribution 4.0 - Charles R. Severance
+</p>
+
+</main>
+</div><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4fae6ccdaf7f7b5',t:'MTc5Mjg2NTA0MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

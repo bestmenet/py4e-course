@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <!-- Tiny bit of JS -->
+        <script src="https://static.tsugi.org/js/tsugiscripts_head.js"></script>
+<script>
+var _TSUGI = {
+  ajax_session: false,
+  cookieless: false,
+  tsugi_browser_mark: "6adcc6c9300e2",
+  heartbeat: 32400000,
+  heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat",
+  rest_path: {"parent":"","base_url":"https:\/\/www.py4e.com","controller":"lessons","extra":"database","action":"database","parameters":[],"current":"\/lessons","full":"\/lessons\/database"},
+  launch_presentation_return_url: false,
+  launch_presentation_error_return_url: false,
+  spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+  staticroot: "https://static.tsugi.org",
+  apphome: "https://www.py4e.com",
+  wwwroot: "https://www.py4e.com/tsugi",
+  youtube_playlist: "PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+  react_token: "f5299d3cb570228b68bfbedaa4a5932b",
+  window_close_message: "Application complete - You can close this tab.",
+  session_expire_message: "Your session has expired"
+}
+</script>
+        <!-- Le styles -->
+<link href="https://static.tsugi.org/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/bootstrap-3.4.1/patch/accessibility-patch.css" rel="stylesheet">
+<link href="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/v4-shims.css" rel="stylesheet">
+<style>:root {--primary:#0D47A1;
+--primary-menu:#0D47A1;
+--primary-border:#0d4295;
+--primary-darker:#0c4091;
+--primary-darkest:#0b3b85;
+--background-color:#FFFFFF;
+--background-focus:#F5F5F5;
+--background-accent:#0D47A1;
+--secondary:#EEEEEE;
+--secondary-menu:#EEEEEE;
+--text:#111111;
+--text-light:#5E5E5E;
+--font-family:sans-serif;
+--font-size:14px;
+}</style>
+<link href="https://static.tsugi.org/css/tsugi2.css" rel="stylesheet">
+<style>
+#tsugi_main_nav_bar .navbar-brand .tsugi-course-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 0.4em;
+  flex: 0 0 32px;
+}
+#tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img img {
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #tsugi_main_nav_bar > .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #tsugi_main_nav_bar .navbar-header {
+    float: none;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  #tsugi_main_nav_bar .navbar-brand {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-collapse.collapse {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-main,
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.navbar-text,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    float: none;
+    min-height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-notifications,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-calendar-due,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-discussions,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-courses {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+  }
+}
+</style>
+<script type="text/javascript">CSRF_TOKEN = "9eb932a36fec604b4fb24fcf921b3cc8";function tsugiCsrfHeaders(h){h=h||{};if(CSRF_TOKEN){h["X-CSRF-TOKEN"]=CSRF_TOKEN;}return h;}</script>
+</head>
+<body prefix="oer: http://oerschema.org">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="body_container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display:none">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tsugi_main_nav_collapse" aria-controls="tsugi_main_nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.py4e.com">PY4E</a>
+    </div>
+    <div id="tsugi_main_nav_collapse" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-main">
+        <li><a href="https://www.py4e.com/lessons" >Lessons</a></li>
+        <li><a href="https://www.py4e.com/book" >Book</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://online.dr-chuck.com" target="_self">Courses</a></li>
+        <li><a href="https://www.py4e.com/login" >Login</a></li>
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+} else {
+  document.getElementsByTagName('body')[0].style.paddingTop = '1.0rem';
+}
+</script>
+<div id="flashmessages"></div><main id="main-content" tabindex="-1">
+<style>
+.card {
+    display: inline-block;
+    padding: 0.5em;
+    margin: 12px;
+    border: 1px solid black;
+    height: 9em;
+    overflow-y: hidden;
+}
+.card div {
+    height: 8em;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+.progress-badge {
+    display: inline-block;
+    margin-left: 0.35em;
+    vertical-align: middle;
+    font-size: 0.75em;
+    line-height: 1.2;
+}
+.progress-badge-check {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+.progress-badge-percent {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: bold;
+}
+.progress-badge-not-started {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.15em 0.45em;
+    border-radius: 0.25em;
+    font-weight: normal;
+}
+.tsugi-lti-link-meta {
+    display: inline;
+    margin-left: 0.25em;
+    white-space: nowrap;
+}
+.tsugi-assignments-due-badge {
+    display: inline-block;
+    margin-left: 0.35em;
+    padding: 0.12em 0.45em;
+    border-radius: 0.25em;
+    font-size: 0.75em;
+    line-height: 1.2;
+    vertical-align: middle;
+    border: 1px solid transparent;
+}
+.tsugi-assignments-due-completed {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.tsugi-assignments-due-past {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.tsugi-assignments-due-soon {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+.tsugi-assignments-due-future {
+    background: #e9ecef;
+    color: #495057;
+    border-color: #dee2e6;
+}
+.tsugi-assignments-due-neutral {
+    background: #f8f9fa;
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+.tsugi-assignments-due-state {
+    font-weight: bold;
+}
+.tsugi-assignments-due-detail {
+    font-weight: normal;
+}
+.tsugi-assignments-rl-sig-sep {
+    color: #767676;
+    margin: 0 0.25em;
+    font-weight: normal;
+}
+.tsugi-assignments-rl-sig {
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #343a40;
+    font-weight: 500;
+}
+.tsugi-link-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1100px;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.tsugi-link-modal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    padding: 0.5em 2.75em 0.5em 0.75em;
+    border-bottom: 1px solid #ddd;
+    background: #f5f5f5;
+    position: relative;
+}
+.tsugi-link-modal-title {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.tsugi-link-modal-open-new {
+    flex: 0 0 auto;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+.tsugi-link-modal-close {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+.tsugi-link-modal-close:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+.tsugi-link-modal-frame {
+    flex: 1 1 auto;
+    width: 100%;
+    border: 0;
+    background: #fff;
+}
+.tsugi-inline-embed {
+    display: block;
+    width: 100%;
+    height: 640px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+</style>
+<div class="container"><div typeof="oer:Lesson" style="padding-left: 5px; vertical-align: text-top;"><ul class="pager tsugi-lessons-pager">
+<li class="previous"><a href="/lessons/Objects">&larr; Previous</a></li>
+<li><a href="/lessons">All (16 / 17)</a></li><li class="next"><a href="/lessons/dataviz">&rarr; Next</a></li>
+</ul></div>
+<h1 property="oer:name" class="tsugi-lessons-module-title tsugi-lessons-module-title-cardmatch">16: Databases</h1>
+<p property="oer:description" class="tsugi-lessons-module-description">Databases give us very fast random access to large amounts of data. There is a lot of material in this chapter as we learn the Structured Query Language (SQL).</p>
+<h2>Slides</h2>
+<ul class="tsugi-lessons-content-list">
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-slide"><span class="tsugi-lessons-module-slide-link"><a href="https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pptx" target="_blank" rel="noopener noreferrer" class="tsugi-lessons-link" typeof="oer:SupportingMaterial" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-slide" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #6f42c1; margin-right: 8px; vertical-align: middle;"><i class="fa fa-file-powerpoint-o" aria-hidden="true" style="color: white;"></i></span>Pythonlearn-15-Databases.pptx</a>
+</span>
+</li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-slide"><span class="tsugi-lessons-module-slide-link"><a href="https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pdf" target="_blank" rel="noopener noreferrer" class="tsugi-lessons-link" typeof="oer:SupportingMaterial" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-pdf tsugi-lessons-pdf-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #b30b00; margin-right: 8px; vertical-align: middle;"><i class="fa fa-file-pdf-o" aria-hidden="true" style="color: white;"></i></span>Pythonlearn-15-Databases.pdf</a>
+</span>
+</li>
+</ul>
+<h2>Videos</h2>
+<ul class="tsugi-lessons-content-list">
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=3RMPveOMd0k&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Part 1 (15:41)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=yRJE-nk20sM&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Single Table SQL - Part 2 (10:07)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=MsZoGw4QEpU&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Worked Example: Emaildb.py (13:39)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=rHjRpYUl5eg&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Complex Models - Part 3 (8:44)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=PgE--P-ZWvU&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Relationships - Part 4 (4:06)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=GfuH_8uH16k&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Foreign Keys - Part 5 (11:32)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=zMOSVrb82iU&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - JOIN - Part 6 (10:30)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=XvBF8BLXnNk&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Worked Example: Tracks.py - (7:56)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=uq_Wf4nuXqE&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Databases - Many-to-Many - Part 7 (13:13)</a></li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-video"><a href="https://www.youtube.com/watch?v=CqzELd0R9zc&amp;list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p" target="_blank" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-video" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #dc3545; margin-right: 8px; vertical-align: middle;"><i class="fa fa-play-circle" aria-hidden="true" style="color: white;"></i></span>Worked Example: Roster.py (11:27)</a></li>
+</ul>
+<h2>References</h2>
+<ul class="tsugi-lessons-content-list">
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-reference"><span class="tsugi-lessons-module-reference-link"><a href="https://www.py4e.com/html3/15-database" target="_blank" rel="noopener noreferrer" class="tsugi-lessons-link" typeof="oer:SupportingMaterial" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-reference" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #17a2b8; margin-right: 8px; vertical-align: middle;"><i class="fa fa-external-link" aria-hidden="true" style="color: white;"></i></span>Chapter 15: Python and Databases</a>
+</span>
+</li>
+<li typeof="oer:SupportingMaterial" class="tsugi-lessons-module-reference"><span class="tsugi-lessons-module-reference-link"><a href="https://www.py4e.com/lectures3/Pythonlearn-15-Database-Handout.txt" target="_blank" rel="noopener noreferrer" class="tsugi-lessons-link" typeof="oer:SupportingMaterial" style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-reference" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #17a2b8; margin-right: 8px; vertical-align: middle;"><i class="fa fa-external-link" aria-hidden="true" style="color: white;"></i></span>Python for Everybody Database Handout</a>
+</span>
+</li>
+</ul>
+<h2>Discussions</h2>
+<ul class="tsugi-lessons-content-list">
+<li typeof="oer:discussion" class="tsugi-lessons-module-discussion"><span class="tsugi-item-type-icon tsugi-item-type-discussion" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #ffc107; margin-right: 8px; vertical-align: middle;"><i class="fa fa-comments" aria-hidden="true" style="color: #333;"></i></span>Databases (Login Required) <br/>
+
+</li>
+</ul>
+<h2>Tools</h2>
+<ul class="tsugi-lessons-content-list">
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-lti" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Autograder: Single Table SQL (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-quiz" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Quiz: Single Table SQL (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-lti" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Autograder: Counting Email in a Database (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-lti" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Autograder: Multi-Table Database - Tracks (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-quiz" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Quiz: Data Modeling (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-lti" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Autograder: Many Students in Many Courses (Login Required)</span><br/>
+
+</li>
+<li typeof="oer:assessment" class="tsugi-lessons-module-lti"><span style="display: inline-flex; align-items: center;"><span class="tsugi-item-type-icon tsugi-item-type-quiz" style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 3px; font-size: 14px; background-color: #28a745; margin-right: 8px; vertical-align: middle;"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: white;"></i></span>Quiz: Many to Many (Login Required)</span><br/>
+
+</li>
+</ul>
+</div><script src="https://static.tsugi.org/js/jquery-1.11.3.js"></script>
+<script src="https://static.tsugi.org/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery.timeago-1.6.3.js"></script>
+<script src="https://static.tsugi.org/js/handlebars-v4.0.2.js"></script>
+<script src="https://static.tsugi.org/tmpljs-3.8.0/tmpl.min.js"></script>
+<script src="https://static.tsugi.org/js/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+    $(document).ready(function() { jQuery("time.timeago").timeago(); });
+</script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Notifications/tsugi-notifications.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Calendar/tsugi-calendar-due.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Discussions/tsugi-discussions.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Courses/tsugi-courses.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.w3schools-overlay').on('click', function(event) {
+        if ( event.target.id == event.currentTarget.id ) {
+            // Stop our embedded YouTube Players
+            if (typeof labnolStopPlayers === 'function') labnolStopPlayers();
+            // https://stackoverflow.com/questions/4071872/html5-video-force-abort-of-buffering
+            // https://stackoverflow.com/a/34058996
+            $('.w3schools-overlay audio, video').each(function (i,e) {
+                    var tmp_src = this.src;
+                    var playtime = this.currentTime;
+                    this.src = '';
+                    this.load();
+                    this.src = tmp_src;
+                    this.currentTime = playtime;
+
+            });
+            // Stop any iframes in this overlay
+            $(event.currentTarget).find('iframe').each(function() {
+                this.src = '';
+            });
+            event.target.style.display = 'none';
+        } else {
+            event.stopPropagation();
+        }
+    })
+});
+function tsugiOpenLinkModal(id) {
+    var overlay = document.getElementById(id);
+    if (!overlay) {
+        return;
+    }
+    var iframe = overlay.querySelector('iframe.tsugi-link-modal-frame');
+    if (iframe && iframe.getAttribute('data-src')) {
+        iframe.src = iframe.getAttribute('data-src');
+    }
+    overlay.style.display = 'block';
+}
+function tsugiCloseLinkModal(id) {
+    var overlay = document.getElementById(id);
+    if (!overlay) {
+        return;
+    }
+    $(overlay).find('iframe').each(function() {
+        this.src = '';
+    });
+    overlay.style.display = 'none';
+}
+</script>
+<script type="module" src="/static/Lessons/tsugi-kaltura-video.js"></script>
+<script src="https://static.tsugi.org/plugins/jquery.bxslider/plugins/jquery.fitvids.js">
+</script>
+<script src="https://static.tsugi.org/plugins/jquery.bxslider/jquery.bxslider.js">
+</script>
+<script>
+$(document).ready(function() {
+    $('.bxslider').bxSlider({
+        video: true,
+        useCSS: false,
+        adaptiveHeight: false,
+        slideWidth: "350px",
+        infiniteLoop: false,
+        maxSlides: 2
+    });
+});
+</script>
+
+</main>
+</div><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f9d253d9e18189',t:'MTc5Mjg1MzcxNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

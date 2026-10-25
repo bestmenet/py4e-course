@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PY4E - Python for Everybody</title>
+        <!-- Tiny bit of JS -->
+        <script src="https://static.tsugi.org/js/tsugiscripts_head.js"></script>
+<script>
+var _TSUGI = {
+  ajax_session: false,
+  cookieless: false,
+  tsugi_browser_mark: "6adcc6c9300e2",
+  heartbeat: 32400000,
+  heartbeat_url: "https://www.py4e.com/tsugi/util/heartbeat",
+  rest_path: {"parent":"\/html3","base_url":"https:\/\/www.py4e.com","controller":"16-viz","extra":"","action":false,"parameters":[],"current":"\/html3\/16-viz","full":"\/html3\/16-viz"},
+  launch_presentation_return_url: false,
+  launch_presentation_error_return_url: false,
+  spinnerUrl: "https://static.tsugi.org/img/spinner.gif",
+  staticroot: "https://static.tsugi.org",
+  apphome: "https://www.py4e.com",
+  wwwroot: "https://www.py4e.com/tsugi",
+  youtube_playlist: "PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+  react_token: "f5299d3cb570228b68bfbedaa4a5932b",
+  window_close_message: "Application complete - You can close this tab.",
+  session_expire_message: "Your session has expired"
+}
+</script>
+        <!-- Le styles -->
+<link href="https://static.tsugi.org/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/bootstrap-3.4.1/patch/accessibility-patch.css" rel="stylesheet">
+<link href="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+<link href="https://static.tsugi.org/fontawesome-free-5.8.2-web/css/v4-shims.css" rel="stylesheet">
+<style>:root {--primary:#0D47A1;
+--primary-menu:#0D47A1;
+--primary-border:#0d4295;
+--primary-darker:#0c4091;
+--primary-darkest:#0b3b85;
+--background-color:#FFFFFF;
+--background-focus:#F5F5F5;
+--background-accent:#0D47A1;
+--secondary:#EEEEEE;
+--secondary-menu:#EEEEEE;
+--text:#111111;
+--text-light:#5E5E5E;
+--font-family:sans-serif;
+--font-size:14px;
+}</style>
+<link href="https://static.tsugi.org/css/tsugi2.css" rel="stylesheet">
+<style>
+#tsugi_main_nav_bar .navbar-brand .tsugi-course-nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 0.4em;
+  flex: 0 0 32px;
+}
+#tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img img {
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  #tsugi_main_nav_bar > .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  #tsugi_main_nav_bar .navbar-header {
+    float: none;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  #tsugi_main_nav_bar .navbar-brand {
+    float: none;
+    display: inline-flex;
+    align-items: center;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-collapse.collapse {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    width: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-main,
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #tsugi_main_nav_bar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.navbar-text,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    float: none;
+    min-height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1;
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-notifications,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-calendar-due,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-discussions,
+  #tsugi_main_nav_bar .navbar-nav > li.tsugi-wc-nav-item > tsugi-courses {
+    display: inline-flex;
+    align-items: center;
+    transform: translateY(2px);
+  }
+  #tsugi_main_nav_bar .navbar-nav > li.dropdown > a.dropdown-img {
+    display: inline-flex;
+    align-items: center;
+    min-height: 50px;
+  }
+}
+</style>
+<script type="text/javascript">CSRF_TOKEN = "9eb932a36fec604b4fb24fcf921b3cc8";function tsugiCsrfHeaders(h){h=h||{};if(CSRF_TOKEN){h["X-CSRF-TOKEN"]=CSRF_TOKEN;}return h;}</script>
+<style>
+body {
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    line-height: 1.93rem;
+    color: var(--text);
+    background-color: var(--background-color);
+}
+</style>
+</head>
+<body prefix="oer: http://oerschema.org">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div id="body_container">
+<script>
+if (window!=window.top) {
+    document.getElementById("body_container").className = "container-fluid";
+} else {
+    document.getElementById("body_container").className = "container";
+}
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="tsugi_main_nav_bar" style="display:none">  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#tsugi_main_nav_collapse" aria-controls="tsugi_main_nav_collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.py4e.com">PY4E</a>
+    </div>
+    <div id="tsugi_main_nav_collapse" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-main">
+        <li><a href="https://www.py4e.com/lessons" >Lessons</a></li>
+        <li><a href="https://www.py4e.com/book" >Book</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://online.dr-chuck.com" target="_self">Courses</a></li>
+        <li><a href="https://www.py4e.com/login" >Login</a></li>
+      </ul>
+    </div> <!--/.nav-collapse -->
+  </div> <!--container -->
+</nav>
+<script>
+if ( ! inIframe() ) {
+  document.getElementById('tsugi_main_nav_bar').style.display = 'block';
+  document.getElementsByTagName('body')[0].style.paddingTop = '5.93rem';
+} else {
+  document.getElementsByTagName('body')[0].style.paddingTop = '1.0rem';
+}
+</script>
+<div id="flashmessages"></div><main id="main-content" tabindex="-1">
+<script>
+function onSelect() {
+    console.log($('#chapters').val());
+    window.location = $('#chapters').val();
+}
+</script>
+<div style="float:right">
+<select id="chapters" onchange="onSelect();" aria-label="Jump to chapter">
+  <option value="01-intro">Chapter 1: Introduction</option>
+  <option value="02-variables">Chapter 2: Variables</option>
+  <option value="03-conditional">Chapter 3: Conditionals</option>
+  <option value="04-functions">Chapter 4: Functions</option>
+  <option value="05-iterations">Chapter 5: Iterations</option>
+  <option value="06-strings">Chapter 6: Strings</option>
+  <option value="07-files">Chapter 7: Files</option>
+  <option value="08-lists">Chapter 8: Lists</option>
+  <option value="09-dictionaries">Chapter 9: Dictionaries</option>
+  <option value="10-tuples">Chapter 10: Tuples</option>
+  <option value="11-regex">Chapter 11: Regex</option>
+  <option value="12-network">Chapter 12: Networked Programs</option>
+  <option value="13-web">Chapter 13: Python and Web Services</option>
+  <option value="14-objects">Chapter 14: Python Objects</option>
+  <option value="15-database">Chapter 15: Python and Databases</option>
+  <option value="16-viz" selected>Chapter 16: Data Vizualization</option>
+</select>
+</div>
+
+<h1 id="visualizing-data">Visualizing data</h1>
+<p>So far we have been learning the Python language and then learning
+how to use Python, the network, and databases to manipulate data.</p>
+<p>In this chapter, we take a look at three complete applications that
+bring all of these things together to manage and visualize data. You
+might use these applications as sample code to help get you started in
+solving a real-world problem.</p>
+<p>Each of the applications is a ZIP file that you can download and
+extract onto your computer and execute.</p>
+<h2 id="building-a-openstreetmap-from-geocoded-data">Building a
+OpenStreetMap from geocoded data</h2>
+<p> </p>
+<p>In this project, we are using the OpenStreetMap geocoding API to
+clean up some user-entered geographic locations of university names and
+then placing the data on an actual OpenStreetMap.</p>
+<figure>
+<img src="../images/openstreet-map.png" alt="An OpenStreetMap" />
+<figcaption aria-hidden="true">An OpenStreetMap</figcaption>
+</figure>
+<p>To get started, download the application from:</p>
+<p><a href="https://www.py4e.com/code3/opengeo.zip">www.py4e.com/code3/opengeo.zip</a></p>
+<p>The first problem to solve is that these geocoding APIs are
+rate-limited to a certain number of requests per day. If you have a lot
+of data, you might need to stop and restart the lookup process several
+times. So we break the problem into two phases.</p>
+<p></p>
+<p>In the first phase we take our input “survey” data in the file
+<em>where.data</em> and read it one line at a time, and retrieve the
+geocoded information from Google and store it in a database
+<em>geodata.sqlite</em>. Before we use the geocoding API for each
+user-entered location, we simply check to see if we already have the
+data for that particular line of input. The database is functioning as a
+local “cache” of our geocoding data to make sure we never ask Google for
+the same data twice.</p>
+<p>You can restart the process at any time by removing the file
+<em>geodata.sqlite</em>.</p>
+<p>Run the <em>geoload.py</em> program. This program will read the input
+lines in <em>where.data</em> and for each line check to see if it is
+already in the database. If we don’t have the data for the location, it
+will call the geocoding API to retrieve the data and store it in the
+database.</p>
+<p>Here is a sample run after there is already some data in the
+database:</p>
+<pre><code>Found in database AGH University of Science and Technology
+
+Found in database Academy of Fine Arts Warsaw Poland
+
+Found in database American University in Cairo
+
+Found in database Arizona State University
+
+Found in database Athens Information Technology
+
+Retrieving https://py4e-data.dr-chuck.net/
+   opengeo?q=BITS+Pilani
+Retrieved 794 characters {&quot;type&quot;:&quot;FeatureColl
+
+Retrieving https://py4e-data.dr-chuck.net/
+   opengeo?q=Babcock+University
+Retrieved 760 characters {&quot;type&quot;:&quot;FeatureColl
+
+Retrieving https://py4e-data.dr-chuck.net/
+   opengeo?q=Banaras+Hindu+University
+Retrieved 866 characters {&quot;type&quot;:&quot;FeatureColl
+...</code></pre>
+<p>The first five locations are already in the database and so they are
+skipped. The program scans to the point where it finds new locations and
+starts retrieving them.</p>
+<p>The <em>geoload.py</em> program can be stopped at any time, and there
+is a counter that you can use to limit the number of calls to the
+geocoding API for each run. Given that the <em>where.data</em> only has
+a few hundred data items, you should not run into the daily rate limit,
+but if you had more data it might take several runs over several days to
+get your database to have all of the geocoded data for your input.</p>
+<p>Once you have some data loaded into <em>geodata.sqlite</em>, you can
+visualize the data using the <em>geodump.py</em> program. This program
+reads the database and writes the file <em>where.js</em> with the
+location, latitude, and longitude in the form of executable JavaScript
+code.</p>
+<p>A run of the <em>geodump.py</em> program is as follows:</p>
+<pre><code>AGH University of Science and Technology, Czarnowiejska,
+Czarna Wieś, Krowodrza, Kraków, Lesser Poland
+Voivodeship, 31-126, Poland 50.0657 19.91895
+
+Academy of Fine Arts, Krakowskie Przedmieście,
+Northern Śródmieście, Śródmieście, Warsaw, Masovian
+Voivodeship, 00-046, Poland 52.239 21.0155
+...
+260 lines were written to where.js
+Open the where.html file in a web browser to view the data.</code></pre>
+<p>The file <em>where.html</em> consists of HTML and JavaScript to
+visualize a Google map. It reads the most recent data in
+<em>where.js</em> to get the data to be visualized. Here is the format
+of the <em>where.js</em> file:</p>
+<pre class="js"><code>myData = [
+[50.0657,19.91895,
+&#39;AGH University of Science and Technology, Czarnowiejska,
+Czarna Wieś, Krowodrza, Kraków, Lesser Poland
+Voivodeship, 31-126, Poland &#39;],
+[52.239,21.0155,
+&#39;Academy of Fine Arts, Krakowskie Przedmieściee,
+Śródmieście Północne, Śródmieście, Warsaw,
+Masovian Voivodeship, 00-046, Poland&#39;],
+   ...
+];</code></pre>
+<p>This is a JavaScript variable that contains a list of lists. The
+syntax for JavaScript list constants is very similar to Python, so the
+syntax should be familiar to you.</p>
+<p>Simply open <em>where.html</em> in a browser to see the locations.
+You can hover over each map pin to find the location that the geocoding
+API returned for the user-entered input. If you cannot see any data when
+you open the <em>where.html</em> file, you might want to check the
+JavaScript or developer console for your browser.</p>
+<h2 id="visualizing-networks-and-interconnections">Visualizing networks
+and interconnections</h2>
+<p> </p>
+<p>In this application, we will perform some of the functions of a
+search engine. We will first spider a small subset of the web and run a
+simplified version of the Google page rank algorithm to determine which
+pages are most highly connected, and then visualize the page rank and
+connectivity of our small corner of the web. We will use the D3
+JavaScript visualization library <a href="http://d3js.org/"
+class="uri">http://d3js.org/</a> to produce the visualization
+output.</p>
+<p>You can download and extract this application from:</p>
+<p><a href="https://www.py4e.com/code3/pagerank.zip">www.py4e.com/code3/pagerank.zip</a></p>
+<figure>
+<img src="../images/pagerank.png" alt="A Page Ranking" style="height: 3.5in;"/>
+<figcaption>
+A Page Ranking
+</figcaption>
+</figure>
+<p>The first program (<em>spider.py</em>) crawls a web site and pulls a
+series of pages into the database (<em>spider.sqlite</em>), recording
+the links between pages. You can restart the process at any time by
+removing the <em>spider.sqlite</em> file and rerunning
+<em>spider.py</em>.</p>
+<pre><code>Enter web url or enter: http://www.dr-chuck.com/
+[&#39;http://www.dr-chuck.com&#39;]
+How many pages:2
+1 http://www.dr-chuck.com/ 12
+2 http://www.dr-chuck.com/csev-blog/ 57
+How many pages:</code></pre>
+<p>In this sample run, we told it to crawl a website and retrieve two
+pages. If you restart the program and tell it to crawl more pages, it
+will not re-crawl any pages already in the database. Upon restart it
+goes to a random non-crawled page and starts there. So each successive
+run of <em>spider.py</em> is additive.</p>
+<pre><code>Enter web url or enter: http://www.dr-chuck.com/
+[&#39;http://www.dr-chuck.com&#39;]
+How many pages:3
+3 http://www.dr-chuck.com/csev-blog 57
+4 http://www.dr-chuck.com/dr-chuck/resume/speaking.htm 1
+5 http://www.dr-chuck.com/dr-chuck/resume/index.htm 13
+How many pages:</code></pre>
+<p>You can have multiple starting points in the same database—within the
+program, these are called “webs”. The spider chooses randomly amongst
+all non-visited links across all the webs as the next page to
+spider.</p>
+<p>If you want to dump the contents of the <em>spider.sqlite</em> file,
+you can run <em>spdump.py</em> as follows:</p>
+<pre><code>(5, None, 1.0, 3, &#39;http://www.dr-chuck.com/csev-blog&#39;)
+(3, None, 1.0, 4, &#39;http://www.dr-chuck.com/dr-chuck/resume/speaking.htm&#39;)
+(1, None, 1.0, 2, &#39;http://www.dr-chuck.com/csev-blog/&#39;)
+(1, None, 1.0, 5, &#39;http://www.dr-chuck.com/dr-chuck/resume/index.htm&#39;)
+4 rows.</code></pre>
+<p>This shows the number of incoming links, the old page rank, the new
+page rank, the id of the page, and the url of the page. The
+<em>spdump.py</em> program only shows pages that have at least one
+incoming link to them.</p>
+<p>Once you have a few pages in the database, you can run page rank on
+the pages using the <em>sprank.py</em> program. You simply tell it how
+many page rank iterations to run.</p>
+<pre><code>How many iterations:2
+1 0.546848992536
+2 0.226714939664
+[(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]</code></pre>
+<p>You can dump the database again to see that page rank has been
+updated:</p>
+<pre><code>(5, 1.0, 0.985, 3, &#39;http://www.dr-chuck.com/csev-blog&#39;)
+(3, 1.0, 2.135, 4, &#39;http://www.dr-chuck.com/dr-chuck/resume/speaking.htm&#39;)
+(1, 1.0, 0.659, 2, &#39;http://www.dr-chuck.com/csev-blog/&#39;)
+(1, 1.0, 0.659, 5, &#39;http://www.dr-chuck.com/dr-chuck/resume/index.htm&#39;)
+4 rows.</code></pre>
+<p>You can run <em>sprank.py</em> as many times as you like and it will
+simply refine the page rank each time you run it. You can even run
+<em>sprank.py</em> a few times and then go spider a few more pages with
+<em>spider.py</em> and then run <em>sprank.py</em> to reconverge the
+page rank values. A search engine usually runs both the crawling and
+ranking programs all the time.</p>
+<p>If you want to restart the page rank calculations without respidering
+the web pages, you can use <em>spreset.py</em> and then restart
+<em>sprank.py</em>.</p>
+<pre><code>How many iterations:50
+1 0.546848992536
+2 0.226714939664
+3 0.0659516187242
+4 0.0244199333
+5 0.0102096489546
+6 0.00610244329379
+...
+42 0.000109076928206
+43 9.91987599002e-05
+44 9.02151706798e-05
+45 8.20451504471e-05
+46 7.46150183837e-05
+47 6.7857770908e-05
+48 6.17124694224e-05
+49 5.61236959327e-05
+50 5.10410499467e-05
+[(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]</code></pre>
+<p>For each iteration of the page rank algorithm it prints the average
+change in page rank per page. The network initially is quite unbalanced
+and so the individual page rank values change wildly between iterations.
+But in a few short iterations, the page rank converges. You should run
+<em>sprank.py</em> long enough that the page rank values converge.</p>
+<p>If you want to visualize the current top pages in terms of page rank,
+run <em>spjson.py</em> to read the database and write the data for the
+most highly linked pages in JSON format to be viewed in a web
+browser.</p>
+<pre><code>Creating JSON output on spider.json...
+How many nodes? 30
+Open force.html in a browser to view the visualization</code></pre>
+<p>You can view this data by opening the file <em>force.html</em> in
+your web browser. This shows an automatic layout of the nodes and links.
+You can click and drag any node and you can also double-click on a node
+to find the URL that is represented by the node.</p>
+<p>If you rerun the other utilities, rerun <em>spjson.py</em> and press
+refresh in the browser to get the new data from
+<em>spider.json</em>.</p>
+<h2 id="visualizing-mail-data">Visualizing mail data</h2>
+<p>Up to this point in the book, you have become quite familiar with our
+<em>mbox-short.txt</em> and <em>mbox.txt</em> data files. Now it is time
+to take our analysis of email data to the next level.</p>
+<p>In the real world, sometimes you have to pull down mail data from
+servers. That might take quite some time and the data might be
+inconsistent, error-filled, and need a lot of cleanup or adjustment. In
+this section, we work with an application that is the most complex so
+far and pull down nearly a gigabyte of data and visualize it.</p>
+<figure>
+<img src="../images/wordcloud.png" alt="A Word Cloud from the Sakai Developer List" style="height: 3.5in;"/>
+<figcaption>
+A Word Cloud from the Sakai Developer List
+</figcaption>
+</figure>
+<p>You can download this application from:</p>
+<p><a
+href="https://www.py4e.com/code3/gmane.zip">https://www.py4e.com/code3/gmane.zip</a></p>
+<p>We will be using data from a free email list archiving service that
+was called <em>gmane</em> - the service has since been shut down and for
+the purposes of this course, a partial archive has been kept at <a
+href="http://mbox.dr-chuck.net">http://mbox.dr-chuck.net</a>. The gmane
+service was very popular with open source projects because it provided a
+nice searchable archive of their email activity.</p>
+<p><a
+href="http://mbox.dr-chuck.net/export.php">http://mbox.dr-chuck.net/export.php</a></p>
+<p>When the Sakai email data was spidered using this software, it
+produced nearly a Gigabyte of data and took a number of runs on several
+days. The file <em>README.txt</em> in the above ZIP may have
+instructions as to how you can download a pre-spidered copy of the
+<em>content.sqlite</em> file for a majority of the Sakai email corpus so
+you don’t have to spider for five days just to run the programs. If you
+download the pre-spidered content, you should still run the spidering
+process to catch up with more recent messages.</p>
+<p>The first step is to spider the repository. The base URL is
+hard-coded in the <em>gmane.py</em> and is hard-coded to the Sakai
+developer list. You can spider another repository by changing that base
+url. Make sure to delete the <em>content.sqlite</em> file if you switch
+the base url.</p>
+<p>The <em>gmane.py</em> file operates as a responsible caching spider
+in that it runs slowly and retrieves one mail message per second so as
+to avoid getting throttled. It stores all of its data in a database and
+can be interrupted and restarted as often as needed. It may take many
+hours to pull all the data down. So you may need to restart several
+times.</p>
+<p>Here is a run of <em>gmane.py</em> retrieving the last five messages
+of the Sakai developer list:</p>
+<pre><code>How many messages:10
+http://mbox.dr-chuck.net/sakai.devel/51410/51411 9460
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcd2d9ddd0dfddd5d8d5d2fccfddd7ddd5dad3c9d2d8ddc8d5d3d292d3cedb">[email&#160;protected]</a> 2013-04-05 re: [building ...
+http://mbox.dr-chuck.net/sakai.devel/51411/51412 3379
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e7d6f637b6b62697b7a676b7c7c6b746467636b606b744e69636f6762206d6163">[email&#160;protected]</a> 2013-04-06 re: [building ...
+http://mbox.dr-chuck.net/sakai.devel/51412/51413 9903
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c4c191e0d6d48ec5c4d5">[email&#160;protected]</a> 2013-04-05 [building sakai] melete 2.9 oracle ...
+http://mbox.dr-chuck.net/sakai.devel/51413/51414 349265
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0dd9ec3d8d5d4d9d4f0d5dcc2d1d5d49dd9c49ed3dfdd">[email&#160;protected]</a> 2013-04-07 [building sakai] ...
+http://mbox.dr-chuck.net/sakai.devel/51414/51415 3481
+    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="186b79756d7d747f6d6c717d6a6a7d627271757d767d62587f75797174367b7775">[email&#160;protected]</a> 2013-04-07 re: ...
+http://mbox.dr-chuck.net/sakai.devel/51415/51416 0
+
+Does not start with From</code></pre>
+<p>The program scans <em>content.sqlite</em> from one up to the first
+message number not already spidered and starts spidering at that
+message. It continues spidering until it has spidered the desired number
+of messages or it reaches a page that does not appear to be a properly
+formatted message.</p>
+<p>Sometimes the repository is missing a message. Perhaps administrators
+can delete messages or perhaps they get lost. If your spider stops, and
+it seems it has hit a missing message, go into the SQLite Manager and
+add a row with the missing id leaving all the other fields blank and
+restart <em>gmane.py</em>. This will unstick the spidering process and
+allow it to continue. These empty messages will be ignored in the next
+phase of the process.</p>
+<p>One nice thing is that once you have spidered all of the messages and
+have them in <em>content.sqlite</em>, you can run <em>gmane.py</em>
+again to get new messages as they are sent to the list.</p>
+<p>The <em>content.sqlite</em> data is pretty raw, with an inefficient
+data model, and not compressed. This is intentional as it allows you to
+look at <em>content.sqlite</em> in the SQLite Manager to debug problems
+with the spidering process. It would be a bad idea to run any queries
+against this database, as they would be quite slow.</p>
+<p>The second process is to run the program <em>gmodel.py</em>. This
+program reads the raw data from <em>content.sqlite</em> and produces a
+cleaned-up and well-modeled version of the data in the file
+<em>index.sqlite</em>. This file will be much smaller (often 10X
+smaller) than <em>content.sqlite</em> because it also compresses the
+header and body text.</p>
+<p>Each time <em>gmodel.py</em> runs it deletes and rebuilds
+<em>index.sqlite</em>, allowing you to adjust its parameters and edit
+the mapping tables in <em>content.sqlite</em> to tweak the data cleaning
+process. This is a sample run of <em>gmodel.py</em>. It prints a line
+out each time 250 mail messages are processed so you can see some
+progress happening, as this program may run for a while processing
+nearly a Gigabyte of mail data.</p>
+<pre><code>Loaded allsenders 1588 and mapping 28 dns mapping 1
+1 2005-12-08T23:34:30-06:00 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe999991929a9b90ccccbe939f9dd09d9193">[email&#160;protected]</a>
+251 2005-12-22T10:03:20-08:00 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="502420313d233c352210253334312639237e353425">[email&#160;protected]</a>
+501 2006-01-12T11:17:34-05:00 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab6bbb4b9bf9ab3b4beb3bbb4bbf4bfbeaf">[email&#160;protected]</a>
+751 2006-01-24T11:13:28-08:00 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="304642515a575f40515c515e7045535d55425355541e555445">[email&#160;protected]</a>
+...</code></pre>
+<p>The <em>gmodel.py</em> program handles a number of data cleaning
+tasks.</p>
+<p>Domain names are truncated to two levels for .com, .org, .edu, and
+.net. Other domain names are truncated to three levels. So si.umich.edu
+becomes umich.edu and caret.cam.ac.uk becomes cam.ac.uk. Email addresses
+are also forced to lower case, and some of the <span class="citation"
+data-cites="gmane.org">@gmane.org</span> address like the following</p>
+<pre><code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066774716e7f72632b3035675e7f65706935527f4e5e632d4a70424a474261467673646a6f6528616b67686328697461">[email&#160;protected]</a></code></pre>
+<p>are converted to the real address whenever there is a matching real
+email address elsewhere in the message corpus.</p>
+<p>In the <em>mapping.sqlite</em> database there are two tables that
+allow you to map both domain names and individual email addresses that
+change over the lifetime of the email list. For example, Steve Githens
+used the following email addresses as he changed jobs over the life of
+the Sakai developer list:</p>
+<pre><code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="097a246e607d616c677a4967667b7d617e6c7a7d6c7b67276c6d7c">[email&#160;protected]</a>
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2457434d504c414a57644745490a45470a514f">[email&#160;protected]</a>
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f4c4858564b575a517f524b4a115a5b4a">[email&#160;protected]</a></code></pre>
+<p>We can add two entries to the Mapping table in
+<em>mapping.sqlite</em> so <em>gmodel.py</em> will map all three to one
+address:</p>
+<pre><code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b3eda7a9b4a8a5aeb380aeafb2b4a8b7a5b3b4a5b2aeeea5a4b5">[email&#160;protected]</a> -&gt;  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cebdb9a9a7baa6aba08ea3babbe0abaabb">[email&#160;protected]</a>
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4d3e2a24392528233e0d2e2c20632c2e633826">[email&#160;protected]</a> -&gt; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780b0f1f110c101d1638150c0d561d1c0d">[email&#160;protected]</a></code></pre>
+<p>You can also make similar entries in the DNSMapping table if there
+are multiple DNS names you want mapped to a single DNS. The following
+mapping was added to the Sakai data:</p>
+<pre><code>iupui.edu -&gt; indiana.edu</code></pre>
+<p>so all the accounts from the various Indiana University campuses are
+tracked together.</p>
+<p>You can rerun the <em>gmodel.py</em> over and over as you look at the
+data, and add mappings to make the data cleaner and cleaner. When you
+are done, you will have a nicely indexed version of the email in
+<em>index.sqlite</em>. This is the file to use to do data analysis. With
+this file, data analysis will be really quick.</p>
+<p>The first, simplest data analysis is to determine “who sent the most
+mail?” and “which organization sent the most mail”? This is done using
+<em>gbasic.py</em>:</p>
+<pre><code>How many to dump? 5
+Loaded messages= 51330 subjects= 25033 senders= 1584
+
+Top 5 Email list participants
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f2c2b3a293a712c2836312c3d2a2d381f38323e3633713c3032">[email&#160;protected]</a> 2657
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbda6b9bfb7b3afb7b59ca9b2b5bfb3b2f2b2b9a8">[email&#160;protected]</a> 1742
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f1989493b1859795df929edf849a">[email&#160;protected]</a> 1591
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="402333253600352d2923286e252435">[email&#160;protected]</a> 1304
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066267706f62286e6974716f727c46736572286765287c67">[email&#160;protected]</a> 1184
+
+Top 5 Email list organizations
+gmail.com 7339
+umich.edu 6243
+uct.ac.za 2451
+indiana.edu 2258
+unicon.net 2055</code></pre>
+<p>Note how much more quickly <em>gbasic.py</em> runs compared to
+<em>gmane.py</em> or even <em>gmodel.py</em>. They are all working on
+the same data, but <em>gbasic.py</em> is using the compressed and
+normalized data in <em>index.sqlite</em>. If you have a lot of data to
+manage, a multistep process like the one in this application may take a
+little longer to develop, but will save you a lot of time when you
+really start to explore and visualize your data.</p>
+<p>You can produce a simple visualization of the word frequency in the
+subject lines in the file <em>gword.py</em>:</p>
+<pre><code>Range of counts: 33229 129
+Output written to gword.js</code></pre>
+<p>This produces the file <em>gword.js</em> which you can visualize
+using <em>gword.htm</em> to produce a word cloud similar to the one at
+the beginning of this section.</p>
+<p>A second visualization is produced by <em>gline.py</em>. It computes
+email participation by organizations over time.</p>
+<pre><code>Loaded messages= 51330 senders= 1584
+Top 10 Oranizations
+[&#39;gmail.com&#39;, &#39;umich.edu&#39;, &#39;uct.ac.za&#39;, &#39;indiana.edu&#39;,
+&#39;unicon.net&#39;, &#39;tfd.co.uk&#39;, &#39;berkeley.edu&#39;, &#39;longsight.com&#39;,
+&#39;stanford.edu&#39;, &#39;ox.ac.uk&#39;]
+Output written to gline.js</code></pre>
+<p>Its output is written to <em>gline.js</em> which is visualized using
+<em>gline.htm</em>.</p>
+<figure>
+<img src="../images/mailorg.png"
+alt="Sakai Mail Activity by Organization" />
+<figcaption aria-hidden="true">Sakai Mail Activity by
+Organization</figcaption>
+</figure>
+<p>This is a relatively complex and sophisticated application and has
+features to do some real data retrieval, cleaning, and
+visualization.</p>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://static.tsugi.org/js/jquery-1.11.3.js"></script>
+<script src="https://static.tsugi.org/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://static.tsugi.org/js/jquery.timeago-1.6.3.js"></script>
+<script src="https://static.tsugi.org/js/handlebars-v4.0.2.js"></script>
+<script src="https://static.tsugi.org/tmpljs-3.8.0/tmpl.min.js"></script>
+<script src="https://static.tsugi.org/js/tsugiscripts.js"></script>
+<script type="text/javascript">
+    HEARTBEAT_TIMEOUT = setTimeout(doHeartBeat, _TSUGI.heartbeat);
+    tsugiEmbedMenu();
+    $(document).ready(function() { jQuery("time.timeago").timeago(); });
+</script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Notifications/tsugi-notifications.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Calendar/tsugi-calendar-due.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Discussions/tsugi-discussions.js"></script>
+<script type="module" src="https://www.py4e.com/tsugi/lib/src/Controllers/static/Courses/tsugi-courses.js"></script>
+
+<hr/>
+<p>
+If you find a mistake in this book, feel free to send me a fix using
+<a href="https://github.com/csev/py4e/tree/master/book3" target="_blank" rel="noopener noreferrer">Github</a>.
+</p>
+<script>
+function onSelectFooter() {
+    console.log($('#chapters_footer').val());
+    window.location = $('#chapters_footer').val();
+}
+</script>
+<div style="float:right">
+<select id="chapters_footer" onchange="onSelectFooter();" aria-label="Jump to chapter">
+  <option value="01-intro">Chapter 1: Introduction</option>
+  <option value="02-variables">Chapter 2: Variables</option>
+  <option value="03-conditional">Chapter 3: Conditionals</option>
+  <option value="04-functions">Chapter 4: Functions</option>
+  <option value="05-iterations">Chapter 5: Iterations</option>
+  <option value="06-strings">Chapter 6: Strings</option>
+  <option value="07-files">Chapter 7: Files</option>
+  <option value="08-lists">Chapter 8: Lists</option>
+  <option value="09-dictionaries">Chapter 9: Dictionaries</option>
+  <option value="10-tuples">Chapter 10: Tuples</option>
+  <option value="11-regex">Chapter 11: Regex</option>
+  <option value="12-network">Chapter 12: Networked Programs</option>
+  <option value="13-web">Chapter 13: Python and Web Services</option>
+  <option value="14-objects">Chapter 14: Python Objects</option>
+  <option value="15-database">Chapter 15: Python and Databases</option>
+  <option value="16-viz" selected>Chapter 16: Data Vizualization</option>
+</select>
+</div>
+
+</main>
+</div><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f9d28a5dc38189',t:'MTc5Mjg1MzcyNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

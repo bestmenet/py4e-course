@@ -1,0 +1,1387 @@
+[
+ {
+  "slug": "install",
+  "title": "1: Installing Python",
+  "number": 1,
+  "name": "Installing Python",
+  "description": "The first task is to work through the installation steps including installing Python and text editor.",
+  "slides": [],
+  "videos": [],
+  "references": [
+   {
+    "title": "Using Replit to write Python Programs",
+    "url": "https://www.py4e.com/software-replit.php",
+    "login_required": false,
+    "kind": "reference"
+   },
+   {
+    "title": "Setting up a Python Environment in Microsoft Windows",
+    "url": "https://www.py4e.com/software-win.php",
+    "login_required": false,
+    "kind": "reference"
+   },
+   {
+    "title": "Setting up a Python Environment in Macintosh",
+    "url": "https://www.py4e.com/software-mac.php",
+    "login_required": false,
+    "kind": "reference"
+   },
+   {
+    "title": "Recommended Programming Text Editors",
+    "url": "https://www.py4e.com/editors.php",
+    "login_required": false,
+    "kind": "reference"
+   },
+   {
+    "title": "Python Shell - Browser Based Development Enviroment",
+    "url": "https://shell.py4e.com/",
+    "login_required": false,
+    "kind": "reference"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [
+   {
+    "title": "Assignment Specification",
+    "url": "https://www.py4e.com/install.php",
+    "login_required": false,
+    "kind": "other",
+    "section": "assignment"
+   }
+  ],
+  "chapter_slugs": []
+ },
+ {
+  "slug": "intro",
+  "title": "2: Why Program?",
+  "number": 2,
+  "name": "Why Program?",
+  "description": "We learn why one might want to learn to program, and look at the basic issues with learning to program.",
+  "slides": [
+   {
+    "title": "Pythonlearn-01-Intro.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-01-Intro.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-01-Intro.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-01-Intro.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Why Program - Part 1",
+    "url": "https://www.youtube.com/watch?v=fvhNadKjE8g&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "fvhNadKjE8g",
+    "duration": "12:31"
+   },
+   {
+    "title": "Why Program - Part 2",
+    "url": "https://www.youtube.com/watch?v=VQZTZsXk8sA&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "VQZTZsXk8sA",
+    "duration": "12:16"
+   },
+   {
+    "title": "What happens when the CPU cooler is removed?",
+    "url": "https://www.youtube.com/watch?v=y39D4529FM4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "y39D4529FM4"
+   },
+   {
+    "title": "Inside of Hard Drive",
+    "url": "https://www.youtube.com/watch?v=9eMWG3fwiEU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "9eMWG3fwiEU"
+   },
+   {
+    "title": "Why Program - Part 3",
+    "url": "https://www.youtube.com/watch?v=LLzFNlCjTSo&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "LLzFNlCjTSo",
+    "duration": "7:49"
+   },
+   {
+    "title": "Why Program - Part 4",
+    "url": "https://www.youtube.com/watch?v=hBkDRKBJj9k&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "hBkDRKBJj9k",
+    "duration": "12:35"
+   },
+   {
+    "title": "Writing 'hello world' in the Autograder",
+    "url": "https://www.youtube.com/watch?v=aDwb41EMEQQ&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "aDwb41EMEQQ",
+    "duration": "5:13"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 1: Introduction",
+    "url": "https://www.py4e.com/html3/01-intro",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "01-intro"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "01-intro"
+  ]
+ },
+ {
+  "slug": "memory",
+  "title": "3: Variables, expressions and statements",
+  "number": 3,
+  "name": "Variables, expressions and statements",
+  "description": "We learn how to make variables and store data in those variables.",
+  "slides": [
+   {
+    "title": "Pythonlearn-02-Expressions.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-02-Expressions.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-02-Expressions.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-02-Expressions.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Variables, Expressions and Statements - Part 1",
+    "url": "https://www.youtube.com/watch?v=yf95LLCbmLs&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "yf95LLCbmLs",
+    "duration": "9:41"
+   },
+   {
+    "title": "Variables, Expressions and Statements - Part 2",
+    "url": "https://www.youtube.com/watch?v=kefrGMAglGs&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "kefrGMAglGs",
+    "duration": "19:53"
+   },
+   {
+    "title": "Worked Exercise: 2.2",
+    "url": "https://www.youtube.com/watch?v=_b-nVJrl02M&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "_b-nVJrl02M",
+    "duration": "6:12"
+   },
+   {
+    "title": "Worked Exercise: 2.3",
+    "url": "https://www.youtube.com/watch?v=DVmspDooG2c&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "DVmspDooG2c",
+    "duration": "7:49"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 2: Variables",
+    "url": "https://www.py4e.com/html3/02-variables",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "02-variables"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "02-variables"
+  ]
+ },
+ {
+  "slug": "logic",
+  "title": "4: Conditional Execution",
+  "number": 4,
+  "name": "Conditional Execution",
+  "description": "We look at how Python executes some statements and skips others.",
+  "slides": [
+   {
+    "title": "Pythonlearn-03-Conditional.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-03-Conditional.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-03-Conditional.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-03-Conditional.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Conditional Execution - Part 1",
+    "url": "https://www.youtube.com/watch?v=DmzEdsqxTbU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "DmzEdsqxTbU",
+    "duration": "11:06"
+   },
+   {
+    "title": "Conditional Execution - Part 2",
+    "url": "https://www.youtube.com/watch?v=OczkNrHPBps&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "OczkNrHPBps",
+    "duration": "13:52"
+   },
+   {
+    "title": "Worked Exercise 3.1",
+    "url": "https://www.youtube.com/watch?v=oUMQbZ4SBuM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "oUMQbZ4SBuM",
+    "duration": "12:07"
+   },
+   {
+    "title": "Worked Exercise 3.2",
+    "url": "https://www.youtube.com/watch?v=-iUA4cCKRlM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "-iUA4cCKRlM",
+    "duration": "9:26"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 3: Conditionals",
+    "url": "https://www.py4e.com/html3/03-conditional",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "03-conditional"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "03-conditional"
+  ]
+ },
+ {
+  "slug": "functions",
+  "title": "5: Functions",
+  "number": 5,
+  "name": "Functions",
+  "description": "Take a brief look at how Python implements the 'store and use later' programming pattern.",
+  "slides": [
+   {
+    "title": "Pythonlearn-04-Functions.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-04-Functions.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-04-Functions.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-04-Functions.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Functions - Part 1",
+    "url": "https://www.youtube.com/watch?v=5Kzw-0-DQAk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "5Kzw-0-DQAk",
+    "duration": "10:29"
+   },
+   {
+    "title": "Functions - Part 2",
+    "url": "https://www.youtube.com/watch?v=AJVNYRqn8kM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "AJVNYRqn8kM",
+    "duration": "12:35"
+   },
+   {
+    "title": "Worked Exercise 4.6",
+    "url": "https://www.youtube.com/watch?v=l93PhBUJ_S0&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "l93PhBUJ_S0",
+    "duration": "10:08"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 4: Functions",
+    "url": "https://www.py4e.com/html3/04-functions",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "04-functions"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "04-functions"
+  ]
+ },
+ {
+  "slug": "loops",
+  "title": "6: Loops and Iterations",
+  "number": 6,
+  "name": "Loops and Iterations",
+  "description": "We look at how Python repeats statements using looping structures.",
+  "slides": [
+   {
+    "title": "Pythonlearn-05-Iterations.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-05-Iterations.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-05-Iterations.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-05-Iterations.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Loops and Iteration - Part 1",
+    "url": "https://www.youtube.com/watch?v=FzpurxjwmsM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "FzpurxjwmsM",
+    "duration": "9:59"
+   },
+   {
+    "title": "Loops and Iteration - Part 2",
+    "url": "https://www.youtube.com/watch?v=5QDrj5ogPYc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "5QDrj5ogPYc",
+    "duration": "6:52"
+   },
+   {
+    "title": "Loops and Iteration - Part 3",
+    "url": "https://www.youtube.com/watch?v=xsavQp8hd78&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "xsavQp8hd78",
+    "duration": "8:44"
+   },
+   {
+    "title": "Loops and Iteration - Part 4",
+    "url": "https://www.youtube.com/watch?v=yjlMMwf9Y5I&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "yjlMMwf9Y5I",
+    "duration": "18:48"
+   },
+   {
+    "title": "Worked Exercise: 5.1",
+    "url": "https://www.youtube.com/watch?v=R2GrfqRofZc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "R2GrfqRofZc",
+    "duration": "8:31"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 5: Iterations",
+    "url": "https://www.py4e.com/html3/05-iterations",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "05-iterations"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "05-iterations"
+  ]
+ },
+ {
+  "slug": "strings",
+  "title": "7: Strings",
+  "number": 7,
+  "name": "Strings",
+  "description": "We look at how Python stores and manipulates textual data using string variables and functions.",
+  "slides": [
+   {
+    "title": "Pythonlearn-06-Strings.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-06-Strings.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-06-Strings.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-06-Strings.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Strings - Part 1",
+    "url": "https://www.youtube.com/watch?v=dr98iM4app8&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "dr98iM4app8",
+    "duration": "10:43"
+   },
+   {
+    "title": "Strings - Part 2",
+    "url": "https://www.youtube.com/watch?v=bIFpJ-qZ3Cc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "bIFpJ-qZ3Cc",
+    "duration": "18:44"
+   },
+   {
+    "title": "Worked Exercise: 6.5",
+    "url": "https://www.youtube.com/watch?v=BGTxwsDI9KY&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "BGTxwsDI9KY",
+    "duration": "8:27"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 6: Strings",
+    "url": "https://www.py4e.com/html3/06-strings",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "06-strings"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "06-strings"
+  ]
+ },
+ {
+  "slug": "files",
+  "title": "8: Files",
+  "number": 8,
+  "name": "Files",
+  "description": "We learn how to open data files on your computer and read through the files using Python.",
+  "slides": [
+   {
+    "title": "Pythonlearn-07-Files.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-07-Files.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-07-Files.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-07-Files.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Reading Files - Part 1",
+    "url": "https://www.youtube.com/watch?v=9KJ-XeQ6ZlI&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "9KJ-XeQ6ZlI",
+    "duration": "7:55"
+   },
+   {
+    "title": "Reading Files - Part 2",
+    "url": "https://www.youtube.com/watch?v=0t4rvnySKR4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "0t4rvnySKR4",
+    "duration": "13:46"
+   },
+   {
+    "title": "Worked Exercise: 7.1",
+    "url": "https://www.youtube.com/watch?v=MHZ4KnFZ7Y0&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "MHZ4KnFZ7Y0",
+    "duration": "9:44"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 7: Files",
+    "url": "https://www.py4e.com/html3/07-files",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "07-files"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "07-files"
+  ]
+ },
+ {
+  "slug": "lists",
+  "title": "9: Lists",
+  "number": 9,
+  "name": "Lists",
+  "description": "We look at Python's simplest data structure - the list. Lists can store more than one item in a variable.",
+  "slides": [
+   {
+    "title": "Pythonlearn-08-Lists.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-08-Lists.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-08-Lists.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-08-Lists.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Lists - Part 1",
+    "url": "https://www.youtube.com/watch?v=oVOcqQNpOFM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "oVOcqQNpOFM",
+    "duration": "10:57"
+   },
+   {
+    "title": "Lists - Part 2",
+    "url": "https://www.youtube.com/watch?v=bV1FQUBIApM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "bV1FQUBIApM",
+    "duration": "9:37"
+   },
+   {
+    "title": "Lists - Part 3",
+    "url": "https://www.youtube.com/watch?v=GxADdpo6EP4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "GxADdpo6EP4",
+    "duration": "8:03"
+   },
+   {
+    "title": "Lists, Files and the Guardian Pattern",
+    "url": "https://www.youtube.com/watch?v=WU6_0A9zYRA&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "WU6_0A9zYRA",
+    "duration": "11:34"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 8: Lists",
+    "url": "https://www.py4e.com/html3/08-lists",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "08-lists"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "08-lists"
+  ]
+ },
+ {
+  "slug": "dictionary",
+  "title": "10: Dictionaries",
+  "number": 10,
+  "name": "Dictionaries",
+  "description": "The dictionary data structures allows us to store multiple values in an object and look up the values by their key.",
+  "slides": [
+   {
+    "title": "Pythonlearn-09-Dictionaries.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-09-Dictionaries.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-09-Dictionaries.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-09-Dictionaries.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Dictionaries - Part 1",
+    "url": "https://www.youtube.com/watch?v=hoH7fTkmnWY&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "hoH7fTkmnWY",
+    "duration": "9:51"
+   },
+   {
+    "title": "Dictionaries - Part 2",
+    "url": "https://www.youtube.com/watch?v=LRSIuH94XM4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "LRSIuH94XM4",
+    "duration": "9:27"
+   },
+   {
+    "title": "Dictionaries - Part 3",
+    "url": "https://www.youtube.com/watch?v=a-NVUngu2Zs&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "a-NVUngu2Zs",
+    "duration": "11:23"
+   },
+   {
+    "title": "Counting Word Frequency using a Dictionary",
+    "url": "https://www.youtube.com/watch?v=HqYAtchZrjE&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "HqYAtchZrjE",
+    "duration": "26:26"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 9: Dictionaries",
+    "url": "https://www.py4e.com/html3/09-dictionaries",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "09-dictionaries"
+   },
+   {
+    "title": "Fun: Sesame Street - The Count",
+    "url": "https://www.youtube.com/watch?v=YtfnsX3Vgrs",
+    "login_required": false,
+    "kind": "reference"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "09-dictionaries"
+  ]
+ },
+ {
+  "slug": "tuples",
+  "title": "11: Tuples",
+  "number": 11,
+  "name": "Tuples",
+  "description": "The tuple is a Python data structure that is like a simple and efficient list.",
+  "slides": [
+   {
+    "title": "Pythonlearn-10-Tuples.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-10-Tuples.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-10-Tuples.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-10-Tuples.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Tuples - Part 1",
+    "url": "https://www.youtube.com/watch?v=CaVhM65wD6g&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "CaVhM65wD6g",
+    "duration": "9:48"
+   },
+   {
+    "title": "Tuples - Part 2",
+    "url": "https://www.youtube.com/watch?v=TkU_PmtVhQo&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "TkU_PmtVhQo",
+    "duration": "12:24"
+   },
+   {
+    "title": "Sorting a Dictionary Using Tuples",
+    "url": "https://www.youtube.com/watch?v=QRyOwoV00QU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "QRyOwoV00QU",
+    "duration": "12:42"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 10: Tuples",
+    "url": "https://www.py4e.com/html3/10-tuples",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "10-tuples"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "10-tuples"
+  ]
+ },
+ {
+  "slug": "regex",
+  "title": "12: Regular Expressions",
+  "number": 12,
+  "name": "Regular Expressions",
+  "description": "Regular Expressions allow us to search for patterns in strings and extract data from strings using the regular expression programming language.",
+  "slides": [
+   {
+    "title": "Pythonlearn-11-Regex.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-11-Regex.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-11-Regex.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-11-Regex.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Regular Expressions - Part 1",
+    "url": "https://www.youtube.com/watch?v=ovZsvN67Glc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "ovZsvN67Glc",
+    "duration": "10:47"
+   },
+   {
+    "title": "Regular Expressions - Part 2",
+    "url": "https://www.youtube.com/watch?v=fiar4QZZ7Xo&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "fiar4QZZ7Xo",
+    "duration": "8:47"
+   },
+   {
+    "title": "Regular Expressions - Part 3",
+    "url": "https://www.youtube.com/watch?v=GiQdXo2Bvgc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "GiQdXo2Bvgc",
+    "duration": "8:51"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 11: Regular Expressions",
+    "url": "https://www.py4e.com/html3/11-regex",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "11-regex"
+   },
+   {
+    "title": "Python Regular Expression Quick Guide",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-11-Regex-Handout.txt",
+    "login_required": false,
+    "kind": "reference"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "11-regex"
+  ]
+ },
+ {
+  "slug": "network",
+  "title": "13: Network Programming",
+  "number": 13,
+  "name": "Network Programming",
+  "description": "We take a quick look at how data moves across the network using the HyperText Transport Protocol (HTTP) and how we write programs to read data across the network.",
+  "slides": [
+   {
+    "title": "Pythonlearn-12-HTTP.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-12-HTTP.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-12-HTTP.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-12-HTTP.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Networks and Packets - Part 1",
+    "url": "https://www.youtube.com/watch?v=RsnaRPC52G0&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "RsnaRPC52G0",
+    "duration": "7:44"
+   },
+   {
+    "title": "Servers and Protocols - Part 2",
+    "url": "https://www.youtube.com/watch?v=nA0XC-FbXdQ&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "nA0XC-FbXdQ",
+    "duration": "9:21"
+   },
+   {
+    "title": "Using HTTP in Python - Part 3",
+    "url": "https://www.youtube.com/watch?v=Lr9Vm-VghAk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "Lr9Vm-VghAk",
+    "duration": "4:36"
+   },
+   {
+    "title": "Worked Example: Sockets",
+    "url": "https://www.youtube.com/watch?v=EqUyu8ZZYUE&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "EqUyu8ZZYUE",
+    "duration": "6:12"
+   },
+   {
+    "title": "Characters, ASCII, and Unicode - Part 4",
+    "url": "https://www.youtube.com/watch?v=-cmlmaVSONg&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "-cmlmaVSONg",
+    "duration": "11:15"
+   },
+   {
+    "title": "Using urllib in Python - Part 5",
+    "url": "https://www.youtube.com/watch?v=k1sUxGPpQOk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "k1sUxGPpQOk",
+    "duration": "5:31"
+   },
+   {
+    "title": "Worked Example: Urllib",
+    "url": "https://www.youtube.com/watch?v=jKaCKIdIoks&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "jKaCKIdIoks",
+    "duration": "3:40"
+   },
+   {
+    "title": "Beautiful Soup in Python - Part 6",
+    "url": "https://www.youtube.com/watch?v=D7ZI8--qbBw&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "D7ZI8--qbBw",
+    "duration": "6:40"
+   },
+   {
+    "title": "Worked Example: BeautifulSoup",
+    "url": "https://www.youtube.com/watch?v=mhaHWiSPxxE&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "mhaHWiSPxxE",
+    "duration": "9:21"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 12: Networked Programs",
+    "url": "https://www.py4e.com/html3/12-network",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "12-network"
+   },
+   {
+    "title": "ASCII Coding and Binary",
+    "url": "https://www.youtube.com/watch?v=H4l42nbYmrU&t=308s",
+    "login_required": false,
+    "kind": "reference"
+   },
+   {
+    "title": "Characters, Symbols and the Unicode Miracle - Computerphile",
+    "url": "https://www.youtube.com/watch?v=MijmeoH9LT4&t=385s",
+    "login_required": false,
+    "kind": "reference"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "12-network"
+  ]
+ },
+ {
+  "slug": "servces",
+  "title": "14: Using Web Services",
+  "number": 14,
+  "name": "Using Web Services",
+  "description": "Web services allow a program to access data available in a different server.",
+  "slides": [
+   {
+    "title": "Pythonlearn-13-WebServices.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-13-WebServices.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-13-WebServices.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-13-WebServices.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Web Services - Part 1",
+    "url": "https://www.youtube.com/watch?v=7NEtEctD9Cw&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "7NEtEctD9Cw",
+    "duration": "2:49"
+   },
+   {
+    "title": "Web Services - XML - Part 2",
+    "url": "https://www.youtube.com/watch?v=A8KcBx9153Y&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "A8KcBx9153Y",
+    "duration": "5:42"
+   },
+   {
+    "title": "Worked Example: XML",
+    "url": "https://www.youtube.com/watch?v=7q8uUehNRK0&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "7q8uUehNRK0",
+    "duration": "6:07"
+   },
+   {
+    "title": "Web Services - XML Schema - Part 3",
+    "url": "https://www.youtube.com/watch?v=0cA6W-4JPQ4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "0cA6W-4JPQ4",
+    "duration": "14:08"
+   },
+   {
+    "title": "Web Services - JSON - Part 4",
+    "url": "https://www.youtube.com/watch?v=J5DjteDzgoM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "J5DjteDzgoM",
+    "duration": "6:29"
+   },
+   {
+    "title": "Worked Example: JSON",
+    "url": "https://www.youtube.com/watch?v=RGQfDirZ7_s&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "RGQfDirZ7_s",
+    "duration": "5:51"
+   },
+   {
+    "title": "Discovering JSON - Douglas Crockford",
+    "url": "https://www.youtube.com/watch?v=kc8BAR7SHJI&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "kc8BAR7SHJI",
+    "duration": "7:08"
+   },
+   {
+    "title": "Web Services - SOA - Part 5",
+    "url": "https://www.youtube.com/watch?v=SNeJcvBY-h4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "SNeJcvBY-h4",
+    "duration": "2:02"
+   },
+   {
+    "title": "The JISC e-Framework",
+    "url": "https://www.youtube.com/watch?v=mj-kCFzF0ME&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "mj-kCFzF0ME",
+    "duration": "5:16"
+   },
+   {
+    "title": "Web Services - GeoJSON - Part 6",
+    "url": "https://www.youtube.com/watch?v=iqW7BdL8riY&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "iqW7BdL8riY",
+    "duration": "8:46"
+   },
+   {
+    "title": "Worked Example: opengeo.py",
+    "url": "https://www.youtube.com/watch?v=5hi6llQzTnk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "5hi6llQzTnk",
+    "duration": "20:09"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 13: Python and Web Services",
+    "url": "https://www.py4e.com/html3/13-web",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "13-web"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "13-web"
+  ]
+ },
+ {
+  "slug": "Objects",
+  "title": "15: Object-Oriented Programming",
+  "number": 15,
+  "name": "Object-Oriented Programming",
+  "description": "We do a quick look at how Python supports the Object-Oriented programming pattern.",
+  "slides": [
+   {
+    "title": "Pythonlearn-14-Objects.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-14-Objects.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-14-Objects.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Objects - Introduction - Part 1",
+    "url": "https://www.youtube.com/watch?v=MafXTB8UXIg&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "MafXTB8UXIg",
+    "duration": "10:40"
+   },
+   {
+    "title": "Objects - A Sample Class - Part 2",
+    "url": "https://www.youtube.com/watch?v=cBgtQK6vhN4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "cBgtQK6vhN4",
+    "duration": "8:22"
+   },
+   {
+    "title": "Objects - Lifecycle - Part 3",
+    "url": "https://www.youtube.com/watch?v=QSaHfuMf5QI&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "QSaHfuMf5QI",
+    "duration": "6:09"
+   },
+   {
+    "title": "Objects - Inheritance - Part 4",
+    "url": "https://www.youtube.com/watch?v=cOf7g_E2G8g&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "cOf7g_E2G8g",
+    "duration": "7:34"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 14: Python Objects",
+    "url": "https://www.py4e.com/html3/14-objects",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "14-objects"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "14-objects"
+  ]
+ },
+ {
+  "slug": "database",
+  "title": "16: Databases",
+  "number": 16,
+  "name": "Databases",
+  "description": "Databases give us very fast random access to large amounts of data. There is a lot of material in this chapter as we learn the Structured Query Language (SQL).",
+  "slides": [
+   {
+    "title": "Pythonlearn-15-Databases.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-15-Databases.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-15-Databases.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Databases - Part 1",
+    "url": "https://www.youtube.com/watch?v=3RMPveOMd0k&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "3RMPveOMd0k",
+    "duration": "15:41"
+   },
+   {
+    "title": "Databases - Single Table SQL - Part 2",
+    "url": "https://www.youtube.com/watch?v=yRJE-nk20sM&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "yRJE-nk20sM",
+    "duration": "10:07"
+   },
+   {
+    "title": "Worked Example: Emaildb.py",
+    "url": "https://www.youtube.com/watch?v=MsZoGw4QEpU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "MsZoGw4QEpU",
+    "duration": "13:39"
+   },
+   {
+    "title": "Databases - Complex Models - Part 3",
+    "url": "https://www.youtube.com/watch?v=rHjRpYUl5eg&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "rHjRpYUl5eg",
+    "duration": "8:44"
+   },
+   {
+    "title": "Databases - Relationships - Part 4",
+    "url": "https://www.youtube.com/watch?v=PgE--P-ZWvU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "PgE--P-ZWvU",
+    "duration": "4:06"
+   },
+   {
+    "title": "Databases - Foreign Keys - Part 5",
+    "url": "https://www.youtube.com/watch?v=GfuH_8uH16k&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "GfuH_8uH16k",
+    "duration": "11:32"
+   },
+   {
+    "title": "Databases - JOIN - Part 6",
+    "url": "https://www.youtube.com/watch?v=zMOSVrb82iU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "zMOSVrb82iU",
+    "duration": "10:30"
+   },
+   {
+    "title": "Worked Example: Tracks.py -",
+    "url": "https://www.youtube.com/watch?v=XvBF8BLXnNk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "XvBF8BLXnNk",
+    "duration": "7:56"
+   },
+   {
+    "title": "Databases - Many-to-Many - Part 7",
+    "url": "https://www.youtube.com/watch?v=uq_Wf4nuXqE&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "uq_Wf4nuXqE",
+    "duration": "13:13"
+   },
+   {
+    "title": "Worked Example: Roster.py",
+    "url": "https://www.youtube.com/watch?v=CqzELd0R9zc&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "CqzELd0R9zc",
+    "duration": "11:27"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 15: Python and Databases",
+    "url": "https://www.py4e.com/html3/15-database",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "15-database"
+   },
+   {
+    "title": "Python for Everybody Database Handout",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-15-Database-Handout.txt",
+    "login_required": false,
+    "kind": "reference"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "15-database"
+  ]
+ },
+ {
+  "slug": "dataviz",
+  "title": "17: Data Visualization",
+  "number": 17,
+  "name": "Data Visualization",
+  "description": "In this section, we learn to scrape data from the network, store the data in a database and then read the data from the database to produce in in-browser visualization of the data.",
+  "slides": [
+   {
+    "title": "Pythonlearn-16-Data-Viz.pptx",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-16-Data-Viz.pptx",
+    "login_required": false,
+    "kind": "pptx"
+   },
+   {
+    "title": "Pythonlearn-16-Data-Viz.pdf",
+    "url": "https://www.py4e.com/lectures3/Pythonlearn-16-Data-Viz.pdf",
+    "login_required": false,
+    "kind": "pdf"
+   }
+  ],
+  "videos": [
+   {
+    "title": "Visualization - Geodata - Part 1",
+    "url": "https://www.youtube.com/watch?v=gy6l4DTv1KU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "gy6l4DTv1KU",
+    "duration": "6:44"
+   },
+   {
+    "title": "Worked Example: OpenGeo",
+    "url": "https://www.youtube.com/watch?v=wr8xpWda4wU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "wr8xpWda4wU",
+    "duration": "18:47"
+   },
+   {
+    "title": "Visualization - Page Rank - Part 2",
+    "url": "https://www.youtube.com/watch?v=x2KMFkvDtI8&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "x2KMFkvDtI8",
+    "duration": "11:24"
+   },
+   {
+    "title": "Worked Example: Page Rank - Spidering",
+    "url": "https://www.youtube.com/watch?v=SbtGozLk5Yk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "SbtGozLk5Yk",
+    "duration": "17:25"
+   },
+   {
+    "title": "Worked Example: Page Rank - Computation",
+    "url": "https://www.youtube.com/watch?v=9gtLOS87ZPs&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "9gtLOS87ZPs",
+    "duration": "15:36"
+   },
+   {
+    "title": "Worked Example: Page Rank - Visualization",
+    "url": "https://www.youtube.com/watch?v=vM4kJNePwhI&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "vM4kJNePwhI",
+    "duration": "6:43"
+   },
+   {
+    "title": "Visualization - Gmane (Email) Part 3",
+    "url": "https://www.youtube.com/watch?v=vE0_PM2BOiU&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "vE0_PM2BOiU",
+    "duration": "6:59"
+   },
+   {
+    "title": "Worked Example: Gmane - Spider",
+    "url": "https://www.youtube.com/watch?v=NFS5MLKdNGw&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "NFS5MLKdNGw",
+    "duration": "17:01"
+   },
+   {
+    "title": "Worked Example: Gmane - Model",
+    "url": "https://www.youtube.com/watch?v=8GHtT7GqRKk&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "8GHtT7GqRKk",
+    "duration": "12:56"
+   },
+   {
+    "title": "Worked Example: Gmane - Visualization",
+    "url": "https://www.youtube.com/watch?v=AQtKm02FQq4&list=PLlRFEj9H3Oj7Bp8-DfGpfAfDBiblRfl5p",
+    "login_required": false,
+    "kind": "youtube",
+    "video_id": "AQtKm02FQq4",
+    "duration": "13:33"
+   }
+  ],
+  "references": [
+   {
+    "title": "Chapter 16: Data Vizualization",
+    "url": "https://www.py4e.com/html3/16-viz",
+    "login_required": false,
+    "kind": "reference",
+    "chapter_slug": "16-viz"
+   }
+  ],
+  "discussions": [],
+  "tools": [],
+  "other": [],
+  "chapter_slugs": [
+   "16-viz"
+  ]
+ }
+]
